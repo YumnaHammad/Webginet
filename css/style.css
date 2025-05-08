@@ -72,86 +72,6 @@
 }
 
 
-/*** Navbar ***/
-.top-bar {
-    height: 75px;
-    padding: 0 4rem;
-}
-
-.nav-bar {
-    position: relative;
-    padding: 0 4.75rem;
-    transition: .5s;
-    z-index: 9999;
-}
-
-.nav-bar.sticky-top {
-    position: sticky;
-    padding: 0;
-    z-index: 9999;
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 25px 0;
-    color: var(--dark);
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    outline: none;
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
-
-@media (max-width: 991.98px) {
-    .nav-bar {
-        padding: 0;
-    }
-
-    .navbar-light .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-    }
-
-    .navbar-light .navbar-nav {
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid #EEEEEE;
-    }
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
-}
-
-
 /*** Header ***/
 .header-carousel .container,
 .page-header .container {
@@ -238,6 +158,8 @@
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-3.jpg) center center no-repeat;
     background-size: cover;
+    height: 450px;
+    margin-top: 73px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -586,5 +508,44 @@
 .footer .copyright a {
     color: var(--light);
 }
+    /* value */
+.check-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #1899d5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #004261;
+    flex-shrink: 0;
+  }
 
+  .value-item {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
 
+  .section-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .download-btn {
+    border: 1px solid #b0aba6;
+    color: #b0aba6;
+    background-color: transparent;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  .download-btn:hover {
+    background-color: #f8f9fa;
+    color: #8c8c8c;
+  }
+  .download-icon {
+    margin-right: 8px;
+  }

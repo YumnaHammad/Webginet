@@ -1,591 +1,1095 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Webginet</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="font-awesome">
-    <!-- BOOTSTRAP & NAVBAR CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="navbar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
 
-</head>
+    .navbar {
+      background-color: rgba(255, 255, 255, 0); /* transparent white */
+      backdrop-filter: blur(3px); /* blur effect */
+      -webkit-backdrop-filter: blur(3px); /* Safari support */
+      position: fixed; /* make it float */
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
 
-<body>
+      padding: 5px 2rem;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: rgb(0, 0, 0) !important;
+      font-weight: 500;
+      margin-right: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #998202 !important;
+      transform: scale(1.05);
+    }
+
+    h6 {
+      color: #000000;
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none; /* Hide default toggler icon */
+    }
+
+    .navbar-toggler i {
+      color: #998202;
+      font-size: 1.8rem;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 5;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    .text-primary {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+  <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-
-<!-- Fixed Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-dark shadow-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="img/logo.png" alt="Logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="bi bi-list"></i>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-
-          <!-- Offers -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button">Offers</a>
-            <ul class="dropdown-menu mega-dropdown">
-              <div>
-                <h6>You Are</h6>
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Electricians</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Installers</a></li>
-                    <li><a class="dropdown-item" href="#">Facility Managers</a></li>
-                    <li><a class="dropdown-item" href="#">Commercial </a></li>
-                    <li><a class="dropdown-item" href="#">Industrial </a></li>
-                    <li><a class="dropdown-item" href="#">Suppliers</a></li>
-                  </ul>
-                </li>
-              </div>
-              <div>
-                <h6>Solutions</h6>
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Smart Building</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Lighting</a></li>
-                    <li><a class="dropdown-item" href="#">Climate Control</a></li>
-                    <li><a class="dropdown-item" href="#">Security</a></li>
-                    <li><a class="dropdown-item" href="#">Datacom</a></li>
-                    <li><a class="dropdown-item" href="#">Photovoltaics</a></li>
-                    <li><a class="dropdown-item" href="#">Home Automation</a></li>
-                    <li><a class="dropdown-item" href="#">Electric Vehicles</a></li>
-                    <li><a class="dropdown-item" href="#">Industrial Solutions</a></li>
-                    <li><a class="dropdown-item" href="#">Production Parts</a></li>
-                  </ul>
-                </li>
-              </div>
-            </ul>
-          </li>
-
-          <!-- Market -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button">Market</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Brands & Products</a></li>
-              <li><a class="dropdown-item" href="#">Markets</a></li>
-              <li><a class="dropdown-item" href="#">Advantages & Services</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
       </div>
     </div>
-  </nav>
-<!-- Fixed Navbar End -->
-
-
-
+    <!-- Spinner End -->
+  <!-- Navbar Start -->
+   <my-navbar></my-navbar>
+ <!-- Navbar End -->
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5" style="z-index: 1; position: relative;">
-        <div class="owl-carousel header-carousel position-relative">
-    
-            <div class="owl-carousel-item position-relative" style="height: 100vh;">
-                <img class="img-fluid" src="img/carousel-3.jpg" alt="" 
-                     style="height: 100%; width: 100%; object-fit: cover;">
-                
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center " 
-                     style="background: rgba(0, 0, 0, .4); height: 100%;">
-                    <div class="container mt-5">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown ">Lorem ipsum dolor sit</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Lorem consectetur adipisic Services</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">
-                                    Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
-                                </p>
-                                <a href="#" class="btn py-md-3 px-md-5 me-3 animated slideInLeft" 
-                                   style="color: white; background-color: #2e3964; border: 1px solid #2e3964;">
-                                    Read More
-                                </a>
-                                <a href="#" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight" 
-                                   style="color: white; background-color: #c776ca; border: 1px solid #c776ca;">
-                                    Free Quote
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container-fluid p-0 mb-5">
+      <div class="owl-carousel header-carousel position-relative">
+        <div class="owl-carousel-item position-relative" style="height: 100vh">
+          <img
+            class="img-fluid"
+            src="img/carousel-3.jpg"
+            alt=""
+            style="height: 100%; width: 100%; object-fit: cover"
+          />
+
+          <div
+            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+            style="background: rgba(0, 0, 0, 0.4); height: 100%"
+          >
+            <div class="container mt-5">
+              <div class="row justify-content-start">
+                <div class="col-10 col-lg-8">
+                  <h5
+                    class="text-white text-uppercase mb-3 animated slideInDown"
+                  >
+                    Lorem ipsum dolor sit
+                  </h5>
+                  <h1 class="display-3 text-white animated slideInDown mb-4">
+                    Lorem consectetur adipisic Services
+                  </h1>
+                  <p class="fs-5 fw-medium text-white mb-4 pb-2">
+                    Vero elitr justo clita lorem. Ipsum dolor at sed stet sit
+                    diam no.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn py-md-3 px-md-5 me-3 animated slideInLeft"
+                    style="
+                      color: white;
+                      background-color: #2e3964;
+                      border: 1px solid #2e3964;
+                    "
+                  >
+                    Read More
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-secondary py-md-3 px-md-5 animated slideInRight"
+                    style="
+                      color: white;
+                      background-color: #c776ca;
+                      border: 1px solid #c776ca;
+                    "
+                  >
+                    Free Quote
+                  </a>
                 </div>
+              </div>
             </div>
-        
-            <div class="owl-carousel-item position-relative" style="height: 100vh;">
-                <img class="img-fluid" src="img/carousel-6.jpg" alt="" 
-                     style="height: 100%; width: 100%; object-fit: cover;">
-        
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" 
-                     style="background: rgba(0, 0, 0, .4); height: 100%;">
-                    <div class="container mt-5">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Lorem ipsum dolor sit</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Lorem consectetur adipisic Services</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">
-                                    Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
-                                </p>
-                                <a href="#" class="btn py-md-3 px-md-5 me-3 animated slideInLeft" 
-                                   style="color: white; background-color: #2e3964; border: 1px solid #2e3964;">
-                                    Read More
-                                </a>
-                                <a href="#" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight" 
-                                   style="color: white; background-color: #c776ca; border: 1px solid #c776ca;">
-                                    Free Quote
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+          </div>
         </div>
-        
+
+        <div class="owl-carousel-item position-relative" style="height: 100vh">
+          <img
+            class="img-fluid"
+            src="img/carousel-6.jpg"
+            alt=""
+            style="height: 100%; width: 100%; object-fit: cover"
+          />
+
+          <div
+            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+            style="background: rgba(0, 0, 0, 0.4); height: 100%"
+          >
+            <div class="container mt-5">
+              <div class="row justify-content-start">
+                <div class="col-10 col-lg-8">
+                  <h5
+                    class="text-white text-uppercase mb-3 animated slideInDown"
+                  >
+                    Lorem ipsum dolor sit
+                  </h5>
+                  <h1 class="display-3 text-white animated slideInDown mb-4">
+                    Lorem consectetur adipisic Services
+                  </h1>
+                  <p class="fs-5 fw-medium text-white mb-4 pb-2">
+                    Vero elitr justo clita lorem. Ipsum dolor at sed stet sit
+                    diam no.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn py-md-3 px-md-5 me-3 animated slideInLeft"
+                    style="
+                      color: white;
+                      background-color: #2e3964;
+                      border: 1px solid #2e3964;
+                    "
+                  >
+                    Read More
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-secondary py-md-3 px-md-5 animated slideInRight"
+                    style="
+                      color: white;
+                      background-color: #c776ca;
+                      border: 1px solid #c776ca;
+                    "
+                  >
+                    Free Quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Carousel End -->
 
-
     <!-- Service Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center text-lg-start wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-5">HIGHLIGHTS</h1>
+      <div class="container">
+        <div class="row g-4">
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <div class="overflow-hidden">
+              <img
+                class="img-fluid w-100 h-100"
+                src="img/carousel-3.jpg"
+                alt=""
+              />
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid w-100 h-100" src="img/carousel-3.jpg" alt="">
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between bg-light p-4">
-                        <h5 class="text-truncate me-3 mb-0">Residential Plumbing</h5>
-                        <a class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href=""><i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid w-100 h-100" src="img/carousel-4.jpg" alt="">
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between bg-light p-4">
-                        <h5 class="text-truncate me-3 mb-0">Commercial Plumbing</h5>
-                        <a class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href=""><i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid w-100 h-100" src="img/carousel-6.jpg" alt="">
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between bg-light p-4">
-                        <h5 class="text-truncate me-3 mb-0">Emergency Servicing</h5>
-                        <a class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href=""><i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
+            <div
+              class="d-flex align-items-center justify-content-between bg-light p-4"
+            >
+              <h5 class="text-truncate me-3 mb-0">Residential Plumbing</h5>
+              <a
+                class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0"
+                href=""
+                ><i class="fa fa-arrow-right"></i
+              ></a>
             </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div class="overflow-hidden">
+              <img
+                class="img-fluid w-100 h-100"
+                src="img/carousel-4.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-between bg-light p-4"
+            >
+              <h5 class="text-truncate me-3 mb-0">Commercial Plumbing</h5>
+              <a
+                class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0"
+                href=""
+                ><i class="fa fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.5s"
+          >
+            <div class="overflow-hidden">
+              <img
+                class="img-fluid w-100 h-100"
+                src="img/carousel-6.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-between bg-light p-4"
+            >
+              <h5 class="text-truncate me-3 mb-0">Emergency Servicing</h5>
+              <a
+                class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0"
+                href=""
+                ><i class="fa fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Service End -->
-
 
     <!-- About Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-secondary text-uppercase">About Us</h6>
-                    <h1 class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, inventore?</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Residential & commercial plumbing</p>
-                    <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Quality services at affordable prices</p>
-                    <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Immediate 24/ 7 emergency services</p>
-                    
-                </div>
-                <div class="col-lg-6 pt-4" style="min-height: 500px;">
-                    <div class="position-relative h-100 wow fadeInUp" data-wow-delay="0.5s">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/carousel-9.jpg" style="object-fit: cover; padding: 0 0 50px 100px;" alt="">
-                        <img class="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50" src="img/carousel-8.jpg" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-secondary text-uppercase">About Us</h6>
+            <h1 class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              inventore?
+            </h1>
+            <p class="mb-4">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
+              diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
+              lorem sit clita duo justo magna dolore erat amet
+            </p>
+            <p class="fw-medium text-primary">
+              <i class="fa fa-check text-success me-3"></i>Residential &
+              commercial plumbing
+            </p>
+            <p class="fw-medium text-primary">
+              <i class="fa fa-check text-success me-3"></i>Quality services at
+              affordable prices
+            </p>
+            <p class="fw-medium text-primary">
+              <i class="fa fa-check text-success me-3"></i>Immediate 24/ 7
+              emergency services
+            </p>
+          </div>
+          <div class="col-lg-6 pt-4" style="min-height: 500px">
+            <div
+              class="position-relative h-100 wow fadeInUp"
+              data-wow-delay="0.5s"
+            >
+              <img
+                class="position-absolute img-fluid w-100 h-100"
+                src="img/carousel-9.jpg"
+                style="object-fit: cover; padding: 0 0 50px 100px"
+                alt=""
+              />
+              <img
+                class="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50"
+                src="img/carousel-8.jpg"
+                style="object-fit: cover"
+                alt=""
+              />
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- About End -->
 
-
     <!-- Fact Start -->
     <div class="container-fluid fact bg-dark my-5 py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                    <i class="fa fa-check fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-                    <p class="text-white mb-0">Years Experience</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                    <i class="fa fa-users-cog fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-                    <p class="text-white mb-0">Expert Technicians</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-users fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-                    <p class="text-white mb-0">Satisfied Clients</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                    <i class="fa fa-wrench fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-                    <p class="text-white mb-0">Compleate Projects</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3 text-center wow fadeIn"
+            data-wow-delay="0.1s"
+          >
+            <i class="fa fa-check fa-2x text-white mb-3"></i>
+            <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+            <p class="text-white mb-0">Years Experience</p>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 text-center wow fadeIn"
+            data-wow-delay="0.3s"
+          >
+            <i class="fa fa-users-cog fa-2x text-white mb-3"></i>
+            <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+            <p class="text-white mb-0">Expert Technicians</p>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 text-center wow fadeIn"
+            data-wow-delay="0.5s"
+          >
+            <i class="fa fa-users fa-2x text-white mb-3"></i>
+            <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+            <p class="text-white mb-0">Satisfied Clients</p>
+          </div>
+          <div
+            class="col-md-6 col-lg-3 text-center wow fadeIn"
+            data-wow-delay="0.7s"
+          >
+            <i class="fa fa-wrench fa-2x text-white mb-3"></i>
+            <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+            <p class="text-white mb-0">Compleate Projects</p>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Fact End -->
 
-
     <!-- Service Start -->
     <div class="container-fluid py-5 px-4 px-lg-0">
-        <div class="row g-0">
-            <div class="col-lg-3 d-none d-lg-flex">
-                <div class="d-flex align-items-center justify-content-center  w-100 h-100" style="background-color: #2e3964;">
-                    <h1 class="display-3 text-white m-0" style="transform: rotate(-90deg);">15 Years Experience</h1>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-9">
-                <div class="ms-lg-5 ps-lg-5">
-                    <div class="text-center text-lg-start wow fadeInUp" data-wow-delay="0.1s">
-                        <h6 class="text-secondary text-uppercase">Our Services</h6>
-                        <h1 class="mb-5">Explore Our Services</h1>
-                    </div>
-                    <div class="owl-carousel service-carousel position-relative wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </div>
-                            <h4 class="mb-3">Lorem ipsum dolor</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
-                        </div>
-                        <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa fa-toilet fa-2x text-primary"></i>
-                            </div>
-                            <h4 class="mb-3">Lorem ipsum dolor</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
-                        </div>
-                        <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa fa-shower fa-2x text-primary"></i>
-                            </div>
-                            <h4 class="mb-3">Lorem ipsum dolor</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
-                        </div>
-                        <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa fa-tint fa-2x text-primary"></i>
-                            </div>
-                            <h4 class="mb-3">Lorem ipsum dolor</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row g-0">
+        <div class="col-lg-3 d-none d-lg-flex">
+          <div
+            class="d-flex align-items-center justify-content-center w-100 h-100"
+            style="background-color: #2e3964"
+          >
+            <h1
+              class="display-3 text-white m-0"
+              style="transform: rotate(-90deg)"
+            >
+              15 Years Experience
+            </h1>
+          </div>
         </div>
+        <div class="col-md-12 col-lg-9">
+          <div class="ms-lg-5 ps-lg-5">
+            <div
+              class="text-center text-lg-start wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
+              <h6 class="text-secondary text-uppercase">Our Services</h6>
+              <h1 class="mb-5">Explore Our Services</h1>
+            </div>
+            <div
+              class="owl-carousel service-carousel position-relative wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
+              <div class="bg-light p-4">
+                <div
+                  class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                  style="width: 75px; height: 75px"
+                >
+                  <i class="fa fa-water fa-2x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Lorem ipsum dolor</h4>
+                <p>
+                  Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
+                  lorem diam justo.
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Quality Service
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Customer
+                  Satisfaction
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Support 24/7
+                </p>
+                <a href="" class="btn bg-white text-primary w-100 mt-2"
+                  >Read More<i class="fa fa-arrow-right text-secondary ms-2"></i
+                ></a>
+              </div>
+              <div class="bg-light p-4">
+                <div
+                  class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                  style="width: 75px; height: 75px"
+                >
+                  <i class="fa fa-toilet fa-2x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Lorem ipsum dolor</h4>
+                <p>
+                  Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
+                  lorem diam justo.
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Quality Service
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Customer
+                  Satisfaction
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Support 24/7
+                </p>
+                <a href="" class="btn bg-white text-primary w-100 mt-2"
+                  >Read More<i class="fa fa-arrow-right text-secondary ms-2"></i
+                ></a>
+              </div>
+              <div class="bg-light p-4">
+                <div
+                  class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                  style="width: 75px; height: 75px"
+                >
+                  <i class="fa fa-shower fa-2x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Lorem ipsum dolor</h4>
+                <p>
+                  Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
+                  lorem diam justo.
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Quality Service
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Customer
+                  Satisfaction
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Support 24/7
+                </p>
+                <a href="" class="btn bg-white text-primary w-100 mt-2"
+                  >Read More<i class="fa fa-arrow-right text-secondary ms-2"></i
+                ></a>
+              </div>
+              <div class="bg-light p-4">
+                <div
+                  class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                  style="width: 75px; height: 75px"
+                >
+                  <i class="fa fa-tint fa-2x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Lorem ipsum dolor</h4>
+                <p>
+                  Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
+                  lorem diam justo.
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Quality Service
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Customer
+                  Satisfaction
+                </p>
+                <p class="text-primary fw-medium">
+                  <i class="fa fa-check text-success me-2"></i>Support 24/7
+                </p>
+                <a href="" class="btn bg-white text-primary w-100 mt-2"
+                  >Read More<i class="fa fa-arrow-right text-secondary ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Service End -->
 
-
     <!-- Booking Start -->
     <div class="container-fluid my-5 px-0">
-        <div class="video wow fadeInUp" data-wow-delay="0.1s">
-            <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                <span></span>
-            </button>
+      <div class="video wow fadeInUp" data-wow-delay="0.1s">
+        <button
+          type="button"
+          class="btn-play"
+          data-bs-toggle="modal"
+          data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
+          data-bs-target="#videoModal"
+        >
+          <span></span>
+        </button>
 
-            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content rounded-0">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- 16:9 aspect ratio -->
-                            <div class="ratio ratio-16x9">
-                                <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                    allow="autoplay"></iframe>
-                            </div>
-                        </div>
-                    </div>
+        <div
+          class="modal fade"
+          id="videoModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Youtube Video
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    class="embed-responsive-item"
+                    src=""
+                    id="video"
+                    allowfullscreen
+                    allowscriptaccess="always"
+                    allow="autoplay"
+                  ></iframe>
                 </div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <h1 class="text-white mb-4">Lorem, ipsum dolor.</h1>
-            <h3 class="text-white mb-0">Lorem ipsum dolor sit amet.</h3>
-        </div>
-        <div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -6rem;">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="bg-light text-center p-5">
-                        <h1 class="mb-4">Booking</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Request"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
+        <h1 class="text-white mb-4">Lorem, ipsum dolor.</h1>
+        <h3 class="text-white mb-0">Lorem ipsum dolor sit amet.</h3>
+      </div>
+      <div
+        class="container position-relative wow fadeInUp"
+        data-wow-delay="0.1s"
+        style="margin-top: -6rem"
+      >
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="bg-light text-center p-5">
+              <h1 class="mb-4">Booking</h1>
+              <form>
+                <div class="row g-3">
+                  <div class="col-12 col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      placeholder="Your Name"
+                      style="height: 55px"
+                    />
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <input
+                      type="email"
+                      class="form-control border-0"
+                      placeholder="Your Email"
+                      style="height: 55px"
+                    />
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <select class="form-select border-0" style="height: 55px">
+                      <option selected>Select A Service</option>
+                      <option value="1">Service 1</option>
+                      <option value="2">Service 2</option>
+                      <option value="3">Service 3</option>
+                    </select>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="date" id="date1" data-target-input="nearest">
+                      <input
+                        type="text"
+                        class="form-control border-0 datetimepicker-input"
+                        placeholder="Service Date"
+                        data-target="#date1"
+                        data-toggle="datetimepicker"
+                        style="height: 55px"
+                      />
                     </div>
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      class="form-control border-0"
+                      placeholder="Special Request"
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button
+                      class="btn btn-primary w-100 py-3"
+                      style="
+                        color: white;
+                        background-color: #2e3964;
+                        border: 1px solid #2e3964;
+                      "
+                      type="submit"
+                    >
+                      Book Now
+                    </button>
+                  </div>
                 </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Booking End -->
 
-
     <!-- Team Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-secondary text-uppercase">Our Technicians</h6>
-                <h1 class="mb-5">Our Expert Technicians</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        </div>
-                        <div class="team-text">
-                            <div class="bg-light">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                            <div class="bg-primary">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                        </div>
-                        <div class="team-text">
-                            <div class="bg-light">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                            <div class="bg-primary">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        </div>
-                        <div class="team-text">
-                            <div class="bg-light">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                            <div class="bg-primary">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                        </div>
-                        <div class="team-text">
-                            <div class="bg-light">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                            <div class="bg-primary">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="text-secondary text-uppercase">Our Technicians</h6>
+          <h1 class="mb-5">Our Expert Technicians</h1>
         </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/team-1.jpg" alt="" />
+              </div>
+              <div class="team-text">
+                <div class="bg-light">
+                  <h5 class="fw-bold mb-0">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="bg-primary">
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/team-2.jpg" alt="" />
+              </div>
+              <div class="team-text">
+                <div class="bg-light">
+                  <h5 class="fw-bold mb-0">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="bg-primary">
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="team-item">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/team-3.jpg" alt="" />
+              </div>
+              <div class="team-text">
+                <div class="bg-light">
+                  <h5 class="fw-bold mb-0">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="bg-primary">
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/team-4.jpg" alt="" />
+              </div>
+              <div class="team-text">
+                <div class="bg-light">
+                  <h5 class="fw-bold mb-0">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="bg-primary">
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-square mx-1" href=""
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Team End -->
 
-
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="text-secondary text-uppercase">Testimonial</h6>
-                <h1 class="mb-5">Our Clients Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                    </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                    </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                    </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                    </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h6 class="text-secondary text-uppercase">Testimonial</h6>
+          <h1 class="mb-5">Our Clients Say!</h1>
         </div>
+        <div
+          class="owl-carousel testimonial-carousel position-relative wow fadeInUp"
+          data-wow-delay="0.1s"
+        >
+          <div class="testimonial-item text-center">
+            <div class="testimonial-text bg-light text-center p-4 mb-4">
+              <p class="mb-0">
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                amet diam et eos. Clita erat ipsum et lorem et sit.
+              </p>
+            </div>
+            <img
+              class="bg-light rounded-circle p-2 mx-auto mb-2"
+              src="img/testimonial-1.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <div class="mb-2">
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+            </div>
+            <h5 class="mb-1">Client Name</h5>
+            <p class="m-0">Profession</p>
+          </div>
+          <div class="testimonial-item text-center">
+            <div class="testimonial-text bg-light text-center p-4 mb-4">
+              <p class="mb-0">
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                amet diam et eos. Clita erat ipsum et lorem et sit.
+              </p>
+            </div>
+            <img
+              class="bg-light rounded-circle p-2 mx-auto mb-2"
+              src="img/testimonial-2.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <div class="mb-2">
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+            </div>
+            <h5 class="mb-1">Client Name</h5>
+            <p class="m-0">Profession</p>
+          </div>
+          <div class="testimonial-item text-center">
+            <div class="testimonial-text bg-light text-center p-4 mb-4">
+              <p class="mb-0">
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                amet diam et eos. Clita erat ipsum et lorem et sit.
+              </p>
+            </div>
+            <img
+              class="bg-light rounded-circle p-2 mx-auto mb-2"
+              src="img/testimonial-3.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <div class="mb-2">
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+            </div>
+            <h5 class="mb-1">Client Name</h5>
+            <p class="m-0">Profession</p>
+          </div>
+          <div class="testimonial-item text-center">
+            <div class="testimonial-text bg-light text-center p-4 mb-4">
+              <p class="mb-0">
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                amet diam et eos. Clita erat ipsum et lorem et sit.
+              </p>
+            </div>
+            <img
+              class="bg-light rounded-circle p-2 mx-auto mb-2"
+              src="img/testimonial-4.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <div class="mb-2">
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+              <small class="fa fa-star text-secondary"></small>
+            </div>
+            <h5 class="mb-1">Client Name</h5>
+            <p class="m-0">Profession</p>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Testimonial End -->
 
-
     <!-- Footer Start -->
-    <my-footer></my-footer>
-
+    <div
+      class="container-fluid text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+      style="background-color: #2e3964"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Address</h4>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3"></i>123 Street, Lorem
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>info@example.com
+            </p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href=""
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a class="btn btn-outline-light btn-social" href=""
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a class="btn btn-outline-light btn-social" href=""
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a class="btn btn-outline-light btn-social" href=""
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Opening Hours</h4>
+            <h6 class="text-light">Monday - Friday:</h6>
+            <p class="mb-4">09.00 AM - 09.00 PM</p>
+            <h6 class="text-light">Saturday - Sunday:</h6>
+            <p class="mb-0">09.00 AM - 12.00 PM</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Services</h4>
+            <a class="btn btn-link" href="">Drain Cleaning</a>
+            <a class="btn btn-link" href="">Sewer Line</a>
+            <a class="btn btn-link" href="">Water Heating</a>
+            <a class="btn btn-link" href="">Toilet Cleaning</a>
+            <a class="btn btn-link" href="">Broken Pipe</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Newsletter</h4>
+            <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+            <div class="position-relative mx-auto" style="max-width: 400px">
+              <input
+                class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                type="text"
+                placeholder="Your email"
+              />
+              <button
+                type="button"
+                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+              >
+                SignUp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">Webginet</a>, All Right
+              Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas,
+              hic.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Footer End -->
-     
-   <!-- Template Javascript -->
-   <script src="js/main.js"></script>
+
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a
+      href="#"
+      class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -598,33 +1102,21 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
- 
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
     <script>
-    window.addEventListener('scroll', function () {
-        const navbar = document.getElementById('mainNavbar');
-        if (window.scrollY > 10) {
-            navbar.style.backgroundColor = "#ffffff";
-            navbar.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)";
-        } else {
-            navbar.style.backgroundColor = "transparent";
-            navbar.style.boxShadow = "none";
+        class MyNavbar extends HTMLElement {
+          connectedCallback() {
+            fetch('navbar.html')
+              .then(res => res.text())
+              .then(html => {
+                this.innerHTML = html;
+              });
+          }
         }
-    });
-</script>
-<!-- Define a component -->
-  <script>
-    class MyFooter extends HTMLElement {
-      connectedCallback() {
-        fetch('footer.html')
-          .then(res => res.text())
-          .then(html => {
-            this.innerHTML = html;
-          });
-      }
-    }
-    customElements.define('my-footer', MyFooter);
-  </script>
-</body>
-
+        customElements.define('my-navbar', MyNavbar);
+      </script>
+  </body>
 </html>

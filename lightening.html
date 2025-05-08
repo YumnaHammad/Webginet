@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>lightening</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0); /* transparent white */
+      backdrop-filter: blur(3px); /* blur effect */
+      -webkit-backdrop-filter: blur(3px); /* Safari support */
+      position: fixed; /* make it float */
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      padding: 5px 2rem;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: rgb(0, 0, 0) !important;
+      font-weight: 500;
+      margin-right: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #998202 !important;
+      transform: scale(1.05);
+    }
+
+    h6 {
+      color: #000000;
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none; /* Hide default toggler icon */
+    }
+
+    .navbar-toggler i {
+      color: #998202;
+      font-size: 1.8rem;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 5;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    .text-primary {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">LIGHTENING</h1>
+    </div>
+    <!-- Page Header End -->
+
+
+ <!-- Performance Start -->
+  <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+    <h1 class="mb-4"> Lighting: innovating for a better performance</h1>
+    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
+    <ul>
+     <li>Lorem Ipsum</li>
+     <li>Lorem Ipsum</li>
+     <li>Lorem Ipsum</li>
+    </ul>
+    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
+  </div>
+ 
+   <!-- Performance Start -->
+
+
+  <!-- Quality-lighting Start -->
+   <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+<h3 class="mb-4">All the Lorem Ipsum generators on the Internet tend to repeat</h3>
+<p class="mb-4">ing it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoub</p>
+
+<div class="video wow fadeInUp" data-wow-delay="0.1s">
+  <button
+    type="button"
+    class="btn-play"
+    data-bs-toggle="modal"
+    data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
+    data-bs-target="#videoModal"
+  >
+    <span></span>
+  </button>
+
+  <div
+    class="modal fade"
+    id="videoModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Youtube Video
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <!-- 16:9 aspect ratio -->
+          <div class="ratio ratio-16x9">
+            <iframe
+              class="embed-responsive-item"
+              src=""
+              id="video"
+              allowfullscreen
+              allowscriptaccess="always"
+              allow="autoplay"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+ <!-- Quality-lighting Start -->
+
+
+  <!-- Value Start -->
+  <div class="my-5 mx-5 wow fadeInUp" data-wow-delay="0.1s">
+    <h2 class="section-title">OUR ADDED VALUE</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="value-item d-flex">
+          <div class="check-icon  border border-blue">✓</div>
+          <p>A team of experts available to assist you with your entire project</p>
+        </div>
+        <div class="value-item d-flex">
+          <div class="check-icon  border border-blue">✓</div>
+          <p>Innovation showrooms and trainings on demand</p>
+        </div>
+        <div class="value-item d-flex">
+          <div class="check-icon border border-blue">✓</div>
+          <p>Audit and calculating tools to facilitate your simulations</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="value-item d-flex">
+          <div class="check-icon  border border-blue">✓</div>
+          <p>Selected products from the best brands</p>
+        </div>
+        <div class="value-item d-flex">
+          <div class="check-icon  border border-blue">✓</div>
+          <p>Financing offers dedicated to professionals and individuals</p>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Value End -->
+
+
+    <!-- Products Start -->
+     <div class="mb-5 wow fadeInUp mx-5 " data-wow-delay="0.1s">
+      <h1 class="mb-5 text-center">Products</h1>
+    <div class="d-flex justify-content-center gap-5 flex-wrap">
+      <div>
+        <img src="img/CatPhoto_Fluorescence-Illuminators_Xylis-II_671x655px.webp" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
+        <p>Lorem Ipsum </p>
+      </div>
+      <div>
+        <img src="img/bulb-pin.jpg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
+        <p>Lorem Ipsum </p>
+      </div>
+      <div>
+        <img src="img/images.jpeg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
+        <p>Lorem Ipsum </p>
+      </div>
+    </div>
+     </div>
+    
+    <!-- Products End -->
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+
+</html>
