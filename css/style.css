@@ -219,6 +219,31 @@
     background-size: cover;
     height: 500px;
 }
+.page-headercom{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-9.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerres{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/res.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headeroffer{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/offer\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerindustrial{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Production\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headermar{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(6\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
@@ -518,7 +543,9 @@ border-radius: 10px;
 .videosecurity{
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/sceurity-7.jpg) center center no-repeat;
 }
-
+.videooffer{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/offer\ \(1\).jpg) center center no-repeat;
+}
 .video  .btn-play {
     position: relative;
     box-sizing: content-box;

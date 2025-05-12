@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Industrial_Market</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+   <div class="container-fluid page-headerindustrial mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Industrial Market</h1>
+    </div>
+<!-- Breadcrumbs  -->
+  <div class="container py-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./index.html">Wachter</a></li>
+        <li class="breadcrumb-item"><a href="./Market">Market</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Industrial Market</li>
+      </ol>
+    </nav>
+  </div>
+
+<!-- Industrial Technology & Energy Solutions -->
+<section class="py-5">
+  <div class="container">
+    <h2>Industrial Technology & Energy Solutions</h2>
+    <p class="text-muted">Driving Automation, Efficiency, and Operational Excellence</p>
+    <p>At Webginet, we empower industrial operations with cutting-edge technology and sustainable energy solutions. Our services cater to manufacturing plants, logistics hubs, warehouses, and industrial complexes — helping you streamline operations, enhance safety, reduce energy costs, and ensure regulatory compliance. From greenfield projects to system retrofits, we optimize your facility for peak performance and future scalability.</p>
+  </div>
+</section>
+<!-- Solutions by Industry -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">Tailored Industrial Automation Solutions</h2>
+    <div class="row g-4">
+
+      <!-- Each Industry Block -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🏭 Manufacturing Plants</h5>
+          <p>Automation for assembly lines, robotics, and process control to boost precision and reduce downtime.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🏗 Construction Sites</h5>
+          <p>Real-time site monitoring, equipment automation, and safety alert systems for efficient project execution.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>⛽ Oil & Gas</h5>
+          <p>Remote asset monitoring, pipeline automation, and predictive maintenance for critical infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>⚡ Power & Utilities</h5>
+          <p>SCADA systems, smart grid tech, and demand-side management for energy distribution and control.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🚚 Logistics & Warehousing</h5>
+          <p>Automated inventory systems, smart conveyors, and tracking solutions to streamline supply chains.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🏢 Industrial Real Estate</h5>
+          <p>Smart building automation for HVAC, lighting, and energy use across industrial parks and warehouses.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🚢 Maritime & Ports</h5>
+          <p>Automation for cargo handling, port surveillance, and fleet energy optimization in marine industries.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="800">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🛤 Rail & Transit Infrastructure</h5>
+          <p>Track monitoring, station automation, and signaling systems for smart, connected transit networks.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="900">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🔧 Tooling & Machining</h5>
+          <p>CNC integration, tool condition monitoring, and real-time analytics for high-precision industries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Sections -->
+<section class="service-section py-5">
+  <div class="container">
+    
+    <!-- Facility Security & Surveillance -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./img/Production (1).jpg" alt="Facility Security & Surveillance" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Facility Security & Surveillance</h3>
+        <p>Protect your industrial assets with Webginet's integrated security systems. We implement high-definition surveillance, perimeter access control, and emergency alert systems tailored for industrial environments — helping you monitor operations, prevent unauthorized access, and ensure worker safety.</p>
+        <a href="#" class="btn btn-link">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Industrial Automation Integration -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="./img/indust (3).jpg" alt="Industrial Automation Integration" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Industrial Automation Integration</h3>
+        <p>From PLCs to SCADA systems, Webginet enables seamless automation across your production line. We deliver turnkey solutions that include sensor integration, machine control, remote monitoring, and predictive maintenance tools — driving productivity while reducing downtime.</p>
+      </div>
+    </div>
+
+    <!-- Smart Factory Infrastructure -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./img/Home-4.jpg" alt="Smart Factory Infrastructure" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Smart Factory Infrastructure</h3>
+        <p>Lay the foundation for Industry 4.0 with Webginet's industrial networking and IT infrastructure services. From fiber-optic connectivity and IoT sensor networks to ruggedized switches and data visualization, we prepare your facility for real-time data-driven operations and digital transformation.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- More Services -->
+<section class="service-section py-5 bg-light">
+  <div class="container">
+
+    <!-- Access Management & Workforce Tracking -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="./img/indust (1).jpg" alt="Access Management & Workforce Tracking" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Smart Access & Workforce Monitoring</h3>
+        <p>Boost on-site security and operational transparency with our advanced access solutions. Using biometric authentication, RFID tags, and contactless entry, Webginet enables seamless workforce tracking, shift management, and real-time access logs for audit-ready compliance.</p>
+      </div>
+    </div>
+
+    <!-- Energy Optimization & Monitoring -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./img/indust (5).jpg" alt="Energy Optimization & Monitoring" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Energy Intelligence & Automation</h3>
+        <p>Optimize your facility’s energy use with AI-powered load balancing, HVAC automation, and real-time analytics dashboards. Our solar-integrated solutions not only cut costs but support long-term sustainability with measurable efficiency improvements.</p>
+        <a href="#" class="btn btn-link">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-dark text-white text-center">
+  <div class="container">
+    <h4>Future-Proof Your Facility with Webginet</h4>
+    <p>From modernizing schools to engineering smart datacenters, we bring scalable tech to every environment.</p>
+    <p><strong>📞 Talk to us today</strong> and learn how we’ve helped organizations cut energy costs by up to 45%.</p>
+    <a href="#contact" class="btn btn-light mt-3">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Industrial Technology Solutions -->
+<section class="py-5 bg-light">
+  <div class="container text-center mt-3">
+    <h2 class="mb-4">Smart Industrial Infrastructure Solutions</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+       <!-- Each Industrial Feature Card -->
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-industry fa-2x text-primary mb-2"></i>
+          <p class="mb-0">Factory Automation</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="150">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-network-wired fa-2x text-success mb-2"></i>
+          <p class="mb-0">Industrial IoT Networks</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-broadcast-tower fa-2x text-danger mb-2"></i>
+          <p class="mb-0">Remote Monitoring & Control</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="250">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-plug fa-2x text-warning mb-2"></i>
+          <p class="mb-0">Energy Optimization Systems</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="300">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-lock fa-2x text-info mb-2"></i>
+          <p class="mb-0">Cybersecurity for SCADA</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="350">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-solar-panel fa-2x text-secondary mb-2"></i>
+          <p class="mb-0">Solar & Backup Power</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="400">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-robot fa-2x text-dark mb-2"></i>
+          <p class="mb-0">Robotics & Conveyor Systems</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="450">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-thermometer-half fa-2x text-primary mb-2"></i>
+          <p class="mb-0">Smart HVAC Control</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="500">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-camera fa-2x text-success mb-2"></i>
+          <p class="mb-0">Surveillance & Safety Systems</p>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="550">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-cogs fa-2x text-danger mb-2"></i>
+          <p class="mb-0">Predictive Maintenance</p>
+        </div>
+      </div>
+
+      <!-- New Card 11 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="600">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-fire-extinguisher fa-2x text-warning mb-2"></i>
+          <p class="mb-0">Fire & Hazard Systems</p>
+        </div>
+      </div>
+
+      <!-- New Card 12 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="650">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-hard-hat fa-2x text-info mb-2"></i>
+          <p class="mb-0">Worker Safety Monitoring</p>
+        </div>
+      </div>
+
+      <!-- New Card 13 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="700">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-database fa-2x text-secondary mb-2"></i>
+          <p class="mb-0">Centralized Data Logging</p>
+        </div>
+      </div>
+
+      <!-- New Card 14 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="750">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-satellite-dish fa-2x text-primary mb-2"></i>
+          <p class="mb-0">Telemetry & Satellite Uplink</p>
+        </div>
+      </div>
+
+      <!-- New Card 15 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="800">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-chart-line fa-2x text-success mb-2"></i>
+          <p class="mb-0">Real-Time Analytics</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+
+</html>

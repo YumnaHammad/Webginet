@@ -37,65 +37,85 @@
   />
 </head>
 <style>
+  /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-      background-color: rgba(255, 255, 255, 0); /* transparent white */
-      backdrop-filter: blur(3px); /* blur effect */
-      -webkit-backdrop-filter: blur(3px); /* Safari support */
-      position: fixed; /* make it float */
-      width: 100%;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-
-      padding: 5px 2rem;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
       height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-      color: rgb(0, 0, 0) !important;
+      color: #ffffff !important;
       font-weight: 500;
       margin-right: 1rem;
+
       transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #998202 !important;
+      color: #000000 !important;
       transform: scale(1.05);
     }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    h6 {
-      color: #000000;
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
+    /* Navbar Toggler Icon */
     .navbar-toggler {
       border: none;
       outline: none;
     }
 
     .navbar-toggler-icon {
-      display: none; /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-      color: #998202;
+      color: #ffffff;
       font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -110,31 +130,29 @@
     .navbar-nav .nav-item:nth-child(1) {
       animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
       animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
       animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
       animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
       animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-      border-radius: 1rem;
+            border-radius: 1rem;
       padding: 1rem;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       min-width: 200px;
     }
@@ -167,6 +185,7 @@
       visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
       display: flex;
       flex-wrap: wrap;
@@ -178,16 +197,18 @@
       padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
       background-color: #f1f5f9;
       color: #1e40af;
     }
 
-    .text-primary {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
       .mega-dropdown {
         flex-direction: column;
@@ -203,75 +224,51 @@
         transform: translateX(0);
         margin-top: 0.5rem;
       }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
-      .hero {
-      background: url('./img/carousel-5.jpg') center/cover no-repeat;
+    .hero-section {
+      background: url('./img/carousel-4.jpg') center/cover no-repeat;
       color: white;
-      padding: 40px 20px;
-       text-align: center;
-       height: 60vh;
-       align-items: center;
-       display: flex;
-       justify-content: center;
-    }
-    .section-title {
-      font-weight: bold;
       text-align: center;
-      margin-top: 40px;
-      margin-bottom: 20px;
+      padding: 100px 20px;
     }
-    .subheading {
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: center;
-      color: #0074c7;
-      margin-top: 30px;
+    .icon {
+      font-size: 48px;
     }
-    .breadcrumb {
-      background: transparent;
-      padding-left: 0;
+    .bg-light-blue {
+      background-color: #f0f8ff;
     }
-
-
-
-
-    .card-hover {
-  position: relative;
-  overflow: hidden;
-  height: 300px; /* Adjust as needed */
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.card-overlay {
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
-  position: relative;
-}
-
-.overlay-content {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.65); /* dark overlay */
-  color: white;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.card-hover:hover .overlay-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    .hero {
+      background: url('./img/carousel-6.jpg') center/cover no-repeat;
+      color: #fff;
+      position: relative;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero .content {
+      position: relative;
+      z-index: 2;
+    }
+    .service-section img { width: 100%; height: auto; border-radius: .25rem; }
+    .icon-grid i { font-size: 2rem; margin-bottom: .5rem; }
+    .banner-primary { background-color: #007bff; color: #fff; }
+    .banner-secondary { background-color: #0056b3; color: #fff; }
   </style>
 <body>
     <!-- Spinner Start -->
@@ -282,152 +279,467 @@
         </div>
     </div>
     <!-- Spinner End -->
-
     <!-- Navbar Start -->
   <my-navbar></my-navbar>
     <!-- Navbar End -->
+  <div class="container-fluid page-headeroffer mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Offers</h1>
+    </div>
+   <!-- Security Solutions Start -->
+    <div
+      id="security"
+      class="container mx-auto text-left wow fadeInUp"
+      style="padding: 30px 20px; line-height: 2"
+      data-wow-delay="0.1s"
+    >
+      <div class="col-12">
+        <h1
+          class="text-4xl font-extrabold mb-6 animate-fade-in-up text-indigo-600"
+        >
+          Revolutionize Your Safety with Comprehensive Security Solutions
+        </h1>
+        <p
+          class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-100"
+        >
+          Webginet provides cutting-edge security solutions for a wide range of
+          industries, from retail and commercial establishments to high-security
+          environments like data centers and healthcare facilities. Our
+          offerings include:
+        </p>
+        <ul
+          class="text-left inline-block text-gray-700 text-base mb-6 list-disc list-inside animate-fade-in-up delay-200"
+        >
+          <li class="mb-2">
+            State-of-the-art surveillance systems with real-time monitoring
+          </li>
+          <li class="mb-2">
+            Access control solutions ensuring restricted entry and exit
+          </li>
+          <li class="mb-2">
+            Integrated security management systems for seamless operations
+          </li>
+        </ul>
+        <p
+          class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-300"
+        >
+          Our security solutions include video surveillance, alarm systems,
+          access control, and automated monitoring to ensure your property,
+          assets, and personnel are always protected.
+        </p>
+      </div>
+    </div>
+    <!-- Security Solutions End -->
 
+    <!-- Access Control Start -->
+    <div
+      id="access-control"
+      class="container mx-auto text-left wow fadeInUp"
+      style="padding: 30px 20px; line-height: 2"
+      data-wow-delay="0.1s"
+    >
+      <div class="col-12 mb-5">
+        <h3 class="text-3xl font-bold mb-6 text-emerald-600 animate-fade-in-up">
+          Securing Entry Points, Controlling Access
+        </h3>
+        <p
+          class="text-lg text-gray-600 mb-4 max-w-3xl mx-auto animate-fade-in-up delay-100"
+        >
+          Webginet offers advanced access control systems designed to secure
+          entry points in buildings, ensuring that only authorized individuals
+          can access restricted areas.
+        </p>
+        <p
+          class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-200"
+        >
+          Our solutions integrate biometric scans, RFID card access, and mobile
+          credentials to provide flexible and secure access management for
+          businesses of all sizes.
+        </p>
+      </div>
 
-   <div class="hero text-center">
-    <h1 class="display-5 fw-bold">OFFER</h1>
-  </div>
+      <!-- Video section -->
+      <div
+        class="videooffer video flex justify-center animate-fade-in-up delay-300"
+        data-wow-delay="0.1s"
+      >
+        <button
+          type="button"
+          class="btn-play hover:scale-110 transition-transform duration-300"
+          data-bs-toggle="modal"
+          data-src="https://www.youtube.com/embed/2zEr93ld7go"
+          data-bs-target="#videoModal"
+        >
+          <span></span>
+        </button>
+      </div>
 
-  <div class="container mt-3">
-   <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/index.html">Wachter</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Markets</li>
-  </ol>
-</nav>
+      <!-- Video Modal -->
+      <div
+        class="modal fade"
+        id="videoModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content rounded-0">
+            <div class="modal-header">
+              <h5 class="modal-title">Webginet Security Solutions</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  class="embed-responsive-item"
+                  src=""
+                  id="video"
+                  allowfullscreen
+                  allowscriptaccess="always"
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Access Control End -->
+     <div class="container">
+      <h2 class="text-2xl font-bold text-indigo-500 mb-4 animate-fade-in-up delay-250">
+      Why Choose Webginet for Structured Cabling Solutions?
+    </h2>
 
-    <h5 class="subheading">Technology Integration Solutions for Any Market</h5>
-    <p class="text-center">
-      No matter the commercial or industrial market your business serves, Wachter’s teams of experienced electricians and technicians are nationwide solutions integrators. From keeping moviegoers entertained, ensuring patient safety in hospital rooms, powering mining facilities with electrical services, and maintaining food and beverage production efficiency — Wachter is there.
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-300">
+      With a dedicated focus on high-performance structured cabling, Webginet ensures that smart building and data center infrastructures meet the most demanding performance, security, and energy-efficiency requirements. Our expertise spans the full lifecycle — from network design and hardware implementation to ongoing monitoring and optimization.
     </p>
-    <p class="text-center">
-      See how Wachter serves your business in every market where your teams operate.
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-400">
+      Our team works alongside architects, facility managers, and IT professionals to deliver tailored networking strategies that align with your project goals and environmental standards. We help organizations reduce operational costs while increasing system responsiveness and security posture.
     </p>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-500">
+      In collaboration with trusted brands like <strong>Conectis</strong> and <strong>Gigamedia</strong>, Webginet offers industry-leading solutions in structured cabling, telecom, and advanced IT infrastructure. Whether you need support for a single office or a multi-site datacenter environment, we are your long-term partner in building secure, scalable networks.
+    </p>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-600">
+      We also prioritize energy efficiency and environmental responsibility by recommending sustainable materials and energy-saving technologies in all cabling and network architecture decisions.
+    </p>
+     </div>
 
-    <h4 class="section-title">Commercial Markets</h4>
+<div class="container my-5">
+  <div class="row g-4">
+<h1>Webginet Offers</h1>
+    <!-- Card 1: Business Support -->
+    <div class="col-md-4" data-category="business">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/Energy.jpg" class="card-img" alt="">
+          
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminOct 28, 2020 1:53:54 PM &lt; 1 min read</div>
+            <div class="card-title">How a Webginet LBU Serves You</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Webginet is committed to supporting businesses in cities throughout the United States.
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 2: Community -->
+    <div class="col-md-4" data-category="community">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/sceurity-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminOct 15, 2020 5:27:47 PM &lt; 1 min read</div>
+            <div class="card-title">Van Donation Helps Restoration Village</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Giving back to our communities is one of our core values at Webginet.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Restaurant -->
+    <div class="col-md-4" data-category="restaurant">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/Home-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 12, 2020 12:48:00 AM &lt; 1 min read</div>
+            <div class="card-title">What is the Restaurant of the Future?</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Each day millions of customers stop in at quick-service and casual dining restaurants...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: IoT -->
+    <div class="col-md-4" data-category="iot">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+        <img src="./img/smart-3.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 8, 2020 12:44:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet’s Industrial IoT Solutions</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Every day managers of industrial spaces face challenges in their facility.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Careers -->
+    <div class="col-md-4" data-category="careers">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/smart-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 7, 2020 12:40:00 AM &lt; 1 min read</div>
+            <div class="card-title">Shape the Future with a STEM Career</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Why STEM Careers are in High Demand — Careers in Science, Technology, Engineering, and Math ...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: History -->
+    <div class="col-md-4" data-category="history">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/sceurity-7.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 6, 2020 12:38:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet’s History</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Webginet’s Legacy of Building Lasting Relationships — What started as a small electrical ...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Innovation -->
+    <div class="col-md-4" data-category="innovation">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/smart-2.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 4, 2020 12:35:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet Drives Business Innovation</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Technology Integration Solutions with Webginet — We implement technologies that ...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Careers -->
+    <div class="col-md-4" data-category="careers">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/Datacom-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 3, 2020 12:32:00 AM &lt; 1 min read</div>
+            <div class="card-title">Careers at Webginet</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Join the Webginet family today! Webginet is a leading nationwide solutions integrator...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9: Community -->
+    <div class="col-md-4" data-category="community">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+         
+               <img src="./img/Home-3.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 1, 2020 12:25:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet Hero Video</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Webginet’s Heroes: Reliable Technicians & Electricians
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Value Start -->
+<div class="container mx-auto text-left wow fadeInUp mt-5" style="padding: 30px 20px; line-height: 2;" data-wow-delay="0.1s">
+  <div class="col-10 mx-auto">
+    <h2 class="section-title">OUR ADDED VALUE</h2>
     <div class="row">
-      <!-- Retail -->
-     <div class="col-md-4 market-item card-hover">
-    <div class="card-overlay" style="background-image: url('./img/carousel-10.jpg');">
-      <div class="overlay-content">
-        <h6 class="text-white">Retail</h6>
-        <p>Technology in retail can drive operational costs down while improving sales. From interactive digital displays to omnichannel retail, Wachter provides retail technology solutions.</p>
+      <div class="col-md-6">
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
+          <p>A team of experts available to assist you with your entire project</p>
+        </div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
+          <p>Innovation showrooms and trainings on demand</p>
+        </div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
+          <p>Audit and calculating tools to facilitate your simulations</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
+          <p>Selected products from the best brands</p>
+        </div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
+          <p>Financing offers dedicated to professionals and individuals</p>
+        </div>
       </div>
     </div>
   </div>
+</div>
+<!-- Value End -->
 
-      <!-- QSR -->
- <div class="col-md-4 market-item card-hover">
-    <div class="card-overlay" style="background-image: url('./img/carousel-9.jpg');">
-      <div class="overlay-content">
-        <h6 class="text-white">QSR</h6>
-        <p>As Quick-Service Restaurant technology experts, Wachter deploys and manages restaurant technologies for every location your business operates.</p>
-      </div>
-    </div>
-  </div>
-      <!-- Data Center -->
-      <div class="col-md-4 market-item card-hover">
-          <div class="card-overlay" style="background-image: url('./img/carousel-8.jpg');" alt="Data Center"></div>
-        <h6 class="text-white">Data Center</h6>
-        <p>Wachter deploys data center solutions to help businesses manage large amounts of data. Our team can design, deploy and maintain servers in your data center and colocation facilities.</p>
-      </div>
+<!-- Products Start -->
+<div class="mb-5 wow fadeInUp mx-5" data-wow-delay="0.1s">
+  <h1 class="mb-5 text-center">Our Featured Products</h1>
 
-      <!-- Education -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-7.jpg');" alt="Education"></div>
-        <h6 class="text-white">Education</h6>
-        <p>Technology in education has become a primary focus for stimulating learning opportunities. Wachter can design and deploy solutions for institutions from K-12 to higher education.</p>
-      </div>
-
-      <!-- Financial Services -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-6.jpg');" alt="Financial Services"></div>
-        <h6 class="text-white">Financial Services</h6>
-        <p>Financial services continue to be served by digital means. Keeping your financial technology secured is a top priority for financial institutions and consumers alike. Wachter provides reliable financial technology solutions.</p>
-      </div>
-
-      <!-- Healthcare -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-5.jpg');" alt="Healthcare"></div>
-        <h6 class="text-whitw">Healthcare</h6>
-        <p>With advances in healthcare technology becoming more prevalent, Wachter’s solutions keep security, patient safety, and connectivity at the forefront of what we do in the medical field.</p>
-      </div>
-
-      <!-- Hospitality -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-4.jpg');" alt="Hospitality"></div>
-        <h6 class="text-white">Hospitality</h6>
-        <p>Your guests deserve a memorable experience. Wachter’s entertainment technology solutions provide for unique experiences with digital signage, high definition audio visual equipment, and more.</p>
-      </div>
-    </div>
-
-    <h4 class="section-title">Industrial Markets</h4>
-
+  <div class="container py-5">
     <div class="row">
-      <!-- Logistics -->
-      <div class="col-md-4 market-item card-hover">
-        <img src="./img/carousel-3.jpg" alt="Logistics" />
-        <div class="card-overlay" style="background-image: url('./img/carousel-3.jpg');" alt="Logistics"></div>
-        <h6 class="text-white">Logistics</h6>
-        <p>As the logistics industry continues to expand, Wachter keeps your business ahead for shipments with our technology solutions.</p>
+      <!-- Product 1 -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="team-item">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/product-1.jpg" alt="Product 1" />
+          </div>
+          <div class="team-text">
+            <div class="bg-light text-center py-3">
+              <h5 class="fw-bold mb-0">Product One</h5>
+              <small>Category: Electronics</small>
+            </div>
+            <div class="bg-primary text-center py-2">
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Transportation -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-2.jpg');" alt="Transportation"></div>
-        <h6 class="text-white">Transportation</h6>
-        <p>When it comes to the transportation industry, efficiency gets people where they need to go. Wachter keeps your operation running smoothly by designing, deploying, and managing your transportation technology.</p>
+      <!-- Product 2 -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="team-item">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/product-2.jpg" alt="Product 2" />
+          </div>
+          <div class="team-text">
+            <div class="bg-light text-center py-3">
+              <h5 class="fw-bold mb-0">Product Two</h5>
+              <small>Category: Home Appliances</small>
+            </div>
+            <div class="bg-primary text-center py-2">
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Corrections -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-1.jpg');" alt="Corrections"></div>
-        <h6 class="text-white">Corrections</h6>
-        <p>Wachter’s corrections technology secures correctional facilities internally and externally with RFID asset tracking, physical security, and access control systems.</p>
-      </div>
-
-      <!-- Mining -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-10.jpg');" alt="Mining"></div>
-        <h6 class="text-white">Mining</h6>
-        <p>As professional mining electrical contractors, Wachter solves complex mining electrical challenges for mines across America.</p>
-      </div>
-
-      <!-- Grain -->
-      <div class="col-md-4 market-item card-hover">
-          <div class="card-overlay" style="background-image: url('./img/carousel-9.jpg');" alt="Grain"></div>
-        <h6 class="text-white">Grain</h6>
-        <p>Wachter integrates grain handling technology to reduce costs and improve facility efficiency at every stage of production.</p>
-      </div>
-
-      <!-- Chemical -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-8.jpg');" alt="Chemical"></div>
-        <h6 class="text-white">Chemical & Petrochemical</h6>
-        <p>Wachter’s engineers keep chemical and petrochemical facilities operational with network solutions, cybersecurity, and automation and controls.</p>
-      </div>
-
-      <!-- Food & Beverage -->
-      <div class="col-md-4 market-item card-hover"> 
-        <div class="card-overlay" style="background-image: url('./img/carousel-7.jpg');" alt="Food & Beverage"></div>
-        <h6 class="text-white">Food & Beverage</h6>
-        <p>Making real-time business decisions for food and beverage manufacturers is faster with Wachter’s edge analytics.</p>
-      </div>
-
-      <!-- Industrial & Manufacturing -->
-      <div class="col-md-4 market-item card-hover">
-        <div class="card-overlay" style="background-image: url('./img/carousel-6.jpg');" alt="Industrial & Manufacturing"></div>
-        <h6 class="text-whte">Industrial & Manufacturing</h6>
-        <p>Wachter’s team of Cisco certified engineers serves as your single-source industrial technology expert. Our solutions include edge analytics, industrial IoT, and cybersecurity.</p>
+      <!-- Product 3 -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="team-item">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/product-3.jpg" alt="Product 3" />
+          </div>
+          <div class="team-text">
+            <div class="bg-light text-center py-3">
+              <h5 class="fw-bold mb-0">Product Three</h5>
+              <small>Category: Fashion</small>
+            </div>
+            <div class="bg-primary text-center py-2">
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+<!-- Products End -->
 
+ <!-- Accomplishment Start -->
+ <div class="container py-5">
+    <h1 class="mb-5 text-uppercase text-center wow fadeInUp" data-wow-delay="0.1s">Accomplishments</h1>
+    <!-- Start of Article Block -->
+    <div class="row mb-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-md-5">
+        <img src="./img/carousel-2.jpg" alt="Project Image" class="img-fluid rounded">
+      </div>
+      <div class="col-md-7">
+        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
+        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">webginet</p>
+        <h5 class="fw-semibold">Improving air quality for childcare centers</h5>
+        <p class="text-muted">
+          The installation of double flow ventilation systems in child care facilities (schools, day cares...) not only reduced energy bills, but also improved comfort and air quality.
+        </p>
+      </div>
+    </div>
+  
+    <!-- Divider -->
+    <hr>
+  
+    <!-- Second Article -->
+    <div class="row mt-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-md-5">
+        <img src="./img/carousel-7.jpg" alt="Project Image" class="img-fluid rounded">
+      </div>
+      <div class="col-md-7">
+        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
+        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">webginet</p>
+        <h5 class="fw-semibold">Geoventilation solution for residential buildings</h5>
+        <p class="text-muted">
+          Reduced energy consumption paired with better air quality: Electrician Philippe Mousset speaks on the key installation issues of a duel Canadian well for a home in La Baule, France, and the...
+        </p>
+      </div>
+    </div>
+  </div>
+<!-- Accomplishment  End -->
+ 
     <!-- Footer Start -->
     <my-footer></my-footer>
     <!-- Footer End -->

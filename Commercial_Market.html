@@ -39,65 +39,85 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
+  /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-      background-color: rgba(255, 255, 255, 0); /* transparent white */
-      backdrop-filter: blur(3px); /* blur effect */
-      -webkit-backdrop-filter: blur(3px); /* Safari support */
-      position: fixed; /* make it float */
-      width: 100%;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-
-      padding: 5px 2rem;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
       height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-      color: rgb(0, 0, 0) !important;
+      color: #ffffff !important;
       font-weight: 500;
       margin-right: 1rem;
+
       transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #998202 !important;
+      color: #000000 !important;
       transform: scale(1.05);
     }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    h6 {
-      color: #000000;
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
+    /* Navbar Toggler Icon */
     .navbar-toggler {
       border: none;
       outline: none;
     }
 
     .navbar-toggler-icon {
-      display: none; /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-      color: #998202;
+      color: #ffffff;
       font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -112,31 +132,29 @@
     .navbar-nav .nav-item:nth-child(1) {
       animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
       animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
       animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
       animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
       animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-      border-radius: 1rem;
+           border-radius: 1rem;
       padding: 1rem;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       min-width: 200px;
     }
@@ -169,6 +187,7 @@
       visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
       display: flex;
       flex-wrap: wrap;
@@ -180,16 +199,18 @@
       padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
       background-color: #f1f5f9;
       color: #1e40af;
     }
 
-    .text-primary {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
       .mega-dropdown {
         flex-direction: column;
@@ -204,6 +225,15 @@
         position: relative;
         transform: translateX(0);
         margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
       }
     }
     .hero-section {
@@ -256,151 +286,304 @@
   <my-navbar></my-navbar>
     <!-- Navbar End -->
  <!-- Hero Section -->
-  <section class="hero text-center text-white py-5">
-    <div class="overlay"></div>
-    <div class="container content py-5">
-      <h1 class="display-4">Education Technology Integrators</h1>
-      <p class="lead">From technology in the classroom to district-wide energy reduction initiatives...</p>
+
+  <div class="container-fluid page-headercom mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Commercial Market</h1>
     </div>
-  </section>
+  
 <!-- Breadcrumbs  -->
   <div class="container py-4">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="./index.html">Wachter</a></li>
+        <li class="breadcrumb-item"><a href="./index.html">Webginet</a></li>
         <li class="breadcrumb-item"><a href="./Market">Market</a></li>
         <li class="breadcrumb-item active" aria-current="page">Commercial Market</li>
       </ol>
     </nav>
   </div>
-  <!-- Intro -->
-  <section class="py-5">
-    <div class="container text-center">
-      <h2>Technology Solutions That Enable Student Success</h2>
-      <p class="text-muted">Whether you’re a small K-12 district or a large regional research institution...</p>
-    </div>
-  </section>
 
-  <!-- Service Sections -->
-  <section class="service-section py-5">
-    <div class="container">
-      <div class="row align-items-center mb-5">
-        <div class="col-md-6">
-          <img src="https://via.placeholder.com/600x400" alt="School Physical Security">
-        </div>
-        <div class="col-md-6">
-          <h3>School Physical Security</h3>
-          <p>Keep your students and staff safe with an integrated physical security system...</p>
-          <a href="#" class="btn btn-link">Learn More</a>
-        </div>
-      </div>
-      <div class="row align-items-center mb-5 flex-md-row-reverse">
-        <div class="col-md-6">
-          <img src="https://via.placeholder.com/600x400" alt="Education Technology Rollouts">
-        </div>
-        <div class="col-md-6">
-          <h3>Education Technology Rollouts</h3>
-          <p>Wachter deploys large-scale technology rollouts across districts...</p>
-        </div>
-      </div>
-      <div class="row align-items-center mb-5">
-        <div class="col-md-6">
-          <img src="https://via.placeholder.com/600x400" alt="Classroom Technology">
-        </div>
-        <div class="col-md-6">
-          <h3>Classroom Technology</h3>
-          <p>Wachter delivers cost-effective and cutting-edge campus technologies...</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Commercial Technology & Energy Solutions -->
+<section class="py-5">
+  <div class="container">
+    <h2>Commercial Technology & Energy Solutions</h2>
+    <p class="text-muted">Empowering Smart, Secure, and Sustainable Businesses</p>
+    <p>At Webginet, we transform commercial environments into intelligent, secure, and energy-efficient spaces. Our tailored solutions span across diverse industries — from retail and hospitality to healthcare, data centers, and office complexes. Whether it's new construction or system upgrades, we help businesses minimize operational costs, meet regulatory compliance, and enhance occupant comfort without compromising on performance or aesthetics.</p>
+  </div>
+</section>
 
-  <!-- More Services -->
-  <section class="service-section py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center mb-5 flex-md-row-reverse">
-        <div class="col-md-6">
-          <img src="https://via.placeholder.com/600x400" alt="Cashless Pay & Access Control">
-        </div>
-        <div class="col-md-6">
-          <h3>Cashless Pay & Access Control</h3>
-          <p>Use student IDs or biometrics readings to regulate building and bus access...</p>
-        </div>
+<!-- Service Sections -->
+<section class="service-section py-5">
+  <div class="container">
+    
+    <!-- School Physical Security -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./img/carousel-11.jpg" alt="School Physical Security" class="img-fluid rounded shadow">
       </div>
-      <div class="row align-items-center mb-5">
-        <div class="col-md-6">
-          <img src="https://via.placeholder.com/600x400" alt="Energy Efficiency">
-        </div>
-        <div class="col-md-6">
-          <h3>Energy Efficiency</h3>
-          <p>Reduce your school's energy consumption and see dramatic ROI...</p>
-          <a href="#" class="btn btn-link">Learn More</a>
-        </div>
+      <div class="col-md-6">
+        <h3>School Physical Security</h3>
+        <p>Ensure a safe and resilient campus environment with Webginet's advanced physical security systems. We deploy surveillance, access control, and emergency communication solutions tailored for K–12 schools, universities, and administrative facilities. These systems are integrated for rapid response and monitoring, helping institutions comply with safety standards and protect students, staff, and assets.</p>
+        <a href="#" class="btn btn-link">Learn More</a>
       </div>
     </div>
-  </section>
 
-  <!-- Icon Grid -->
-  <section class="py-5">
-    <div class="container text-center">
-      <h4>Additional Education Technology Solutions</h4>
-      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4 icon-grid mt-3">
-        <!-- Repeat for each icon -->
-        <div class="col">
-          <i class="fas fa-building"></i>
-          <p>Campus New Construction & Remodel</p>
+    <!-- Education Technology Rollouts -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="./img/sceurity-7.jpg" alt="Education Technology Rollouts" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Education Technology Rollouts</h3>
+        <p>Webginet specializes in district-wide technology deployments including smart classrooms, Wi-Fi coverage, digital signage, and centralized IT systems. We handle complex installations across campuses with minimal disruption, delivering scalable rollouts that enhance learning, streamline administration, and support future upgrades.</p>
+      </div>
+    </div>
+
+    <!-- Classroom Technology -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./img/Home-4.jpg" alt="Classroom Technology" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Classroom Technology</h3>
+        <p>Modernize your learning spaces with Webginet's integrated classroom solutions. From interactive whiteboards and connected devices to energy-efficient lighting and environmental controls, we ensure optimal learning environments that foster engagement, comfort, and safety for students and educators alike.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- More Services -->
+<section class="service-section py-5 bg-light">
+  <div class="container">
+
+    <!-- Cashless Pay & Access Control -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="./img/indust (1).jpg" alt="Cashless Pay & Access Control" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Cashless Pay & Access Control</h3>
+        <p>Empower students and staff with secure and seamless building access using biometric ID systems and contactless payment technology. Webginet implements smart ID card systems that enhance campus mobility, cafeteria payments, and building entry — promoting convenience while improving oversight and reporting capabilities.</p>
+      </div>
+    </div>
+
+    <!-- Energy Efficiency -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./img/indust (5).jpg" alt="Energy Efficiency" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h3>Energy Efficiency</h3>
+        <p>Optimize energy usage and reduce your carbon footprint with our intelligent building solutions. Webginet integrates HVAC controls, occupancy-based lighting, solar readiness, and energy dashboards to monitor and manage real-time energy performance — ensuring sustainable savings with measurable ROI.</p>
+        <a href="#" class="btn btn-link">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Call to Action -->
+<section class="py-5 bg-dark text-white text-center">
+  <div class="container">
+    <h4>Let’s Build the Future of Your Facility</h4>
+    <p>Whether retrofitting a school or designing a high-tech datacenter, Webginet is your trusted integration partner.</p>
+    <p><strong>📞 Contact us today</strong> to learn how we've helped businesses reduce energy costs by up to 45%.</p>
+    <a href="#contact" class="btn btn-light mt-3">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Additional Education Technology Solutions -->
+<section class="py-5 bg-light">
+  <div class="container text-center mt-3">
+    <h2 class="mb-4">Additional Education Technology Solutions</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
+      <!-- Grid Card -->
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-building fa-2x text-primary mb-2"></i>
+          <p class="mb-0">Campus New Construction & Remodel</p>
         </div>
-        <div class="col">
-          <i class="fas fa-wifi"></i>
-          <p>Network Wireless Studies</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-wifi fa-2x text-success mb-2"></i>
+          <p class="mb-0">Network Wireless Studies</p>
         </div>
-        <div class="col">
-          <i class="fas fa-map-marker-alt"></i>
-          <p>Campus Site Surveys</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-map-marker-alt fa-2x text-danger mb-2"></i>
+          <p class="mb-0">Campus Site Surveys</p>
         </div>
-        <div class="col">
-          <i class="fas fa-bolt"></i>
-          <p>Critical Power Systems</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-bolt fa-2x text-warning mb-2"></i>
+          <p class="mb-0">Critical Power Systems</p>
         </div>
-        <div class="col">
-          <i class="fas fa-shield-alt"></i>
-          <p>Life Safety Systems</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-shield-alt fa-2x text-info mb-2"></i>
+          <p class="mb-0">Life Safety Systems</p>
         </div>
-        <div class="col">
-          <i class="fas fa-tv"></i>
-          <p>Digital Signage</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-tv fa-2x text-secondary mb-2"></i>
+          <p class="mb-0">Digital Signage</p>
         </div>
-        <div class="col">
-          <i class="fas fa-boxes"></i>
-          <p>RFID Asset Tracking</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-boxes fa-2x text-dark mb-2"></i>
+          <p class="mb-0">RFID Asset Tracking</p>
         </div>
-        <div class="col">
-          <i class="fas fa-location-arrow"></i>
-          <p>Real-Time Location Systems</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-location-arrow fa-2x text-primary mb-2"></i>
+          <p class="mb-0">Real-Time Location Systems</p>
         </div>
-        <div class="col">
-          <i class="fas fa-chalkboard-teacher"></i>
-          <p>Intelligent Connected Classrooms</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-chalkboard-teacher fa-2x text-success mb-2"></i>
+          <p class="mb-0">Intelligent Connected Classrooms</p>
         </div>
-        <div class="col">
-          <i class="fas fa-laptop-house"></i>
-          <p>Virtual Classroom Technology</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-laptop-house fa-2x text-danger mb-2"></i>
+          <p class="mb-0">Virtual Classroom Technology</p>
         </div>
-        <div class="col">
-          <i class="fas fa-touch-app"></i>
-          <p>Interactive Touchscreen Kiosks</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-touch-app fa-2x text-warning mb-2"></i>
+          <p class="mb-0">Interactive Touchscreen Kiosks</p>
         </div>
-        <div class="col">
-          <i class="fas fa-lightbulb"></i>
-          <p>LED Lighting Upgrades</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-lightbulb fa-2x text-info mb-2"></i>
+          <p class="mb-0">LED Lighting Upgrades</p>
         </div>
-        <div class="col">
-          <i class="fas fa-project-diagram"></i>
-          <p>Structured Cabling</p>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded shadow-sm h-100">
+          <i class="fas fa-project-diagram fa-2x text-secondary mb-2"></i>
+          <p class="mb-0">Structured Cabling</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Solutions by Industry -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Solutions by Industry</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🏢 Office Spaces</h5>
+          <p>Smart lighting, HVAC automation, and integrated systems that boost workplace comfort and productivity.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🏨 Hospitality</h5>
+          <p>Energy-efficient climate, security, and lighting controls that enhance guest satisfaction and reduce costs.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🏥 Healthcare</h5>
+          <p>Technology solutions for round-the-clock care — improving energy savings while maintaining safety and hygiene.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🛒 Retail</h5>
+          <p>Smart stores with engaging lighting, displays, and real-time analytics to drive customer experience and efficiency.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🏫 Education</h5>
+          <p>Connected classrooms, air quality systems, and secure campuses built for modern learning and teaching.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🖥️ Data Centers</h5>
+          <p>High-performance infrastructure with precision cooling and power for uptime, security, and energy reduction.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🎭 Leisure & Entertainment</h5>
+          <p>Customized AV, lighting, and automation systems for memorable experiences in theaters, casinos, and venues.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🚆 Transportation</h5>
+          <p>Resilient technologies for transit hubs, tunnels, and critical infrastructure projects built to last.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🛡 Defense & Government</h5>
+          <p>Mission-critical systems that meet federal security, compliance, and reliability standards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Services -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Core Service Areas</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🔐 Physical Security & Access Control</h5>
+          <p>Integrated video surveillance, ID systems, and visitor tracking to protect people and assets.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>📶 Smart Connectivity & Infrastructure</h5>
+          <p>Fast, reliable wired and wireless infrastructure ready for cloud, IoT, and future tech integration.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🌱 Building Energy Management</h5>
+          <p>HVAC, lighting, and real-time energy monitoring systems that support sustainability goals.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>🖥️ AV & Classroom Tech</h5>
+          <p>Interactive learning, digital signage, and touch-enabled tools that drive better communication.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h5>💡 LED Upgrades & Lighting Design</h5>
+          <p>Brilliant, efficient lighting designs that reduce energy use and improve user experience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Footer Start -->
     <my-footer></my-footer>

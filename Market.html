@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Market</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+     /* Global Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .hero-section {
+        background: url('./img/carousel-4.jpg') center/cover no-repeat;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .icon {
+        font-size: 48px;
+    }
+
+    .bg-light-blue {
+        background-color: #f0f8ff;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero {
+        background: url('./img/carousel-6.jpg') center/cover no-repeat;
+        color: #fff;
+        position: relative;
+    }
+
+    .hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero .content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .service-section img {
+        width: 100%;
+        height: auto;
+        border-radius: .25rem;
+    }
+
+    .icon-grid i {
+        font-size: 2rem;
+        margin-bottom: .5rem;
+    }
+
+    .banner-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .banner-secondary {
+        background-color: #0056b3;
+        color: #fff;
+    }
+
+    .icon-text {
+        text-align: center;
+        margin: 20px 0;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .icon-text i,
+    .icon-text img {
+        font-size: 40px;
+        margin-bottom: 10px;
+        display: block;
+        width: 78px;
+    }
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image wrapper for overlay */
+    .card-img-wrapper {
+        position: relative;
+    }
+
+    .card-img-wrapper img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Overlay effect */
+    .card-img-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(8, 81, 100, 0.9);
+        /* semi-transparent black */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+    }
+
+    .card-overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        opacity: 0;
+        z-index: 2;
+        transition: opacity 0.3s ease;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .card:hover .card-img-wrapper::before,
+    .card:hover .card-overlay-text {
+        opacity: 1;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <my-navbar></my-navbar>
+    <!-- Navbar End -->
+    <!-- Hero Section -->
+  <div class="container-fluid page-headermar mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Market</h1>
+    </div>
+    <!-- Breadcrumbs  -->
+<div class="container py-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Webginet</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Market</a></li>
+        </ol>
+    </nav>
+</div>
+<!-- Section: Description -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center">Integrated Technology Solutions for Every Industry</h2>
+        <p class="text-center">
+            Regardless of the industry you serve — from commercial to industrial — Webginet’s nationwide team of
+            expert electricians and technicians delivers reliable, future-ready integration solutions.
+            Whether it's creating immersive experiences for moviegoers, enhancing patient safety in hospitals,
+            powering critical mining operations, or streamlining food production — Webginet is there with the technology that drives progress.
+        </p>
+    </div>
+</section>
+
+<!-- Markets Section -->
+<section class="markets py-5">
+    <div class="container">
+
+        <!-- Residential Markets -->
+        <h2 class="text-center mb-5">Residential Markets</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/offer (5).jpg" class="card-img-top" alt="Logistics">
+                        <div class="card-overlay-text">Logistics</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Logistics</h5>
+                        <p class="card-text">
+                            As the logistics industry evolves, Webginet empowers your operations with scalable
+                            solutions — from edge analytics and process automation to smart warehousing. Our
+                            Cisco-certified engineers ensure your logistics remain efficient and competitive.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/video-1.jpg" class="card-img-top" alt="Transportation">
+                        <div class="card-overlay-text">Transportation</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Transportation</h5>
+                        <p class="card-text">
+                            In transportation, uptime is everything. Webginet delivers end-to-end integration — planning,
+                            deploying, and managing smart transit technologies to keep people and goods moving
+                            efficiently and securely across the country.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/offer (4).jpg" class="card-img-top" alt="Corrections">
+                        <div class="card-overlay-text">Corrections</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Corrections</h5>
+                        <p class="card-text">
+                            Webginet enhances security in correctional institutions with integrated RFID tracking,
+                            surveillance systems, and advanced access control. Our experienced teams deliver
+                            end-to-end installations that protect facilities from the inside out.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Commercial Markets -->
+        <h2 class="text-center mb-5">Commercial Markets</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/indust (5).jpg" class="card-img-top" alt="Logistics">
+                        <div class="card-overlay-text">Logistics</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Logistics</h5>
+                        <p class="card-text">
+                            With the rapid growth of global commerce, Webginet supports logistics companies by
+                            implementing intelligent technology infrastructure, enabling smooth operations from
+                            inventory control to fleet management and data-driven decision-making.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/carousel-9.jpg" class="card-img-top" alt="Transportation">
+                        <div class="card-overlay-text">Transportation</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Transportation</h5>
+                        <p class="card-text">
+                            Webginet’s commercial transportation solutions help streamline routes, reduce delays,
+                            and enhance safety. From traffic control to smart ticketing systems, we help you meet
+                            today’s transit demands with tomorrow’s technology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/smart-3.jpg" class="card-img-top" alt="Corrections">
+                        <div class="card-overlay-text">Corrections</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Corrections</h5>
+                        <p class="card-text">
+                            From surveillance to inmate tracking and control room technologies, Webginet's
+                            commercial corrections services offer turnkey security integration that adapts to
+                            facilities of every scale and complexity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industrial Markets -->
+        <h2 class="text-center mb-5">Industrial Markets</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/Production (1).jpg" class="card-img-top" alt="Logistics">
+                        <div class="card-overlay-text">Logistics</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Logistics</h5>
+                        <p class="card-text">
+                            In industrial logistics, reliability is non-negotiable. Webginet delivers robust
+                            electrical and automation systems that ensure 24/7 operation and minimize downtime,
+                            all tailored to your facility's scale and pace.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/Production (2).jpg" class="card-img-top" alt="Transportation">
+                        <div class="card-overlay-text">Transportation</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Transportation</h5>
+                        <p class="card-text">
+                            Webginet supports industrial transport networks with ruggedized, scalable solutions
+                            that keep critical cargo moving — from rail systems to manufacturing supply chains —
+                            through intelligent automation and real-time monitoring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/Production (3).jpg" class="card-img-top" alt="Corrections">
+                        <div class="card-overlay-text">Corrections</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Corrections</h5>
+                        <p class="card-text">
+                            Industrial-grade security for correctional facilities demands more than standard systems.
+                            Webginet integrates hardened infrastructure, advanced monitoring tools, and secure
+                            access systems — all tailored to institutional compliance and control.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </script>
+    <script>
+        class MyNavbar extends HTMLElement {
+            connectedCallback() {
+                fetch('navbar.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-navbar', MyNavbar);
+    </script>
+    <script>
+        class MyFooter extends HTMLElement {
+            connectedCallback() {
+                fetch('footer.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-footer', MyFooter);
+    </script>
+</body>
+
+</html>
