@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Offer</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0); /* transparent white */
+      backdrop-filter: blur(3px); /* blur effect */
+      -webkit-backdrop-filter: blur(3px); /* Safari support */
+      position: fixed; /* make it float */
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      padding: 5px 2rem;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: rgb(0, 0, 0) !important;
+      font-weight: 500;
+      margin-right: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #998202 !important;
+      transform: scale(1.05);
+    }
+
+    h6 {
+      color: #000000;
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none; /* Hide default toggler icon */
+    }
+
+    .navbar-toggler i {
+      color: #998202;
+      font-size: 1.8rem;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    .text-primary {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+    }
+      .hero {
+      background: url('./img/carousel-5.jpg') center/cover no-repeat;
+      color: white;
+      padding: 40px 20px;
+       text-align: center;
+       height: 60vh;
+       align-items: center;
+       display: flex;
+       justify-content: center;
+    }
+    .section-title {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .subheading {
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #0074c7;
+      margin-top: 30px;
+    }
+    .breadcrumb {
+      background: transparent;
+      padding-left: 0;
+    }
+
+
+
+
+    .card-hover {
+  position: relative;
+  overflow: hidden;
+  height: 300px; /* Adjust as needed */
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card-overlay {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.overlay-content {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65); /* dark overlay */
+  color: white;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-hover:hover .overlay-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+
+   <div class="hero text-center">
+    <h1 class="display-5 fw-bold">OFFER</h1>
+  </div>
+
+  <div class="container mt-3">
+   <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/index.html">Wachter</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Markets</li>
+  </ol>
+</nav>
+
+    <h5 class="subheading">Technology Integration Solutions for Any Market</h5>
+    <p class="text-center">
+      No matter the commercial or industrial market your business serves, Wachter’s teams of experienced electricians and technicians are nationwide solutions integrators. From keeping moviegoers entertained, ensuring patient safety in hospital rooms, powering mining facilities with electrical services, and maintaining food and beverage production efficiency — Wachter is there.
+    </p>
+    <p class="text-center">
+      See how Wachter serves your business in every market where your teams operate.
+    </p>
+
+    <h4 class="section-title">Commercial Markets</h4>
+
+    <div class="row">
+      <!-- Retail -->
+     <div class="col-md-4 market-item card-hover">
+    <div class="card-overlay" style="background-image: url('./img/carousel-10.jpg');">
+      <div class="overlay-content">
+        <h6 class="text-white">Retail</h6>
+        <p>Technology in retail can drive operational costs down while improving sales. From interactive digital displays to omnichannel retail, Wachter provides retail technology solutions.</p>
+      </div>
+    </div>
+  </div>
+
+      <!-- QSR -->
+ <div class="col-md-4 market-item card-hover">
+    <div class="card-overlay" style="background-image: url('./img/carousel-9.jpg');">
+      <div class="overlay-content">
+        <h6 class="text-white">QSR</h6>
+        <p>As Quick-Service Restaurant technology experts, Wachter deploys and manages restaurant technologies for every location your business operates.</p>
+      </div>
+    </div>
+  </div>
+      <!-- Data Center -->
+      <div class="col-md-4 market-item card-hover">
+          <div class="card-overlay" style="background-image: url('./img/carousel-8.jpg');" alt="Data Center"></div>
+        <h6 class="text-white">Data Center</h6>
+        <p>Wachter deploys data center solutions to help businesses manage large amounts of data. Our team can design, deploy and maintain servers in your data center and colocation facilities.</p>
+      </div>
+
+      <!-- Education -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-7.jpg');" alt="Education"></div>
+        <h6 class="text-white">Education</h6>
+        <p>Technology in education has become a primary focus for stimulating learning opportunities. Wachter can design and deploy solutions for institutions from K-12 to higher education.</p>
+      </div>
+
+      <!-- Financial Services -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-6.jpg');" alt="Financial Services"></div>
+        <h6 class="text-white">Financial Services</h6>
+        <p>Financial services continue to be served by digital means. Keeping your financial technology secured is a top priority for financial institutions and consumers alike. Wachter provides reliable financial technology solutions.</p>
+      </div>
+
+      <!-- Healthcare -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-5.jpg');" alt="Healthcare"></div>
+        <h6 class="text-whitw">Healthcare</h6>
+        <p>With advances in healthcare technology becoming more prevalent, Wachter’s solutions keep security, patient safety, and connectivity at the forefront of what we do in the medical field.</p>
+      </div>
+
+      <!-- Hospitality -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-4.jpg');" alt="Hospitality"></div>
+        <h6 class="text-white">Hospitality</h6>
+        <p>Your guests deserve a memorable experience. Wachter’s entertainment technology solutions provide for unique experiences with digital signage, high definition audio visual equipment, and more.</p>
+      </div>
+    </div>
+
+    <h4 class="section-title">Industrial Markets</h4>
+
+    <div class="row">
+      <!-- Logistics -->
+      <div class="col-md-4 market-item card-hover">
+        <img src="./img/carousel-3.jpg" alt="Logistics" />
+        <div class="card-overlay" style="background-image: url('./img/carousel-3.jpg');" alt="Logistics"></div>
+        <h6 class="text-white">Logistics</h6>
+        <p>As the logistics industry continues to expand, Wachter keeps your business ahead for shipments with our technology solutions.</p>
+      </div>
+
+      <!-- Transportation -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-2.jpg');" alt="Transportation"></div>
+        <h6 class="text-white">Transportation</h6>
+        <p>When it comes to the transportation industry, efficiency gets people where they need to go. Wachter keeps your operation running smoothly by designing, deploying, and managing your transportation technology.</p>
+      </div>
+
+      <!-- Corrections -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-1.jpg');" alt="Corrections"></div>
+        <h6 class="text-white">Corrections</h6>
+        <p>Wachter’s corrections technology secures correctional facilities internally and externally with RFID asset tracking, physical security, and access control systems.</p>
+      </div>
+
+      <!-- Mining -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-10.jpg');" alt="Mining"></div>
+        <h6 class="text-white">Mining</h6>
+        <p>As professional mining electrical contractors, Wachter solves complex mining electrical challenges for mines across America.</p>
+      </div>
+
+      <!-- Grain -->
+      <div class="col-md-4 market-item card-hover">
+          <div class="card-overlay" style="background-image: url('./img/carousel-9.jpg');" alt="Grain"></div>
+        <h6 class="text-white">Grain</h6>
+        <p>Wachter integrates grain handling technology to reduce costs and improve facility efficiency at every stage of production.</p>
+      </div>
+
+      <!-- Chemical -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-8.jpg');" alt="Chemical"></div>
+        <h6 class="text-white">Chemical & Petrochemical</h6>
+        <p>Wachter’s engineers keep chemical and petrochemical facilities operational with network solutions, cybersecurity, and automation and controls.</p>
+      </div>
+
+      <!-- Food & Beverage -->
+      <div class="col-md-4 market-item card-hover"> 
+        <div class="card-overlay" style="background-image: url('./img/carousel-7.jpg');" alt="Food & Beverage"></div>
+        <h6 class="text-white">Food & Beverage</h6>
+        <p>Making real-time business decisions for food and beverage manufacturers is faster with Wachter’s edge analytics.</p>
+      </div>
+
+      <!-- Industrial & Manufacturing -->
+      <div class="col-md-4 market-item card-hover">
+        <div class="card-overlay" style="background-image: url('./img/carousel-6.jpg');" alt="Industrial & Manufacturing"></div>
+        <h6 class="text-whte">Industrial & Manufacturing</h6>
+        <p>Wachter’s team of Cisco certified engineers serves as your single-source industrial technology expert. Our solutions include edge analytics, industrial IoT, and cybersecurity.</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+</html>

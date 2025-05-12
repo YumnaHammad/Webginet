@@ -1,101 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>lightening</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-</head>
-<style>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <style>
+    /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-      background-color: rgba(255, 255, 255, 0); /* transparent white */
-      backdrop-filter: blur(3px); /* blur effect */
-      -webkit-backdrop-filter: blur(3px); /* Safari support */
-      position: fixed; /* make it float */
-      width: 100%;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-
-      padding: 5px 2rem;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
       height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-      color: rgb(0, 0, 0) !important;
+      color: #ffffff !important;
       font-weight: 500;
       margin-right: 1rem;
+
       transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #998202 !important;
+      color: #000000 !important;
       transform: scale(1.05);
     }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    h6 {
-      color: #000000;
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
+    /* Navbar Toggler Icon */
     .navbar-toggler {
       border: none;
       outline: none;
     }
 
     .navbar-toggler-icon {
-      display: none; /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-      color: #998202;
+      color: #ffffff;
       font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -110,23 +140,20 @@
     .navbar-nav .nav-item:nth-child(1) {
       animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
       animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
       animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
       animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
       animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
       border-radius: 1rem;
       padding: 1rem;
@@ -134,7 +161,8 @@
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       min-width: 200px;
     }
@@ -151,7 +179,7 @@
     }
 
     .dropdown-submenu > .dropdown-menu {
-      top: 5;
+      top: 0;
       left: 90%;
       margin-left: 0.2rem;
       transform: translateX(10px);
@@ -167,6 +195,7 @@
       visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
       display: flex;
       flex-wrap: wrap;
@@ -178,16 +207,18 @@
       padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
       background-color: #f1f5f9;
       color: #1e40af;
     }
 
-    .text-primary {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
       .mega-dropdown {
         flex-direction: column;
@@ -203,202 +234,606 @@
         transform: translateX(0);
         margin-top: 0.5rem;
       }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
   </style>
-<body>
+  <body>
     <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-  <my-navbar></my-navbar>
+    <my-navbar></my-navbar>
     <!-- Navbar End -->
 
-
     <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 py-5 justify-content-center d-flex align-items-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">SECURITY</h1>
+    <div
+      class="container-fluid page-headersecurity mb-5 py-5 justify-content-center d-flex align-items-center"
+    >
+      <h1 class="display-3 text-white mb-3 animated slideInDown text-uppercase">
+        Security
+      </h1>
     </div>
     <!-- Page Header End -->
 
-
- <!-- Performance Start -->
-  <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-    <h1 class="mb-4"> Providing security solutions for people and property</h1>
-    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
-    <ul>
-     <li>Lorem Ipsum</li>
-     <li>Lorem Ipsum</li>
-     <li>Lorem Ipsum</li>
-    </ul>
-    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
-  </div>
- 
-   <!-- Performance Start -->
-
-
-  <!-- Quality-lighting Start -->
-   <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-<h3 class="mb-4">All the Lorem Ipsum generators on the Internet tend to repeat</h3>
-<p class="mb-4">ing it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoub</p>
-   </div>
- <!-- Quality-lighting Start -->
-
-
-  <!-- Value Start -->
-  <div class="my-5 mx-5 wow fadeInUp" data-wow-delay="0.1s">
-    <h2 class="section-title">OUR ADDED VALUE</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>A team of experts available to assist you with your entire project</p>
-        </div>
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>Innovation showrooms and trainings on demand</p>
-        </div>
-        <div class="value-item d-flex">
-          <div class="check-icon border border-blue">✓</div>
-          <p>Audit and calculating tools to facilitate your simulations</p>
-        </div>
+    <!-- Security Solutions Start -->
+    <div
+      id="security"
+      class="container mx-auto text-left wow fadeInUp"
+      style="padding: 30px 20px; line-height: 2"
+      data-wow-delay="0.1s"
+    >
+      <div class="col-9">
+        <h1
+          class="text-4xl font-extrabold mb-6 animate-fade-in-up text-indigo-600"
+        >
+          Revolutionize Your Safety with Comprehensive Security Solutions
+        </h1>
+        <p
+          class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-100"
+        >
+          Webginet provides cutting-edge security solutions for a wide range of
+          industries, from retail and commercial establishments to high-security
+          environments like data centers and healthcare facilities. Our
+          offerings include:
+        </p>
+        <ul
+          class="text-left inline-block text-gray-700 text-base mb-6 list-disc list-inside animate-fade-in-up delay-200"
+        >
+          <li class="mb-2">
+            State-of-the-art surveillance systems with real-time monitoring
+          </li>
+          <li class="mb-2">
+            Access control solutions ensuring restricted entry and exit
+          </li>
+          <li class="mb-2">
+            Integrated security management systems for seamless operations
+          </li>
+        </ul>
+        <p
+          class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-300"
+        >
+          Our security solutions include video surveillance, alarm systems,
+          access control, and automated monitoring to ensure your property,
+          assets, and personnel are always protected.
+        </p>
       </div>
-      <div class="col-md-6">
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>Selected products from the best brands</p>
-        </div>
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>Financing offers dedicated to professionals and individuals</p>
+    </div>
+    <!-- Security Solutions End -->
+
+    <!-- Access Control Start -->
+    <div
+      id="access-control"
+      class="container mx-auto text-left wow fadeInUp"
+      style="padding: 30px 20px; line-height: 2"
+      data-wow-delay="0.1s"
+    >
+      <div class="col-9 mb-5">
+        <h3 class="text-3xl font-bold mb-6 text-emerald-600 animate-fade-in-up">
+          Securing Entry Points, Controlling Access
+        </h3>
+        <p
+          class="text-lg text-gray-600 mb-4 max-w-3xl mx-auto animate-fade-in-up delay-100"
+        >
+          Webginet offers advanced access control systems designed to secure
+          entry points in buildings, ensuring that only authorized individuals
+          can access restricted areas.
+        </p>
+        <p
+          class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-200"
+        >
+          Our solutions integrate biometric scans, RFID card access, and mobile
+          credentials to provide flexible and secure access management for
+          businesses of all sizes.
+        </p>
+      </div>
+
+      <!-- Video section -->
+      <div
+        class="videosecurity video flex justify-center animate-fade-in-up delay-300"
+        data-wow-delay="0.1s"
+      >
+        <button
+          type="button"
+          class="btn-play hover:scale-110 transition-transform duration-300"
+          data-bs-toggle="modal"
+          data-src="https://www.youtube.com/embed/2zEr93ld7go"
+          data-bs-target="#videoModal"
+        >
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Video Modal -->
+      <div
+        class="modal fade"
+        id="videoModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content rounded-0">
+            <div class="modal-header">
+              <h5 class="modal-title">Webginet Security Solutions</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  class="embed-responsive-item"
+                  src=""
+                  id="video"
+                  allowfullscreen
+                  allowscriptaccess="always"
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Access Control End -->
+
+    <!-- Surveillance Systems Start -->
+    <div
+      class="container mx-auto text-left wow fadeInUp"
+      style="padding: 30px 20px; line-height: 2"
+      data-wow-delay="0.1s"
+    >
+      <div class="col-9">
+        <h3 class="text-3xl font-bold mb-6 text-indigo-600">
+          Advanced Surveillance Systems for Total Protection
+        </h3>
+        <p class="text-lg text-gray-600 mb-4 max-w-3xl mx-auto">
+          Webginet offers comprehensive surveillance systems that monitor your
+          premises 24/7, ensuring maximum security and minimizing the risk of
+          theft or damage.
+        </p>
+        <ul
+          class="text-left inline-block text-gray-700 text-base mb-6 list-disc list-inside"
+        >
+          <li class="mb-2">
+            HD and 4K cameras for clear, high-resolution footage
+          </li>
+          <li class="mb-2">
+            Real-time alerts and remote monitoring via mobile devices
+          </li>
+          <li class="mb-2">
+            AI-driven video analytics for intelligent threat detection
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Surveillance Systems End -->
+
+    <!-- Emergency Response Integration Start -->
+    <div
+      class="container mx-auto text-left wow fadeInUp"
+      style="padding: 30px 20px; line-height: 2"
+      data-wow-delay="0.1s"
+    >
+      <div class="col-9">
+        <h3 class="text-3xl font-bold mb-6 text-indigo-600">
+          Seamless Integration with Emergency Response Systems
+        </h3>
+        <p class="text-lg text-gray-600 mb-4 max-w-3xl mx-auto">
+          Our security systems integrate smoothly with emergency response
+          services to provide immediate action in case of an emergency,
+          enhancing safety and reducing response times.
+        </p>
+        <ul
+          class="text-left inline-block text-gray-700 text-base mb-6 list-disc list-inside"
+        >
+          <li class="mb-2">
+            Automated alerting to local authorities in case of security breaches
+          </li>
+          <li class="mb-2">Emergency evacuation management integration</li>
+          <li class="mb-2">
+            Real-time incident reporting and response coordination
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Emergency Response Integration End -->
+
+<!-- Value Start -->
+<div
+  id="value"
+  class="container mx-auto text-left wow fadeInUp mt-5"
+  style="padding: 30px 20px; line-height: 2"
+  data-wow-delay="0.1s"
+>
+  <div class="col-10 mx-auto">
+    <h1 class=" text-2xl font-bold mb-5 text-center mb-4  pb-4">
+      WEBGINET ADDED VALUE
+    </h1>
+    
+
+    <div class="row ">
+      <!-- Left Column -->
+      <div class="col-md-6 mb-4">
+        <div class="value-item d-flex align-items-start mb-3">
+          <div class="check-icon text-success mr-3">✓</div>
+          <p class="mb-0">
+            <strong>Custom security solutions</strong> tailored for all business types and budgets.
+          </p>
+        </div>
+        <hr />
+        <div class="value-item d-flex align-items-start mb-3">
+          <div class="check-icon text-success mr-3">✓</div>
+          <p class="mb-0">
+            <strong>Expert guidance</strong> with 24/7 system monitoring.
+          </p>
+        </div>
+        <hr />
+        <div class="value-item d-flex align-items-start mb-3">
+          <div class="check-icon text-success mr-3">✓</div>
+          <p class="mb-0">
+            <strong>Seamless integration</strong> with your existing infrastructure.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-md-6 mb-4">
+        <div class="value-item d-flex align-items-start mb-3">
+          <div class="check-icon text-success mr-3">✓</div>
+          <p class="mb-0">
+            <strong>Remote support</strong> and automated fault detection for uninterrupted operations.
+          </p>
+        </div>
+        <hr />
+        <div class="value-item d-flex align-items-start mb-3">
+          <div class="check-icon text-success mr-3">✓</div>
+          <p class="mb-0">
+            <strong>Professional training</strong>, certifications, and flexible financing options.
+          </p>
+        </div>
+        <hr />
+      </div>
+    </div>
   </div>
-   <!-- Value End -->
+</div>
+<!-- Value End -->
 
 
     <!-- Products Start -->
-     <div class="mb-5 wow fadeInUp mx-5 " data-wow-delay="0.1s">
-      <h1 class="mb-5 text-center">Products</h1>
-    <div class="d-flex justify-content-center gap-5 flex-wrap">
-      <div>
-        <img src="img/CatPhoto_Fluorescence-Illuminators_Xylis-II_671x655px.webp" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
-      </div>
-      <div>
-        <img src="img/bulb-pin.jpg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
-      </div>
-      <div>
-        <img src="img/images.jpeg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
+    <div class="mb-5 wow fadeInUp mx-5" data-wow-delay="0.1s">
+      <h1 class="mb-5 text-center">Our Featured Security Products</h1>
+
+      <div class="container py-5">
+  <div class="row">
+    <!-- Product 1: Smart Surveillance System -->
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="team-item">
+        <div class="position-relative overflow-hidden">
+          <img
+            class="img-fluid"
+            src="img/sceurity-1.jpg"
+            alt="Smart Surveillance System"
+          />
+        </div>
+        <div class="team-text">
+          <div class="bg-light text-center py-3">
+            <h5 class="fw-bold mb-0">Smart Surveillance System</h5>
+            <small>Category: Video Monitoring</small>
+          </div>
+          <div class="bg-primary text-center py-2">
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
       </div>
     </div>
-     </div>
-    
+
+    <!-- Product 2: Access Control Systems -->
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+      <div class="team-item">
+        <div class="position-relative overflow-hidden">
+          <img
+            class="img-fluid"
+            src="img/sceurity-2.jpg"
+            alt="Access Control Systems"
+          />
+        </div>
+        <div class="team-text">
+          <div class="bg-light text-center py-3">
+            <h5 class="fw-bold mb-0">Access Control Systems</h5>
+            <small>Category: Entry Management</small>
+          </div>
+          <div class="bg-primary text-center py-2">
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3: Alarm Systems -->
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+      <div class="team-item">
+        <div class="position-relative overflow-hidden">
+          <img
+            class="img-fluid"
+            src="img/sceurity-3.jpg"
+            alt="Alarm Systems"
+          />
+        </div>
+        <div class="team-text">
+          <div class="bg-light text-center py-3">
+            <h5 class="fw-bold mb-0">Alarm Systems</h5>
+            <small>Category: Emergency Alert</small>
+          </div>
+          <div class="bg-primary text-center py-2">
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+<div class="row mt-4">
+      <!-- Product 4: Fire Detection Systems -->
+    <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="0.4s">
+      <div class="team-item">
+        <div class="position-relative overflow-hidden">
+          <img
+            class="img-fluid"
+            src="img/sceurity-4.jpg"
+            alt="Fire Detection Systems"
+          />
+        </div>
+        <div class="team-text">
+          <div class="bg-light text-center py-3">
+            <h5 class="fw-bold mb-0">Fire Detection Systems</h5>
+            <small>Category: Fire Safety</small>
+          </div>
+          <div class="bg-primary text-center py-2">
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 5: Intrusion Detection Systems -->
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+      <div class="team-item">
+        <div class="position-relative overflow-hidden">
+          <img
+            class="img-fluid"
+            src="img/sceurity-6.jpg"
+            alt="Intrusion Detection Systems"
+          />
+        </div>
+        <div class="team-text">
+          <div class="bg-light text-center py-3">
+            <h5 class="fw-bold mb-0">Intrusion Detection Systems</h5>
+            <small>Category: Threat Detection</small>
+          </div>
+          <div class="bg-primary text-center py-2">
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 6: Perimeter Security Solutions -->
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+      <div class="team-item">
+        <div class="position-relative overflow-hidden">
+          <img
+            class="img-fluid"
+            src="img/sceurity-5.jpg"
+            alt="Perimeter Security Solutions"
+          />
+        </div>
+        <div class="team-text">
+          <div class="bg-light text-center py-3">
+            <h5 class="fw-bold mb-0">Perimeter Security Solutions</h5>
+            <small>Category: Boundary Protection</small>
+          </div>
+          <div class="bg-primary text-center py-2">
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-square mx-1 text-primary" href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ 
+</div>
+
+    </div>
     <!-- Products End -->
+    ```
 
- <!-- Accomplishment Start -->
- <div class="container py-5">
-    <h1 class="mb-5 text-uppercase text-center wow fadeInUp" data-wow-delay="0.1s">Accomplishments</h1>
+<!-- Accomplishment Start -->
+<div class="container py-5">
+  <h1
+    class="mb-5 text-uppercase text-center wow fadeInUp"
+    data-wow-delay="0.1s"
+  >
+    Accomplishments
+  </h1>
 
-    <div class="bg-dark text-white text-center d-flex align-items-center justify-content-center mb-5" 
-     style="background-image: url('./img/carousel-3.jpg'); background-size: cover; background-position: center; height: 80vh;">
-  <div>
-    <h1 class="display-5 fw-bold">Rexel promotes social innovation</h1>
-    <a href="#" class="btn btn-success btn-lg mt-4">LEARN MORE</a>
+  <div
+    class="bg-dark text-white text-center d-flex align-items-center justify-content-center mb-5"
+    style="
+      background-image: url('./img/carousel-13.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+    "
+  >
+    <div>
+      <h1 class="display-5 fw-bold text-white">Webginet strengthens safety through smart security</h1>
+      <a href="#" class="btn btn-success btn-lg mt-4">LEARN MORE</a>
+    </div>
+  </div>
+
+  <!-- First Security Project -->
+  <div class="row mb-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
+    <div class="col-md-5">
+      <img
+        src="./img/sceurity-4.jpg"
+        alt="Surveillance Project"
+        class="img-fluid rounded"
+      />
+    </div>
+    <div class="col-md-7">
+      <p
+        class="text-uppercase text-muted mb-1"
+        style="letter-spacing: 1px; font-size: 0.8rem"
+      >
+        Germany
+      </p>
+      <p
+        class="text-uppercase text-secondary fw-bold mb-2"
+        style="font-size: 0.85rem"
+      >
+        Webginet
+      </p>
+      <h5 class="fw-semibold">
+        Urban surveillance upgrade in public transport hubs
+      </h5>
+      <p class="text-muted">
+        Webginet installed an advanced smart surveillance system across key metro and bus stations in Berlin to ensure real-time monitoring and faster response times to security incidents.
+      </p>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <hr />
+
+  <!-- Second Security Project -->
+  <div class="row mt-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
+    <div class="col-md-5">
+      <img
+        src="./img/sceurity-5.jpg"
+        alt="Access Control Project"
+        class="img-fluid rounded"
+      />
+    </div>
+    <div class="col-md-7">
+      <p
+        class="text-uppercase text-muted mb-1"
+        style="letter-spacing: 1px; font-size: 0.8rem"
+      >
+        UAE
+      </p>
+      <p
+        class="text-uppercase text-secondary fw-bold mb-2"
+        style="font-size: 0.85rem"
+      >
+        Webginet
+      </p>
+      <h5 class="fw-semibold">
+        High-security access system for commercial buildings
+      </h5>
+      <p class="text-muted">
+        Webginet provided a multi-layered access control solution for a major corporate tower in Dubai, enabling biometric verification, visitor management, and real-time access logs.
+      </p>
+    </div>
   </div>
 </div>
-    <!-- Start of Article Block -->
-    <div class="row mb-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
-      <div class="col-md-5">
-        <img src="./img/carousel-2.jpg" alt="Project Image" class="img-fluid rounded">
-      </div>
-      <div class="col-md-7">
-        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
-        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">Rexel</p>
-        <h5 class="fw-semibold">Improving air quality for childcare centers</h5>
-        <p class="text-muted">
-          The installation of double flow ventilation systems in child care facilities (schools, day cares...) not only reduced energy bills, but also improved comfort and air quality.
-        </p>
-      </div>
-    </div>
-  
-    <!-- Divider -->
-    <hr>
-  
-    <!-- Second Article -->
-    <div class="row mt-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
-      <div class="col-md-5">
-        <img src="./img/carousel-7.jpg" alt="Project Image" class="img-fluid rounded">
-      </div>
-      <div class="col-md-7">
-        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
-        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">Rexel</p>
-        <h5 class="fw-semibold">Geoventilation solution for residential buildings</h5>
-        <p class="text-muted">
-          Reduced energy consumption paired with better air quality: Electrician Philippe Mousset speaks on the key installation issues of a duel Canadian well for a home in La Baule, France, and the...
-        </p>
-      </div>
-    </div>
-  </div>
-<!-- Accomplishment  End -->
+<!-- Accomplishment End -->
+
 
     <!-- Footer Start -->
     <my-footer></my-footer>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a
+      href="#"
+      class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
-
- <!-- JavaScript Libraries -->
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
- <script src="lib/wow/wow.min.js"></script>
- <script src="lib/easing/easing.min.js"></script>
- <script src="lib/waypoints/waypoints.min.js"></script>
- <script src="lib/counterup/counterup.min.js"></script>
- <script src="lib/owlcarousel/owl.carousel.min.js"></script>
- <script src="lib/tempusdominus/js/moment.min.js"></script>
- <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
- <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</script>
-<script>
-    class MyNavbar extends HTMLElement {
-      connectedCallback() {
-        fetch('navbar.html')
-          .then(res => res.text())
-          .then(html => {
-            this.innerHTML = html;
-          });
-      }
-    }
-    customElements.define('my-navbar', MyNavbar);
-  </script>
-  <script>
-    class MyFooter extends HTMLElement {
-      connectedCallback() {
-        fetch('footer.html')
-          .then(res => res.text())
-          .then(html => {
-            this.innerHTML = html;
-          });
-      }
-    }
-    customElements.define('my-footer', MyFooter);
-  </script>
-</body>
-
+  </body>
 </html>

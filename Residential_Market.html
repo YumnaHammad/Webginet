@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Residential_Market</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0); /* transparent white */
+      backdrop-filter: blur(3px); /* blur effect */
+      -webkit-backdrop-filter: blur(3px); /* Safari support */
+      position: fixed; /* make it float */
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      padding: 5px 2rem;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: rgb(0, 0, 0) !important;
+      font-weight: 500;
+      margin-right: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #998202 !important;
+      transform: scale(1.05);
+    }
+
+    h6 {
+      color: #000000;
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none; /* Hide default toggler icon */
+    }
+
+    .navbar-toggler i {
+      color: #998202;
+      font-size: 1.8rem;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    .text-primary {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+    }
+    .hero-section {
+      background: url('./img/carousel-10.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .icon {
+      font-size: 48px;
+    }
+    .bg-light-blue {
+      background-color: #f0f8ff;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <h1>SIMPLE, YET POWERFUL CONFERENCE ROOM TECHNOLOGY</h1>
+    <p>End-to-end AV, software, and device solutions for every meeting room</p>
+  </div>
+</section>
+
+<!-- Breadcrumbs -->
+  <div class="container py-4">
+     <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/index.html">Wachter</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Residential_Market</li>
+  </ol>
+</nav>
+  </div>
+
+<!-- Conference Room in a Box -->
+<section class="py-5">
+  <div class="container text-center">
+    <h2>Conference Room in a Box Solutions</h2>
+    <p class="lead">Easily deploy audio-visual, conferencing, and scheduling tools in any room.</p>
+  </div>
+</section>
+
+<!-- Steps Section -->
+<section class="bg-light-blue py-5">
+  <div class="container">
+    <h3 class="text-center mb-5">Conference Room Technology Solutions: Easy as 1, 2, 3</h3>
+    
+    <!-- Step 1 -->
+    <div class="mb-4">
+      <h4>1. Pick Your Room(s)</h4>
+      <div class="row text-center">
+        <div class="col-md-4"><img src="./img/carousel-2.jpg" class="mb-2"><h5>Huddle Rooms</h5></div>
+        <div class="col-md-4"><img src="./img/carousel-6.jpg" class="mb-2"><h5>Conference Rooms</h5></div>
+        <div class="col-md-4"><img src="./img/carousel-7.jpg" class="mb-2"><h5>Training Rooms</h5></div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="mb-4">
+      <h4>2. Choose Your Technology</h4>
+      <div class="row text-center">
+        <div class="col-md-3"><img src="./img/carousel-4.jpg"><p>Video Conferencing</p></div>
+        <div class="col-md-3"><img src="./img/carousel-1.jpg"><p>Wireless Presentation</p></div>
+        <div class="col-md-3"><img src="./img/carousel-10.jpg"><p>Mic Systems</p></div>
+        <div class="col-md-3"><img src="./img/carousel-3.jpg"><p>Room Scheduling</p></div>
+        <!-- Repeat for all icons -->
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="mb-4">
+      <h4>3. Use Your Favorite Conferencing Tool</h4>
+      <p>Supports Microsoft Teams, Zoom, Google Meet, Webex and more</p>
+      <ul class="list-inline text-center">
+        <li class="list-inline-item mx-3">Teams</li>
+        <li class="list-inline-item mx-3">Zoom</li>
+        <li class="list-inline-item mx-3">Meet</li>
+        <li class="list-inline-item mx-3">Webex</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Win Section -->
+<section class="py-5 text-center bg-white">
+  <div class="container">
+    <h3>You Win!</h3>
+    <div class="row mt-4">
+      <div class="col-md-4"><img src="./img/carousel-5.jpg"><p>Increase Productivity</p></div>
+      <div class="col-md-4"><img src="./img/carousel-3.jpg"><p>Engage Your Team</p></div>
+      <div class="col-md-4"><img src="./img/carousel-10.jpg"><p>Easy to Use</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Partner Section -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h4 class="text-center mb-4">Wachter’s Experience Stems from our Partnerships</h4>
+    <div class="text-center mb-4">
+      <img src="./img/carousel-4.jpg" class="img-fluid" alt="Partnership">
+    </div>
+    <div class="row text-center">
+      <div class="col-md-2"><img src="./img/carousel-2.jpg" class="img-fluid"></div>
+      <div class="col-md-2"><img src="./img/carousel-5.jpg" class="img-fluid"></div>
+      <div class="col-md-2"><img src="./img/carousel-6.jpg" class="img-fluid"></div>
+      <div class="col-md-2"><img src="./img/carousel-4.jpg" class="img-fluid"></div>
+      <div class="col-md-2"><img src="./img/carousel-7.jpg" class="img-fluid"></div>
+      <div class="col-md-2"><img src="./img/about-2.jpg" class="img-fluid"></div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+
+</html>

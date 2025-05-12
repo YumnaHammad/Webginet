@@ -158,23 +158,236 @@
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-3.jpg) center center no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 500px;
     margin-top: 73px;
 }
-
+.page-headerlighting{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+    
+}
+.page-headerclimate{
+   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-2.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+    
+}
+.page-headersecurity{
+   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-10.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+    
+}
+.page-headerDataCom{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Datacom-1.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerenergy{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Energy.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headersmart{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-7.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerhome{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Home-3.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headervideo{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/video-2.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerindust{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(4\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerproduct{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Production\ \(3\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headercon{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/contact.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
 
+.iconnn-text {
+  padding: 30px; /* or use padding-left/right/top/bottom as needed */
+}
+/* Override nav-link text color only in the video section */
+.video-section .nav-link {
+  color: #000000 !important;
+}
+
+.video-section .nav-link:hover,
+.video-section .nav-link.active {
+  color: #ffffff !important;
+  background: linear-gradient(90deg, #6dd5fa, #c776ca);
+  box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+  border-radius: 10px;
+  padding: 5px 25px;
+}
+  .custom-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    transition: transform 0.3s ease;
+  }
+
+  .custom-card:hover {
+    transform: scale(1.02);
+  }
+
+  .card-img-overlay-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .card-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+  }
+
+  .overlay-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 3;
+    color: #fff;
+    text-align: left;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  .meta {
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+
+  .start-reading {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  .card-bottom-text {
+    padding: 15px;
+    background-color: #fff;
+    font-size: 0.95rem;
+    color: #333;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Hover Effects */
+  .custom-card:hover .card-img {
+    transform: scale(1.1);
+  }
+
+  .custom-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .custom-card:hover .overlay-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 /*** Facts ***/
 .fact {
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-3.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
+}
+
+.iconnn {
+  filter: invert(32%) sepia(100%) saturate(500%) hue-rotate(180deg); /* Example blue tone */
+
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+  object-fit: contain;
+
+
+}
+.iconnn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 
 /*** Service ***/
+/* Animate icons on hover */
+.bg-light:hover i {
+  animation: bounceIcon 0.6s;
+}
+
+@keyframes bounceIcon {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+/* Animate 'Learn More' button */
+.btn.w-100.mt-2 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.w-100.mt-2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
 .service-item-top img {
     transition: .5s;
 }
@@ -205,21 +418,108 @@
     background: var(--light);
     border-color: var(--primary);
 }
+.sgradient-icon {
+  background: linear-gradient(90deg, #6dd5fa, #c776ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+/* Ensure all cards are equal height */
+.service-cardd {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 500px; /* You can adjust this based on your content */
+}
 
+/* Optional: Ensure the carousel container doesn’t clip cards */
+.owl-carousell .owl-item {
+  display: flex;
+}
+
+.owl-carousell .service-cardd {
+  width: 100%;
+}
+.owl-carousell .owl-stage-outer {
+  display: flex;
+}
+
+.owl-carousell .owl-stage {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .service-cardd {
+    min-height: 450px;
+  }
+}
+.owl-carousell .owl-nav .owl-prev,
+.owl-carousell .owl-nav .owl-next {
+   
+    color: #ffffff;
+   
+}
+.gradient-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #6dd5fa, #c776ca);
+  border: none;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+  transition: all 0.4s ease;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(199, 118, 202, 0.8);
+}
+
+.gradient-btn i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.gradient-btn:hover i {
+  transform: translateX(5px);
+}
 
 /*** Booking ***/
 .video {
     position: relative;
     padding: 8rem 0 12rem 0;
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-5.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-3.jpg) center center no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.videolightening {
+    position: relative;
+    padding: 8rem 0 12rem 0;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-9.jpg) center center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.videoclimate{
+        background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-10.jpg) center center no-repeat;
+}
+.videosecurity{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/sceurity-7.jpg) center center no-repeat;
+}
 
-.video .btn-play {
+.video  .btn-play {
     position: relative;
     box-sizing: content-box;
     display: block;

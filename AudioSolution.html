@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Audio Solution</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+ <style>
+    /* Global Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+  <!-- Navbar End -->
+        <!-- Page Header Start -->
+    <div class="container-fluid page-headervideo mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Audio/Visual Solutions</h1>
+    </div>
+    <!-- Page Header End -->
+    
+<div class="container text-center video-section">
+  <ul class="nav nav-pills justify-content-center flex-wrap mb-4">
+    <li class="nav-item"><a class="nav-link active" href="#" data-filter="all">SHOW ALL</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-filter="business">BUSINESS SUPPORT</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-filter="community">COMMUNITY OUTREACH</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-filter="restaurant">RESTAURANT TECH</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-filter="iot">INDUSTRIAL IOT</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-filter="careers">CAREERS</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-filter="innovation">INNOVATION</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" data-filter="history">OUR HISTORY</a></li>
+  </ul>
+</div>
+
+<div class="container my-5">
+  <div class="row g-4">
+
+    <!-- Card 1: Business Support -->
+    <div class="col-md-4" data-category="business">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/Energy.jpg" class="card-img" alt="">
+          
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminOct 28, 2020 1:53:54 PM &lt; 1 min read</div>
+            <div class="card-title">How a Webginet LBU Serves You</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Webginet is committed to supporting businesses in cities throughout the United States.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Community -->
+    <div class="col-md-4" data-category="community">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/sceurity-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminOct 15, 2020 5:27:47 PM &lt; 1 min read</div>
+            <div class="card-title">Van Donation Helps Restoration Village</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Giving back to our communities is one of our core values at Webginet.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Restaurant -->
+    <div class="col-md-4" data-category="restaurant">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/Home-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 12, 2020 12:48:00 AM &lt; 1 min read</div>
+            <div class="card-title">What is the Restaurant of the Future?</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Each day millions of customers stop in at quick-service and casual dining restaurants...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: IoT -->
+    <div class="col-md-4" data-category="iot">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+        <img src="./img/smart-3.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 8, 2020 12:44:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet’s Industrial IoT Solutions</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Every day managers of industrial spaces face challenges in their facility.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Careers -->
+    <div class="col-md-4" data-category="careers">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/smart-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 7, 2020 12:40:00 AM &lt; 1 min read</div>
+            <div class="card-title">Shape the Future with a STEM Career</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Why STEM Careers are in High Demand — Careers in Science, Technology, Engineering, and Math ...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: History -->
+    <div class="col-md-4" data-category="history">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/sceurity-7.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 6, 2020 12:38:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet’s History</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Webginet’s Legacy of Building Lasting Relationships — What started as a small electrical ...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Innovation -->
+    <div class="col-md-4" data-category="innovation">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/smart-2.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 4, 2020 12:35:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet Drives Business Innovation</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Technology Integration Solutions with Webginet — We implement technologies that ...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Careers -->
+    <div class="col-md-4" data-category="careers">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+          <img src="./img/Datacom-1.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 3, 2020 12:32:00 AM &lt; 1 min read</div>
+            <div class="card-title">Careers at Webginet</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Join the Webginet family today! Webginet is a leading nationwide solutions integrator...
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9: Community -->
+    <div class="col-md-4" data-category="community">
+      <div class="custom-card">
+        <div class="card-img-overlay-wrapper">
+         
+               <img src="./img/Home-3.jpg" class="card-img" alt="">
+          <div class="card-overlay"></div>
+          <div class="overlay-content">
+            <div class="meta">AdminFeb 1, 2020 12:25:00 AM &lt; 1 min read</div>
+            <div class="card-title">Webginet Hero Video</div>
+            <div class="start-reading mt-2">START READING →</div>
+          </div>
+        </div>
+        <div class="card-bottom-text">
+          Webginet’s Heroes: Reliable Technicians & Electricians
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+                 
+<div class="container my-5">
+
+  <h2 class="section-title text-center mt-5">Webginet’s Audio/Video Solutions Include:</h2>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4 text-center">
+    <div class="col icon-text text-primary">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/speaker.png" alt="PA System">
+      <p><strong class="text-dark">Public Address (PA) Systems</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/video-conference.png" alt="Video Conf">
+      <p><strong class="text-dark">Video Conferencing Solutions</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/video-projector.png" alt="Projector">
+      <p><strong class="text-dark">Projectors and Display Systems</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/video.png" alt="Digital Signage">
+      <p><strong class="text-dark">Digital Signage & Menu Boards</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/connected-people.png" alt="AV Integration">
+      <p><strong class="text-dark">Complete AV Integration</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/video-playlist.png" alt="Control Room">
+      <p><strong class="text-dark">Control Room Video Walls</strong></p>
+    </div>
+
+
+
+
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/audio-wave.png" alt="Sound Masking">
+      <p><strong class="text-dark">Sound Masking Systems</strong></p>
+    </div>
+
+   
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/microphone.png" alt="Microphones">
+      <p><strong class="text-dark">Professional Microphone Systems</strong></p>
+    </div>
+   
+  </div>
+</div>
+
+                    <!-- Footer Start -->
+                    <my-footer></my-footer>
+                    <!-- Footer End -->
+
+
+                    <!-- Back to Top -->
+                    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i
+                        class="bi bi-arrow-up"></i></a>
+
+
+                    <!-- JavaScript Libraries -->
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                    <script src="lib/wow/wow.min.js"></script>
+                    <script src="lib/easing/easing.min.js"></script>
+                    <script src="lib/waypoints/waypoints.min.js"></script>
+                    <script src="lib/counterup/counterup.min.js"></script>
+                    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+                    <script src="lib/tempusdominus/js/moment.min.js"></script>
+                    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+                    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+                    <!-- Template Javascript -->
+                    <script src="js/main.js"></script>
+                    </script>
+                    <script>
+                      class MyNavbar extends HTMLElement {
+                        connectedCallback() {
+                          fetch('navbar.html')
+                            .then(res => res.text())
+                            .then(html => {
+                              this.innerHTML = html;
+                            });
+                        }
+                      }
+                      customElements.define('my-navbar', MyNavbar);
+                    </script>
+                    <script>
+                      class MyFooter extends HTMLElement {
+                        connectedCallback() {
+                          fetch('footer.html')
+                            .then(res => res.text())
+                            .then(html => {
+                              this.innerHTML = html;
+                            });
+                        }
+                      }
+                      customElements.define('my-footer', MyFooter);
+                    </script>
+                    <script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterLinks = document.querySelectorAll(".nav-link");
+    const cards = document.querySelectorAll(".col-md-4");
+
+    filterLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Remove 'active' from all links
+        filterLinks.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+
+        const filter = this.getAttribute("data-filter");
+
+        cards.forEach(card => {
+          const category = card.getAttribute("data-category");
+
+          if (filter === "all" || category === filter) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
+
+
+
+</body>
+
+</html>

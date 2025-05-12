@@ -117,7 +117,7 @@
     });
 
 
-    // Service carousel
+   // Service carousel
     $(".service-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
@@ -140,10 +140,12 @@
                 items:2
             },
             1200:{
-                items:3
+                items:4
             }
         }
     });
+
+
 
 
     // Testimonials carousel
@@ -172,4 +174,27 @@
     });
     
 })(jQuery);
+
+
+      class MyNavbar extends HTMLElement {
+        connectedCallback() {
+          fetch("navbar.html")
+            .then((res) => res.text())
+            .then((html) => {
+              this.innerHTML = html;
+            });
+        }
+      }
+      customElements.define("my-navbar", MyNavbar);
+  
+      class myfooter extends HTMLElement {
+        connectedCallback() {
+          fetch("footer.html")
+            .then((res) => res.text())
+            .then((html) => {
+              this.innerHTML = html;
+            });
+        }
+      }
+      customElements.define("my-footer", myfooter);
 

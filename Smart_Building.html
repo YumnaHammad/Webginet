@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Smart Building Systems</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+ <style>
+    /* Global Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+   
+        <!-- Page Header Start -->
+    <div class="container-fluid page-headersmart mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Smart Building System</h1>
+    </div>
+    <!-- Page Header End -->
+<!-- Project Management Section -->
+<section class="container mx-auto py-12 px-6 text-left animate-fade-in-up" id="project-management">
+  <h2 class="text-3xl font-bold text-indigo-600 mb-4">End-to-End Project Management</h2>
+  <p class="text-gray-700 text-lg max-w-4xl">
+    At Webginet, we handle the entire lifecycle of your smart building project—from initial planning and design to configuration and on-site installation. Our experienced project managers ensure seamless execution across all phases.
+  </p>
+</section>
+
+<!-- Integrated Solutions Section -->
+<section class="container mx-auto py-12 px-6 text-left animate-fade-in-up delay-100" id="solutions-integration">
+  <h2 class="text-3xl font-bold text-emerald-600 mb-4">Integrated Technology Solutions</h2>
+  <p class="text-gray-700 text-lg max-w-4xl">
+    Whether you're expanding operations or launching a new facility, Webginet integrates automation, power, voice, data, audiovisual, security, and IoT solutions — all from a single expert vendor.
+  </p>
+  <ul class="list-disc list-inside text-gray-600 mt-4 space-y-2">
+    <li>Building automation and environmental controls</li>
+    <li>Physical security and surveillance systems</li>
+    <li>Structured cabling, data networks, and AV integration</li>
+    <li>Energy management and IoT deployment</li>
+  </ul>
+</section>
+
+<!-- MAC Services Section -->
+<section class="container mx-auto py-12 px-6 text-left animate-fade-in-up delay-200" id="mac-services">
+  <h2 class="text-3xl font-bold text-indigo-600 mb-4">Moves, Adds, and Changes (MAC)</h2>
+  <p class="text-gray-700 text-lg max-w-4xl">
+    Our MAC services support evolving workplaces — whether you're relocating, upgrading, or expanding your smart building. We help maintain operational continuity while integrating the latest technologies.
+  </p>
+  <p class="text-gray-600 mt-3">
+    As hybrid work becomes the norm, our flexible upgrades and reconfigurations keep your systems efficient, secure, and connected.
+  </p>
+</section>
+
+<section class="container my-5 wow fadeInUp">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="./img/Smart-1.jpg" class="img-fluid rounded shadow" alt="Smart Building Network">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-bold text-indigo-600">Smart Building Network Infrastructure</h2>
+      <p class="text-muted">
+        We design and deploy structured cabling and high-speed network solutions tailored for intelligent buildings. Our systems ensure robust connectivity, seamless data exchange, and long-term scalability.
+      </p>
+      <ul class="text-muted">
+        <li>Enterprise-grade copper & fiber cabling</li>
+        <li>Wi-Fi 6 deployment with optimized coverage</li>
+        <li>Backbone integration for IoT, BMS, and AV systems</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Staging & Configuration Section -->
+<section class="container mx-auto py-12 px-6 text-left animate-fade-in-up delay-300" id="staging-configuration">
+  <h2 class="text-3xl font-bold text-emerald-600 mb-4">Staging & On-Site Configuration</h2>
+  <p class="text-gray-700 text-lg max-w-4xl">
+    Before deployment, Webginet stages your systems in our secure configuration center. This minimizes downtime and ensures flawless installation on-site.
+  </p>
+  <ul class="list-disc list-inside text-gray-600 mt-4 space-y-2">
+    <li>Pre-installation system testing and prep</li>
+    <li>Configuration documentation and logs</li>
+    <li>Secure handling of equipment and firmware updates</li>
+  </ul>
+</section>
+
+<section class="container my-5 wow fadeInUp">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/smart-2.jpg" class="img-fluid rounded shadow" alt="Smart Lighting System">
+    </div>
+    <div class="col-md-6 order-md-1">
+      <h2 class="fw-bold text-emerald-600">Energy Efficiency & Lighting Automation</h2>
+      <p class="text-muted">
+        Our intelligent lighting systems reduce energy consumption, enhance building aesthetics, and support sustainability goals. Adaptive controls adjust lighting based on occupancy, daylight, and usage trends.
+      </p>
+      <ul class="text-muted">
+        <li>PoE & DALI-based smart lighting systems</li>
+        <li>Daylight harvesting and occupancy sensors</li>
+        <li>Integrated control via BMS or mobile app</li>
+      </ul>
+      <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Commissioning & Training Section -->
+<section class="container mx-auto py-12 px-6 text-left animate-fade-in-up delay-400" id="commissioning">
+  <h2 class="text-3xl font-bold text-indigo-600 mb-4">Commissioning, Training & Ongoing Support</h2>
+  <p class="text-gray-700 text-lg max-w-4xl">
+    We ensure that every system is tested, verified, and fully operational before handover. Webginet also trains your staff and provides documentation for long-term system performance and maintenance.
+  </p>
+  <ul class="list-disc list-inside text-gray-600 mt-4 space-y-2">
+    <li>System commissioning and performance validation</li>
+    <li>On-site team training on new technologies</li>
+    <li>Comprehensive O&M (Operations & Maintenance) manuals</li>
+    <li>Post-deployment support and service options</li>
+  </ul>
+</section>
+
+
+<section class="container my-5 wow fadeInUp">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="./img/smart-3.jpg" class="img-fluid rounded shadow" alt="Building Security System">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-bold text-indigo-600">Integrated Security & Access Management</h2>
+      <p class="text-muted">
+        Protect your facility with advanced security systems that integrate access control, surveillance, and real-time monitoring. Our smart platforms give you centralized visibility and control from anywhere.
+      </p>
+      <ul class="text-muted">
+        <li>Face recognition and RFID access solutions</li>
+        <li>IP-based CCTV with AI-driven analytics</li>
+        <li>Mobile and web-based security management</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+
+</html>

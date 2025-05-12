@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>lightening</title>
+    <title>Datacom</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,66 +36,86 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
-<style>
+  <style>
+    /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-      background-color: rgba(255, 255, 255, 0); /* transparent white */
-      backdrop-filter: blur(3px); /* blur effect */
-      -webkit-backdrop-filter: blur(3px); /* Safari support */
-      position: fixed; /* make it float */
-      width: 100%;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-
-      padding: 5px 2rem;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
       height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-      color: rgb(0, 0, 0) !important;
+      color: #ffffff !important;
       font-weight: 500;
       margin-right: 1rem;
+
       transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #998202 !important;
+      color: #000000 !important;
       transform: scale(1.05);
     }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    h6 {
-      color: #000000;
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
+    /* Navbar Toggler Icon */
     .navbar-toggler {
       border: none;
       outline: none;
     }
 
     .navbar-toggler-icon {
-      display: none; /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-      color: #998202;
+      color: #ffffff;
       font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -110,23 +130,20 @@
     .navbar-nav .nav-item:nth-child(1) {
       animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
       animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
       animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
       animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
       animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
       border-radius: 1rem;
       padding: 1rem;
@@ -134,7 +151,8 @@
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       min-width: 200px;
     }
@@ -151,7 +169,7 @@
     }
 
     .dropdown-submenu > .dropdown-menu {
-      top: 5;
+      top: 0;
       left: 90%;
       margin-left: 0.2rem;
       transform: translateX(10px);
@@ -167,6 +185,7 @@
       visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
       display: flex;
       flex-wrap: wrap;
@@ -178,16 +197,18 @@
       padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
       background-color: #f1f5f9;
       color: #1e40af;
     }
 
-    .text-primary {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
       .mega-dropdown {
         flex-direction: column;
@@ -202,6 +223,15 @@
         position: relative;
         transform: translateX(0);
         margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
       }
     }
   </style>
@@ -219,146 +249,206 @@
   <my-navbar></my-navbar>
     <!-- Navbar End -->
 
-
+    
+<!-- Hero Section -->
     <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 py-5 justify-content-center d-flex align-items-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">DATACOM</h1>
+    <div class="container-fluid page-headerDataCom mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Datacom</h1>
     </div>
     <!-- Page Header End -->
 
+<!-- Breadcrumb -->
+<div class="container my-3">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Residential market</li>
+    </ol>
+  </nav>
+</div>
 
- <!-- Performance Start -->
-  <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-    <h1 class="mb-4">Infrastructures for Smart Buildings and Datacenters</h1>
-    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
-    <ul>
-     <li>Lorem Ipsum</li>
-     <li>Lorem Ipsum</li>
-     <li>Lorem Ipsum</li>
+<!-- Smart Infrastructure Start -->
+<div
+  id="infrastructure"
+  class="container mx-auto text-left wow fadeInUp"
+  style="padding: 30px 20px; line-height: 2"
+  data-wow-delay="0.1s"
+>
+  <div class="col-9">
+    <h1 class="text-4xl font-extrabold mb-6 animate-fade-in-up text-indigo-600">
+      Smart Infrastructure for Future-Ready Buildings and Data Centers
+    </h1>
+    <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-100">
+      Webginet delivers robust network cabling infrastructure tailored for smart buildings and mission-critical data centers. Our solutions are engineered for high reliability, top-tier security, modular scalability, and strict compliance with international standards.
+    </p>
+    <ul class="text-left inline-block text-gray-700 text-base mb-6 list-disc list-inside animate-fade-in-up delay-200">
+      <li class="mb-2">End-to-end solutions for voice, data, and video over copper, fiber, and WiFi</li>
+      <li class="mb-2">Infrastructure support for both new builds and renovation projects</li>
+      <li class="mb-2">Comprehensive equipment range including racks, cabinets, and network hardware</li>
+      <li class="mb-2">Integrated IP surveillance and access control systems</li>
+      <li class="mb-2">Modular infrastructure designed for quick upgrades and future technology integration</li>
+      <li class="mb-2">Built-in fault detection and remote system diagnostics to minimize downtime</li>
     </ul>
-    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
-  </div>
- 
-   <!-- Performance Start -->
 
+    <h2 class="text-2xl font-bold text-indigo-500 mb-4 animate-fade-in-up delay-250">
+      Why Choose Webginet for Structured Cabling Solutions?
+    </h2>
 
-  <!-- Quality-lighting Start -->
-   <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-<h3 class="mb-4">All the Lorem Ipsum generators on the Internet tend to repeat</h3>
-<p class="mb-4">ing it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoub</p>
-   </div>
- <!-- Quality-lighting Start -->
-
-
-  <!-- Value Start -->
-  <div class="my-5 mx-5 wow fadeInUp" data-wow-delay="0.1s">
-    <h2 class="section-title">OUR ADDED VALUE</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>A team of experts available to assist you with your entire project</p>
-        </div>
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>Innovation showrooms and trainings on demand</p>
-        </div>
-        <div class="value-item d-flex">
-          <div class="check-icon border border-blue">✓</div>
-          <p>Audit and calculating tools to facilitate your simulations</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>Selected products from the best brands</p>
-        </div>
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
-          <p>Financing offers dedicated to professionals and individuals</p>
-        </div>
-      </div>
-    </div>
-  </div>
-   <!-- Value End -->
-
-
-    <!-- Products Start -->
-     <div class="mb-5 wow fadeInUp mx-5 " data-wow-delay="0.1s">
-      <h1 class="mb-5 text-center">Products</h1>
-    <div class="d-flex justify-content-center gap-5 flex-wrap">
-      <div>
-        <img src="img/CatPhoto_Fluorescence-Illuminators_Xylis-II_671x655px.webp" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
-      </div>
-      <div>
-        <img src="img/bulb-pin.jpg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
-      </div>
-      <div>
-        <img src="img/images.jpeg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
-      </div>
-    </div>
-     </div>
-    
-    <!-- Products End -->
-
- <!-- Accomplishment Start -->
- <div class="container py-5">
-    <h1 class="mb-5 text-uppercase text-center wow fadeInUp" data-wow-delay="0.1s">Accomplishments</h1>
-
-    <div class="bg-dark text-white text-center d-flex align-items-center justify-content-center mb-5" 
-     style="background-image: url('./img/carousel-3.jpg'); background-size: cover; background-position: center; height: 80vh;">
-  <div>
-    <h1 class="display-5 fw-bold">Rexel promotes social innovation</h1>
-    <a href="#" class="btn btn-success btn-lg mt-4">LEARN MORE</a>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-300">
+      With a dedicated focus on high-performance structured cabling, Webginet ensures that smart building and data center infrastructures meet the most demanding performance, security, and energy-efficiency requirements. Our expertise spans the full lifecycle — from network design and hardware implementation to ongoing monitoring and optimization.
+    </p>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-400">
+      Our team works alongside architects, facility managers, and IT professionals to deliver tailored networking strategies that align with your project goals and environmental standards. We help organizations reduce operational costs while increasing system responsiveness and security posture.
+    </p>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-500">
+      In collaboration with trusted brands like <strong>Conectis</strong> and <strong>Gigamedia</strong>, Webginet offers industry-leading solutions in structured cabling, telecom, and advanced IT infrastructure. Whether you need support for a single office or a multi-site datacenter environment, we are your long-term partner in building secure, scalable networks.
+    </p>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-600">
+      We also prioritize energy efficiency and environmental responsibility by recommending sustainable materials and energy-saving technologies in all cabling and network architecture decisions.
+    </p>
   </div>
 </div>
-    <!-- Start of Article Block -->
-    <div class="row mb-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
-      <div class="col-md-5">
-        <img src="./img/carousel-2.jpg" alt="Project Image" class="img-fluid rounded">
-      </div>
-      <div class="col-md-7">
-        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
-        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">Rexel</p>
-        <h5 class="fw-semibold">Improving air quality for childcare centers</h5>
-        <p class="text-muted">
-          The installation of double flow ventilation systems in child care facilities (schools, day cares...) not only reduced energy bills, but also improved comfort and air quality.
-        </p>
-        <div class="d-flex align-items-center">
-            <a href="example.pdf" download class="btn download-btn">
-              <span class="download-icon">⬇</span>
-              DOWNLOAD
-            </a></div>
-      </div>
+<!-- Smart Infrastructure End -->
+
+
+
+<!-- Section: Housing Value Enhancement -->
+<section class="container my-5 mb-5 wow fadeInUp">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="./img/Datacom-2.jpg" class="img-fluid rounded shadow-lg" alt="House">
     </div>
-  
-    <!-- Divider -->
-    <hr>
-  
-    <!-- Second Article -->
-    <div class="row mt-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
-      <div class="col-md-5">
-        <img src="./img/carousel-7.jpg" alt="Project Image" class="img-fluid rounded">
-      </div>
-      <div class="col-md-7">
-        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
-        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">Rexel</p>
-        <h5 class="fw-semibold">Geoventilation solution for residential buildings</h5>
-        <p class="text-muted">
-          Reduced energy consumption paired with better air quality: Electrician Philippe Mousset speaks on the key installation issues of a duel Canadian well for a home in La Baule, France, and the...
-        </p>
-        <div class="d-flex align-items-center">
-            <a href="example.pdf" download class="btn download-btn">
-              <span class="download-icon">⬇</span>
-              DOWNLOAD
-            </a></div>
-      </div>
+    <div class="col-md-6 mb-5">
+      <h2 class="wow fadeInUp fw-bold">Enhancing Housing with Smart Infrastructure</h2>
+      <p class="text-muted">Optimize energy performance and enhance comfort through integrated lighting, HVAC, and security systems, increasing both value and livability of individual homes.</p>
     </div>
   </div>
-<!-- Accomplishment  End -->
+</section>
+
+<hr class="my-5">
+
+<!-- Section: Lighting Video -->
+<section class="container my-5 mb-5 wow fadeInUp">
+  <h2 class="wow fadeInUp fw-bold text-center mb-4">Lighting Solutions for Modern Buildings</h2>
+    <!-- Video section -->
+      <div
+        class="videosecurity video flex justify-center animate-fade-in-up delay-300"
+        data-wow-delay="0.1s"
+      >
+        <button
+          type="button"
+          class="btn-play hover:scale-110 transition-transform duration-300"
+          data-bs-toggle="modal"
+          data-src="https://www.youtube.com/embed/2zEr93ld7go"
+          data-bs-target="#videoModal"
+        >
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Video Modal -->
+      <div
+        class="modal fade"
+        id="videoModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content rounded-0">
+            <div class="modal-header">
+              <h5 class="modal-title">Webginet Security Solutions</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  class="embed-responsive-item"
+                  src=""
+                  id="video"
+                  allowfullscreen
+                  allowscriptaccess="always"
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+<!-- Section: CO2 Reduction -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h2 class="wow fadeInUp fw-bold">Reducing Emissions Through Smart Lighting</h2>
+      <p class="text-muted">Advanced lighting technologies play a key role in reducing CO₂ emissions and improving visual environments. These solutions also lower energy bills and contribute to sustainable construction goals.</p>
+      <a href="#" class="btn btn-outline-primary mt-3">Download Case Study</a>
+    </div>
+    <div class="col-md-6 mb-5">
+      <img src="./img/Datacom-1.jpg" class="img-fluid rounded shadow" alt="Lighting">
+    </div>
+    
+  </div>
+</section>
+
+
+
+<!-- Section: Datacom Cabling Infrastructure -->
+<section class="container my-5 wow fadeInUp">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="./img/carousel-13.jpg" class="img-fluid rounded shadow" alt="Datacenter Cabling">
+    </div>
+    <div class="col-md-6">
+      <h2 class="wow fadeInUp fw-bold">Network Cabling for Smart Buildings</h2>
+      <p class="text-muted">Designed for high reliability and security, our structured cabling infrastructure ensures optimal data flow for smart buildings and datacenters. Copper, fiber, and WiFi systems are tailored for both commercial and residential applications.</p>
+      <ul class="text-muted">
+        <li>Modular and scalable development</li>
+        <li>Compliance with the latest industry standards</li>
+        <li>Complete hardware solutions including racks, IP surveillance, and access control</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Icons Grid -->
+<section class="container text-center my-5">
+  <h2 class="mb-4 mb-5 mt-4 wow fadeInUp">Discover our solutions for the residential market</h2>
+  <div class="row row-cols-2 row-cols-md-4 g-4">
+   <div class="col icon-text">
+      <img src="https://img.icons8.com/ios/100/solar-panel.png" alt="PV">
+      <p><strong>Solar and Photovoltaic (PV) Systems</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img src="https://img.icons8.com/ios/100/cloud-network.png" alt="IoT">
+      <p><strong>Integrated IoT Solutions</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img src="https://img.icons8.com/ios/100/combo-chart--v1.png" alt="Analytics">
+      <p><strong>Predictive Analytics</strong></p>
+    </div>
+    <div class="col icon-text">
+      <img src="https://img.icons8.com/ios/100/computer.png" alt="Panels">
+      <p><strong>Smart Panels</strong></p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer Start -->
     <my-footer></my-footer>

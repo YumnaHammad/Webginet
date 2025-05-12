@@ -36,66 +36,86 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
-<style>
+  <style>
+    /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-      background-color: rgba(255, 255, 255, 0); /* transparent white */
-      backdrop-filter: blur(3px); /* blur effect */
-      -webkit-backdrop-filter: blur(3px); /* Safari support */
-      position: fixed; /* make it float */
-      width: 100%;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-
-      padding: 5px 2rem;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
       height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-      color: rgb(0, 0, 0) !important;
+      color: #ffffff !important;
       font-weight: 500;
       margin-right: 1rem;
+
       transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #998202 !important;
+      color: #000000 !important;
       transform: scale(1.05);
     }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    h6 {
-      color: #000000;
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
+    /* Navbar Toggler Icon */
     .navbar-toggler {
       border: none;
       outline: none;
     }
 
     .navbar-toggler-icon {
-      display: none; /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-      color: #998202;
+      color: #ffffff;
       font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -110,23 +130,20 @@
     .navbar-nav .nav-item:nth-child(1) {
       animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
       animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
       animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
       animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
       animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
       border-radius: 1rem;
       padding: 1rem;
@@ -134,7 +151,8 @@
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       min-width: 200px;
     }
@@ -151,7 +169,7 @@
     }
 
     .dropdown-submenu > .dropdown-menu {
-      top: 5;
+      top: 0;
       left: 90%;
       margin-left: 0.2rem;
       transform: translateX(10px);
@@ -167,6 +185,7 @@
       visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
       display: flex;
       flex-wrap: wrap;
@@ -178,16 +197,18 @@
       padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
       background-color: #f1f5f9;
       color: #1e40af;
     }
 
-    .text-primary {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
       .mega-dropdown {
         flex-direction: column;
@@ -202,6 +223,15 @@
         position: relative;
         transform: translateX(0);
         margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
       }
     }
   </style>
@@ -221,43 +251,62 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 py-5 justify-content-center d-flex align-items-center">
+    <div class="container-fluid page-headerlighting mb-5 py-5 justify-content-center d-flex align-items-center">
             <h1 class="display-3 text-white mb-3 animated slideInDown">LIGHTENING</h1>
     </div>
     <!-- Page Header End -->
 
 
- <!-- Performance Start -->
-  <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-    <h1 class="mb-4"> Lighting: innovating for a better performance</h1>
-    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
-    <ul>
-     <li>Lorem Ipsum</li>
-     <li>Lorem Ipsum</li>
-     <li>Lorem Ipsum</li>
-    </ul>
-    <p class="mb-4">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, </p>
+<!-- Performance Start --> 
+<div class="container mx-auto  text-left wow fadeInUp" style="padding: 30px 20px; line-height: 2;" data-wow-delay="0.1s">
+<div class="col-9">
+    <h1 class="text-4xl font-extrabold mb-6 animate-fade-in-up text-indigo-600">
+    Modern Lighting for Every Space
+  </h1>
+  <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-100">
+    For residential, commercial, and industrial markets, Webginet's lighting solutions cover the complete lifecycle of lighting needs:
+  </p>
+  <ul class="text-left inline-block text-gray-700 text-base mb-6 list-disc list-inside animate-fade-in-up delay-200">
+    <li class="mb-2">Design and installation of lighting systems tailored to every requirement</li>
+    <li class="mb-2">Renovation of outdated lighting equipment for improved efficiency</li>
+    <li class="mb-2">Maintenance and repair (MRO) of installed lighting infrastructure</li>
+  </ul>
+  <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-300">
+    We also offer lighting management solutions to boost user comfort and maximize energy savings through intelligent systems.
+  </p>
+</div>
+</div>
+<!-- Performance End -->
+
+
+<!-- Quality-lighting Start -->
+<div class="container mx-auto  text-left wow fadeInUp" style="padding: 30px 20px; line-height: 2;" data-wow-delay="0.1s">
+<div class="col-9 mb-5">
+    <h3 class="text-3xl font-bold mb-6 text-emerald-600 animate-fade-in-up">
+    Bringing Together Quality Lighting and Energy Savings
+  </h3>
+  <p class="text-lg text-gray-600 mb-4 max-w-3xl mx-auto animate-fade-in-up delay-100">
+    At Webginet, we deliver cutting-edge lighting solutions that combine visual comfort, high performance, and sustainability. We provide only the most effective products for lighting efficiency.
+  </p>
+  <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-200">
+    Our high-performance LEDs shine five times brighter, last ten times longer, and reduce both energy consumption and maintenance costs—all while enhancing light quality.
+  </p>
+
+
+</div>
+  <div class="videolightening video flex justify-center animate-fade-in-up delay-300" data-wow-delay="0.1s">
+    <button
+      type="button"
+      class="btn-play hover:scale-110 transition-transform duration-300"
+      data-bs-toggle="modal"
+      data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
+      data-bs-target="#videoModal"
+    >
+      <span></span>
+    </button>
   </div>
- 
-   <!-- Performance Start -->
 
-
-  <!-- Quality-lighting Start -->
-   <div class="mx-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-<h3 class="mb-4">All the Lorem Ipsum generators on the Internet tend to repeat</h3>
-<p class="mb-4">ing it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoub</p>
-
-<div class="video wow fadeInUp" data-wow-delay="0.1s">
-  <button
-    type="button"
-    class="btn-play"
-    data-bs-toggle="modal"
-    data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-    data-bs-target="#videoModal"
-  >
-    <span></span>
-  </button>
-
+  <!-- Video Modal -->
   <div
     class="modal fade"
     id="videoModal"
@@ -269,7 +318,7 @@
       <div class="modal-content rounded-0">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">
-            Youtube Video
+            Webginet Lighting Solutions
           </h5>
           <button
             type="button"
@@ -295,63 +344,150 @@
     </div>
   </div>
 </div>
-   </div>
- <!-- Quality-lighting Start -->
+<!-- Quality-lighting End -->
 
 
-  <!-- Value Start -->
-  <div class="my-5 mx-5 wow fadeInUp" data-wow-delay="0.1s">
+<!-- Value Start -->
+<div class="container mx-auto text-left wow fadeInUp mt-5" style="padding: 30px 20px; line-height: 2;" data-wow-delay="0.1s">
+  <div class="col-10 mx-auto">
     <h2 class="section-title">OUR ADDED VALUE</h2>
     <div class="row">
       <div class="col-md-6">
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
           <p>A team of experts available to assist you with your entire project</p>
         </div>
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
           <p>Innovation showrooms and trainings on demand</p>
         </div>
-        <div class="value-item d-flex">
-          <div class="check-icon border border-blue">✓</div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
           <p>Audit and calculating tools to facilitate your simulations</p>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
           <p>Selected products from the best brands</p>
         </div>
-        <div class="value-item d-flex">
-          <div class="check-icon  border border-blue">✓</div>
+        <div class="value-item d-flex align-items-center">
+          <div class="check-icon border border-blue mr-2">✓</div>
           <p>Financing offers dedicated to professionals and individuals</p>
         </div>
       </div>
     </div>
   </div>
-   <!-- Value End -->
+</div>
+<!-- Value End -->
 
+<!-- Products Start -->
+<div class="mb-5 wow fadeInUp mx-5" data-wow-delay="0.1s">
+  <h1 class="mb-5 text-center">Our Featured Products</h1>
 
-    <!-- Products Start -->
-     <div class="mb-5 wow fadeInUp mx-5 " data-wow-delay="0.1s">
-      <h1 class="mb-5 text-center">Products</h1>
-    <div class="d-flex justify-content-center gap-5 flex-wrap">
-      <div>
-        <img src="img/CatPhoto_Fluorescence-Illuminators_Xylis-II_671x655px.webp" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
+  <div class="container py-5">
+    <div class="row">
+      <!-- Product 1 -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="team-item">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/product-1.jpg" alt="Product 1" />
+          </div>
+          <div class="team-text">
+            <div class="bg-light text-center py-3">
+              <h5 class="fw-bold mb-0">Product One</h5>
+              <small>Category: Electronics</small>
+            </div>
+            <div class="bg-primary text-center py-2">
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="img/bulb-pin.jpg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
+
+      <!-- Product 2 -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="team-item">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/product-2.jpg" alt="Product 2" />
+          </div>
+          <div class="team-text">
+            <div class="bg-light text-center py-3">
+              <h5 class="fw-bold mb-0">Product Two</h5>
+              <small>Category: Home Appliances</small>
+            </div>
+            <div class="bg-primary text-center py-2">
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="img/images.jpeg" alt="Lighting" class="img-fluid" style="width: 100%; height: 112px;" />
-        <p>Lorem Ipsum </p>
+
+      <!-- Product 3 -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="team-item">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/product-3.jpg" alt="Product 3" />
+          </div>
+          <div class="team-text">
+            <div class="bg-light text-center py-3">
+              <h5 class="fw-bold mb-0">Product Three</h5>
+              <small>Category: Fashion</small>
+            </div>
+            <div class="bg-primary text-center py-2">
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-square mx-1 text-primary" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-     </div>
-    
-    <!-- Products End -->
+  </div>
+</div>
+<!-- Products End -->
+
+ <!-- Accomplishment Start -->
+ <div class="container py-5">
+    <h1 class="mb-5 text-uppercase text-center wow fadeInUp" data-wow-delay="0.1s">Accomplishments</h1>
+    <!-- Start of Article Block -->
+    <div class="row mb-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-md-5">
+        <img src="./img/carousel-2.jpg" alt="Project Image" class="img-fluid rounded">
+      </div>
+      <div class="col-md-7">
+        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
+        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">webginet</p>
+        <h5 class="fw-semibold">Improving air quality for childcare centers</h5>
+        <p class="text-muted">
+          The installation of double flow ventilation systems in child care facilities (schools, day cares...) not only reduced energy bills, but also improved comfort and air quality.
+        </p>
+      </div>
+    </div>
+  
+    <!-- Divider -->
+    <hr>
+  
+    <!-- Second Article -->
+    <div class="row mt-5 align-items-start wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-md-5">
+        <img src="./img/carousel-7.jpg" alt="Project Image" class="img-fluid rounded">
+      </div>
+      <div class="col-md-7">
+        <p class="text-uppercase text-muted mb-1" style="letter-spacing: 1px; font-size: 0.8rem;">France</p>
+        <p class="text-uppercase text-secondary fw-bold mb-2" style="font-size: 0.85rem;">webginet</p>
+        <h5 class="fw-semibold">Geoventilation solution for residential buildings</h5>
+        <p class="text-muted">
+          Reduced energy consumption paired with better air quality: Electrician Philippe Mousset speaks on the key installation issues of a duel Canadian well for a home in La Baule, France, and the...
+        </p>
+      </div>
+    </div>
+  </div>
+<!-- Accomplishment  End -->
 
     <!-- Footer Start -->
     <my-footer></my-footer>
@@ -377,31 +513,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</script>
-<script>
-    class MyNavbar extends HTMLElement {
-      connectedCallback() {
-        fetch('navbar.html')
-          .then(res => res.text())
-          .then(html => {
-            this.innerHTML = html;
-          });
-      }
-    }
-    customElements.define('my-navbar', MyNavbar);
-  </script>
-  <script>
-    class MyFooter extends HTMLElement {
-      connectedCallback() {
-        fetch('footer.html')
-          .then(res => res.text())
-          .then(html => {
-            this.innerHTML = html;
-          });
-      }
-    }
-    customElements.define('my-footer', MyFooter);
-  </script>
+
+
 </body>
 
 </html>
