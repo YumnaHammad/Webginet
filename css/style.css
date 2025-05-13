@@ -244,6 +244,41 @@
     background-size: cover;
     height: 500px;
 }
+.page-headerser{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Service\ \(1\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerab{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headermulti{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headermarketingCon{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headermanagedservice{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerecomerce{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headersupport{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }

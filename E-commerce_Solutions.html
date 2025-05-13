@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>E-commerce Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+  
+    /* Global Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-headerecomerce mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">LIGHTENING</h1>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Breadcrumbs  -->
+<div class="container py-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Wabginet</a></li>
+             <li class="breadcrumb-item"><a href="Services.html">Services</a></li>
+            <li class="breadcrumb-item active" aria-current="page">E-commerce_Solutions</a></li>
+        </ol>
+    </nav>
+</div>
+  <!-- Overview Section -->
+<div class="container text-center my-4">
+  <h3 class="section-heading">Wachter Delivers Design & Engineering</h3>
+  <p>Wachter’s engineers and project managers take a consultative approach...</p>
+  <em>When planning tomorrow’s technology for today, think Wachter.</em>
+</div>
+
+<!-- Engineering Projects Section -->
+<div class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h5 class="fw-bold">Engineering Successful Projects</h5>
+      <p>By collaborating with owners, architects, engineers...</p>
+      <p>With a staff of professional engineers including CCIEs, RCDDs...</p>
+    </div>
+    <div class="col-md-6">
+      <img src="./img/carousel-2.jpg" alt="Engineering Image" class="img-fluid rounded">
+    </div>
+  </div>
+</div>
+
+<!-- Wachter Design & Engineering Solutions Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-header mb-4 text-center">Wachter Design & Engineering Solutions</h2>
+        <div class="row text-center">
+            <div class="col-md-2">
+                <i class="fas fa-users-cog service-icon mb-3"></i>
+                <h4>Multi-Discipline Consulting</h4>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-map-marked-alt service-icon mb-3"></i>
+                <h4>Site Surveys</h4>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-chart-line service-icon mb-3"></i>
+                <h4>Gap Analysis</h4>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-project-diagram service-icon mb-3"></i>
+                <h4>Project Planning</h4>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-cogs service-icon mb-3"></i>
+                <h4>Systems Design</h4>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-file-alt service-icon mb-3"></i>
+                <h4>RFP / RFQ Services</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </script>
+    <script>
+        class MyNavbar extends HTMLElement {
+            connectedCallback() {
+                fetch('navbar.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-navbar', MyNavbar);
+    </script>
+    <script>
+        class MyFooter extends HTMLElement {
+            connectedCallback() {
+                fetch('footer.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-footer', MyFooter);
+    </script>
+</body>
+
+</html>

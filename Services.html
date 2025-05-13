@@ -36,177 +36,202 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
+     /* Global Styles */
     body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        overflow-x: hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-        background-color: rgba(255, 255, 255, 0);
-        /* transparent white */
-        backdrop-filter: blur(3px);
-        /* blur effect */
-        -webkit-backdrop-filter: blur(3px);
-        /* Safari support */
-        position: fixed;
-        /* make it float */
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-
-        padding: 5px 2rem;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
-        height: 50px;
+      height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-        color: rgb(0, 0, 0) !important;
-        font-weight: 500;
-        margin-right: 1rem;
-        transition: all 0.3s ease;
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-        color: #998202 !important;
-        transform: scale(1.05);
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
-    h6 {
-        color: #000000;
-    }
-
+    /* Navbar Toggler Icon */
     .navbar-toggler {
-        border: none;
-        outline: none;
+      border: none;
+      outline: none;
     }
 
     .navbar-toggler-icon {
-        display: none;
-        /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-        color: #998202;
-        font-size: 1.8rem;
+      color: #ffffff;
+      font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
-        0% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .navbar-nav .nav-item {
-        opacity: 0;
-        animation: slideDown 0.5s ease forwards;
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
     }
 
     .navbar-nav .nav-item:nth-child(1) {
-        animation-delay: 0.2s;
+      animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
-        animation-delay: 0.4s;
+      animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
-        animation-delay: 0.6s;
+      animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
-        animation-delay: 0.8s;
+      animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
-        animation-delay: 1s;
+      animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-        border-radius: 1rem;
-        padding: 1rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        background-color: white;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        min-width: 200px;
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
     }
 
-    .dropdown:hover>.dropdown-menu {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .dropdown-submenu {
-        position: relative;
+      position: relative;
     }
 
-    .dropdown-submenu>.dropdown-menu {
-        top: 0;
-        left: 90%;
-        margin-left: 0.2rem;
-        transform: translateX(10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
 
-    .dropdown-submenu:hover>.dropdown-menu {
-        display: block;
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
-        display: flex;
-        flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    .mega-dropdown>div {
-        flex: 1;
-        min-width: 200px;
-        padding: 0.5rem 1rem;
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
-        background-color: #f1f5f9;
-        color: #1e40af;
+      background-color: #f1f5f9;
+      color: #1e40af;
     }
 
-    .text-primary {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
-        .mega-dropdown {
-            flex-direction: column;
-        }
+      .mega-dropdown {
+        flex-direction: column;
+      }
 
-        .dropdown-menu {
-            min-width: 100%;
-        }
+      .dropdown-menu {
+        min-width: 100%;
+      }
 
-        .dropdown-submenu>.dropdown-menu {
-            left: auto;
-            position: relative;
-            transform: translateX(0);
-            margin-top: 0.5rem;
-        }
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
 
     .hero-section {
@@ -343,21 +368,6 @@
     .card:hover .card-overlay-text {
         opacity: 1;
     }
-  .icon-box {
-            text-align: center;
-            padding: 20px;
-            font-size: 2rem;
-        }
-
-        .service-title {
-            font-size: 18px;
-            color: #333;
-            margin-top: 10px;
-        }
-
-        .highlight-green {
-            color: #28a745;
-        }
 </style>
 
 <body>
@@ -374,13 +384,9 @@
     <my-navbar></my-navbar>
     <!-- Navbar End -->
     <!-- Hero Section -->
-    <section class="hero text-center text-white py-5 ">
-        <div class="overlay"></div>
-        <div class="container content py-5">
-            <h1 class="display-4">Services</h1>
-            <p class="lead">Technology Integration Solutions for Any Market</p>
-        </div>
-    </section>
+  <div class="container-fluid page-headerser mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
+    </div>
     <!-- Breadcrumbs  -->
 <div class="container py-4">
     <nav aria-label="breadcrumb">
@@ -390,252 +396,190 @@
         </ol>
     </nav>
 </div>
-    <!-- Section: Description -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center">Technology Service Powered by Webginet</h2>
-            <p class="text-center">
-                No matter the commercial or industrial market your business serves, Wachter’s teams of experienced
-                electricians and technicians are nationwide solutions integrators.
-                From keeping moviegoers entertained, ensuring patient safety in hospital rooms, powering mining
-                facilities with electrical services, and maintaining food and beverage production efficiency—Wachter is
-                there.
-            </p>
-        </div>
-    </section>
+<!-- Section: Description -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center">Digital Transformation Powered by Webginet</h2>
+        <p class="text-center">
+            Webginet delivers cutting-edge IT solutions tailored for businesses across industries. Whether you're in finance,
+            healthcare, logistics, or e-commerce, our team of expert developers, consultants, and engineers transforms 
+            your digital infrastructure through innovation and scalable technology.
+        </p>
+    </div>
+</section>
 
-    <!-- Markets Section -->
-    <section class="markets py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card ">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-6.jpg" class="card-img-top" alt="Logistics">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
-
-                        <div class="card-body">
-                            <h5 class="card-title">Logistics</h5>
-                            <p class="card-text">As the logistics industry continues to expand, Wachter keeps your
-                                business ahead for shipments with our technology solutions. From edge analytics to
-                                automation and more, our Cisco certified engineers offer the best solutions.</p>
-                        </div>
+<!-- Markets Section -->
+<section class="markets py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Software Development -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/offer (4).jpg" class="card-img-top" alt="Software Development">
+                        <div class="card-overlay-text">Software</div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-5.jpg" class="card-img-top" alt="Transportation">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Transportation</h5>
-                            <p class="card-text">When it comes to the transportation industry, efficiency gets people
-                                where they need to go. As nationwide technology integrators, Wachter keeps your
-                                operation running smoothly by designing, deploying, and managing your transportation
-                                technology.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-4.jpg" class="card-img-top" alt="Corrections">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Corrections</h5>
-                            <p class="card-text">Wachter’s corrections technology secures correctional facilities
-                                internally and externally. Our technicians can expertly install RFID asset tracking,
-                                physical security, and access control systems throughout the correctional facility.</p>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Software Development</h5>
+                        <p class="card-text">We build scalable, secure, and custom web and mobile applications that align
+                            with your business goals using modern frameworks and agile methodologies.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card ">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-6.jpg" class="card-img-top" alt="Logistics">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
 
-                        <div class="card-body">
-                            <h5 class="card-title">Logistics</h5>
-                            <p class="card-text">As the logistics industry continues to expand, Wachter keeps your
-                                business ahead for shipments with our technology solutions. From edge analytics to
-                                automation and more, our Cisco certified engineers offer the best solutions.</p>
-                        </div>
+            <!-- Cloud Solutions -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/offer (5).jpg" class="card-img-top" alt="Cloud Services">
+                        <div class="card-overlay-text">Cloud</div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-5.jpg" class="card-img-top" alt="Transportation">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Transportation</h5>
-                            <p class="card-text">When it comes to the transportation industry, efficiency gets people
-                                where they need to go. As nationwide technology integrators, Wachter keeps your
-                                operation running smoothly by designing, deploying, and managing your transportation
-                                technology.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-4.jpg" class="card-img-top" alt="Corrections">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Corrections</h5>
-                            <p class="card-text">Wachter’s corrections technology secures correctional facilities
-                                internally and externally. Our technicians can expertly install RFID asset tracking,
-                                physical security, and access control systems throughout the correctional facility.</p>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cloud Solutions</h5>
+                        <p class="card-text">From AWS to Azure, we help businesses migrate, manage, and optimize their
+                            cloud infrastructure to ensure flexibility, reliability, and cost-efficiency.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card ">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-6.jpg" class="card-img-top" alt="Logistics">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
 
-                        <div class="card-body">
-                            <h5 class="card-title">Logistics</h5>
-                            <p class="card-text">As the logistics industry continues to expand, Wachter keeps your
-                                business ahead for shipments with our technology solutions. From edge analytics to
-                                automation and more, our Cisco certified engineers offer the best solutions.</p>
-                        </div>
+            <!-- Cybersecurity -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/Service (2).jpg" class="card-img-top" alt="Cybersecurity">
+                        <div class="card-overlay-text">Security</div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-5.jpg" class="card-img-top" alt="Transportation">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Transportation</h5>
-                            <p class="card-text">When it comes to the transportation industry, efficiency gets people
-                                where they need to go. As nationwide technology integrators, Wachter keeps your
-                                operation running smoothly by designing, deploying, and managing your transportation
-                                technology.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-img-wrapper">
-                            <img src="./img/carousel-4.jpg" class="card-img-top" alt="Corrections">
-                            <div class="card-overlay-text">Logistics</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Corrections</h5>
-                            <p class="card-text">Wachter’s corrections technology secures correctional facilities
-                                internally and externally. Our technicians can expertly install RFID asset tracking,
-                                physical security, and access control systems throughout the correctional facility.</p>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cybersecurity</h5>
+                        <p class="card-text">Protect your data and digital assets with our end-to-end cybersecurity services,
+                            including threat detection, compliance audits, and incident response planning.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-<!-- Services -->
- <div class="container text-center py-5">
-        <h2 class="font-weight-bold mb-4">OUR CUSTOMIZED SERVICE</h2>
-        <p class="text-muted mb-5">Operational excellence at the heart of our added value</p>
-        
-        <div class="row justify-content-center">
-            <!-- Multichannel Service -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-sitemap"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Multichannel</p>
-            </div>
-
-            <!-- Commercial Services -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-user"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Commercial services</p>
+        <div class="row">
+            <!-- IT Consultancy -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/Datacom-2.jpg" class="card-img-top" alt="IT Consulting">
+                        <div class="card-overlay-text">Consulting</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">IT Consulting</h5>
+                        <p class="card-text">Gain strategic insights and IT roadmaps that align with your goals. Our
+                            consultants bridge the gap between business needs and tech implementation.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- E-commerce -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-shopping-cart"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">E-commerce</p>
+            <!-- Infrastructure Management -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/Home-4.jpg" class="card-img-top" alt="Infrastructure">
+                        <div class="card-overlay-text">Infra</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Infrastructure Management</h5>
+                        <p class="card-text">We deploy and maintain your IT infrastructure with 24/7 support—ensuring
+                            reliability, performance, and minimal downtime.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Logistics -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-cogs"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Logistics</p>
-            </div>
-
-            <!-- International Services -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-globe"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Private: International services</p>
-            </div>
-             <!-- Commercial Services -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-user"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Commercial services</p>
-            </div>
-
-            <!-- E-commerce -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-shopping-cart"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">E-commerce</p>
-            </div>
-
-            <!-- Logistics -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-cogs"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Logistics</p>
-            </div>
-             <!-- Commercial Services -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-user"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Commercial services</p>
-            </div>
-
-            <!-- E-commerce -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-shopping-cart"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">E-commerce</p>
-            </div>
-
-            <!-- Logistics -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-cogs"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Logistics</p>
-            </div>
-             <!-- Commercial Services -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-user"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Commercial services</p>
-            </div>
-
-            <!-- E-commerce -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-shopping-cart"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">E-commerce</p>
-            </div>
-
-            <!-- Logistics -->
-            <div class="col-md-2 col-sm-6 icon-box">
-                <i class="fas fa-cogs"></i> <!-- You can replace with the correct icon -->
-                <p class="service-title">Logistics</p>
+            <!-- UI/UX Design -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./img/Smart-3.jpg" class="card-img-top" alt="UI/UX Design">
+                        <div class="card-overlay-text">Design</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">UI/UX Design</h5>
+                        <p class="card-text">We design intuitive, responsive, and user-centric interfaces to enhance
+                            customer engagement across web and mobile platforms.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</section>
+
+<!-- Services -->
+<!-- All Services Section -->
+<div class="container my-5">
+  <h2 class="section-title text-center mt-5">All Services by Webginet</h2>
+  <p class="text-center mb-4">
+    From industrial innovation to smart digital infrastructure — Webginet delivers comprehensive technology solutions that empower businesses of all sizes.
+  </p>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4 text-center">
+
+    <!-- PLC Programming -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/settings.png" alt="PLC Programming">
+      <p><strong class="text-dark">PLC Programming</strong></p>
+    </div>
+
+    <!-- Robotics Integration -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/robot-2.png" alt="Robotics Integration">
+      <p><strong class="text-dark">Robotics Integration</strong></p>
+    </div>
+
+    <!-- Surveillance & Access Control -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/fingerprint-scan.png" alt="Surveillance & Access Control">
+      <p><strong class="text-dark">Surveillance & Access Control</strong></p>
+    </div>
+
+    <!-- Cloud & Edge Computing -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/cloud-checked--v1.png" alt="Cloud & Edge Computing">
+      <p><strong class="text-dark">Cloud & Edge Computing</strong></p>
+    </div>
+
+    <!-- Managed IT Services -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/services.png" alt="Managed IT Services">
+      <p><strong class="text-dark">Managed IT Services</strong></p>
+    </div>
+
+ <div class="col icon-text">
+  <img class="iconnn" src="https://img.icons8.com/ios/100/technical-support--v1.png" alt="IT Consultancy">
+  <p><strong class="text-dark">IT Consultancy</strong></p>
+</div>
+
+    <!-- Software Development -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/source-code.png" alt="Software Development">
+      <p><strong class="text-dark">Software Development</strong></p>
+    </div>
+
+<div class="col icon-text">
+  <img class="iconnn" src="https://img.icons8.com/ios/100/ethernet-on.png" alt="Structured Cabling">
+  <p><strong class="text-dark">Structured Cabling</strong></p>
+</div>
+
+
+    <!-- Fire Alarm Systems -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/fire-alarm.png" alt="Fire Alarm Systems">
+      <p><strong class="text-dark">Fire Alarm Systems</strong></p>
+    </div>
+
+    <!-- Nationwide Technology Rollouts -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/worldwide-location.png" alt="Nationwide Technology Rollouts">
+      <p><strong class="text-dark">Nationwide Technology Rollouts</strong></p>
+    </div>
+
+  </div>
+</div>
+
+
 
     <!-- Footer Start -->
     <my-footer></my-footer>
