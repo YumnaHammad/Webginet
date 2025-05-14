@@ -36,7 +36,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
-  
+  .hover-shadow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
     /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -267,7 +273,7 @@
 
     <!-- Page Header Start -->
     <div class="container-fluid page-headermanagedservice mb-5 py-5 justify-content-center d-flex align-items-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">LIGHTENING</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Managed Services</h1>
     </div>
     <!-- Page Header End -->
 
@@ -282,164 +288,114 @@
     </nav>
 </div>
  
- <!-- Wachter Delivers Managed Services -->
-    <section class="container py-5">
-        <div class="section-header">
-            <h2 class="section-title">Wachter Delivers Managed Services</h2>
-            <p>Tired of the risks, the updates, and the variability of managing your own IT? Let Wachter take the burden of your network and business-critical technologies!</p>
-        </div>
-    </section>
+<!-- Webginet Delivers Managed Services -->
+<section class="container py-5">
+  <div class="section-header text-center">
+    <h2 class="section-title animate__animated animate__fadeInDown">Webginet Delivers Managed Services</h2>
+    <p class="animate__animated animate__fadeInUp">Free your team from the stress of maintaining IT infrastructure. Webginet provides comprehensive managed services to ensure business continuity, security, and optimized performance — all with 24/7 support.</p>
+  </div>
+</section>
 
-    <!-- Service Sections -->
-    <section class="container py-5">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h4>IT Consulting</h4>
-                    <p>Wachter works with you to find the right solutions, streamline processes, optimize operations, and maximize your customer experience.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h4>Business Continuity</h4>
-                    <p>Ensure your business keeps running through disasters and emergencies. We help with backup and recovery for servers and clients.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h4>NOC / VOC</h4>
-                    <p>Our Network Operating Center operates 24/7 to ensure your data and communications networks are running smoothly.</p>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h4>Business Continuity</h4>
-                    <p>Ensure your business keeps running through disasters and emergencies. We help with backup and recovery for servers and clients.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h4>NOC / VOC</h4>
-                    <p>Our Network Operating Center operates 24/7 to ensure your data and communications networks are running smoothly.</p>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h4>Business Continuity</h4>
-                    <p>Ensure your business keeps running through disasters and emergencies. We help with backup and recovery for servers and clients.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h4>NOC / VOC</h4>
-                    <p>Our Network Operating Center operates 24/7 to ensure your data and communications networks are running smoothly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Service Sections -->
+<section class="container py-5">
+  <div class="row text-center g-4">
+    <div class="col-md-4">
+      <div class="service-card p-4 border rounded shadow-sm animate__animated animate__zoomIn hover-shadow">
+        <div class="service-icon fs-1">💼</div>
+        <h4>IT Consulting</h4>
+        <p>We help you assess and realign your IT infrastructure for business agility, performance, and compliance.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card p-4 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-1s hover-shadow">
+        <div class="service-icon fs-1">🔁</div>
+        <h4>Business Continuity</h4>
+        <p>Disaster recovery planning, data backups, and redundancy strategies to ensure uptime and resilience.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card p-4 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-2s hover-shadow">
+        <div class="service-icon fs-1">🌐</div>
+        <h4>24/7 NOC & VOC</h4>
+        <p>Our Network and Voice Operations Centers actively monitor and manage your network around the clock.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card p-4 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-3s hover-shadow">
+        <div class="service-icon fs-1">☁️</div>
+        <h4>Cloud Management</h4>
+        <p>End-to-end monitoring and optimization of your cloud environments, including AWS, Azure, and private clouds.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card p-4 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-4s hover-shadow">
+        <div class="service-icon fs-1">🛡️</div>
+        <h4>Cybersecurity Services</h4>
+        <p>Proactive threat detection, endpoint protection, and compliance solutions tailored to your business.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card p-4 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-5s hover-shadow">
+        <div class="service-icon fs-1">🔍</div>
+        <h4>IT Auditing</h4>
+        <p>Comprehensive audits and assessments to uncover risks and optimize your IT strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Let's Connect Section -->
-    <section class="container text-center py-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h3>Let's Connect</h3>
-                <p>Contact us to learn more about how Wachter can help manage your IT infrastructure and technology solutions.</p>
-                <a href="#" class="cta-btn">Contact Us</a>
-            </div>
-            <div class="col-md-6">
-                <img src="./img/carousel-3.jpg" class="img-fluid" alt="Connect">
-            </div>
-        </div>
-    </section>
+<!-- Let's Connect Section -->
+<section class="container text-center py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 animate__animated animate__fadeInLeft">
+      <h3>Let's Connect</h3>
+      <p>Reach out today and learn how Webginet’s managed services can transform your IT landscape.</p>
+      <a href="#" class="cta-btn btn btn-primary mt-3">Contact Us</a>
+    </div>
+    <div class="col-md-6 animate__animated animate__fadeInRight">
+      <img src="./img/carousel-3.jpg" class="img-fluid " style="box-shadow: 0 8px 20px rgb(0, 0, 0);" alt="Connect">
+    </div>
+  </div>
+</section>
 
-    <!-- Let's Connect Section -->
-    <section class="container text-center py-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="./img/carousel-3.jpg" class="img-fluid" alt="Connect">
-            </div>
-            <div class="col-md-6">
-                <h3>Let's Connect</h3>
-                <p>Contact us to learn more about how Wachter can help manage your IT infrastructure and technology solutions.</p>
-                <a href="#" class="cta-btn">Contact Us</a>
-            </div>
-        </div>
-    </section>
-    <!-- Additional Managed Services Section -->
-    <section class="container py-5">
-        <div class="section-header">
-            <h2 class="section-title">Additional Managed Services</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">🖥️</div>
-                        <h4>Desktop Management</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">🔧</div>
-                        <h4>Vendor Management</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">🔒</div>
-                        <h4>Physical Security</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">📞</div>
-                        <h4>24/7 Help Desk Support</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">🔧</div>
-                        <h4>Vendor Management</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">🔒</div>
-                        <h4>Physical Security</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">📞</div>
-                        <h4>24/7 Help Desk Support</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">🔧</div>
-                        <h4>Vendor Management</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">🔒</div>
-                        <h4>Physical Security</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">📞</div>
-                        <h4>24/7 Help Desk Support</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Additional Managed Services Section -->
+<section class="container py-5">
+  <div class="section-header text-center">
+    <h2 class="section-title animate__animated animate__fadeInDown">Additional Managed Services</h2>
+    <p class="animate__animated animate__fadeInUp">Beyond core IT functions, Webginet offers a broad range of managed services to keep your business secure, supported, and scalable.</p>
+  </div>
+  <div class="row text-center g-4 mt-4">
+    <div class="col-md-3">
+      <div class="service-card p-3 border rounded shadow-sm animate__animated animate__zoomIn hover-shadow">
+        <div class="service-icon fs-1">🖥️</div>
+        <h5>Desktop Management</h5>
+        <p>Proactive management and support for all endpoints across your organization.</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="service-card p-3 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-1s hover-shadow">
+        <div class="service-icon fs-1">🔧</div>
+        <h5>Vendor Management</h5>
+        <p>Streamline vendor relationships with a single point of accountability and performance tracking.</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="service-card p-3 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-2s hover-shadow">
+        <div class="service-icon fs-1">🔒</div>
+        <h5>Physical Security</h5>
+        <p>Protect physical assets with managed surveillance systems, access control, and incident monitoring.</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="service-card p-3 border rounded shadow-sm animate__animated animate__zoomIn animate__delay-3s hover-shadow">
+        <div class="service-icon fs-1">📞</div>
+        <h5>24/7 Help Desk Support</h5>
+        <p>Round-the-clock technical assistance to keep your team productive and your operations running smoothly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer Start -->
     <my-footer></my-footer>

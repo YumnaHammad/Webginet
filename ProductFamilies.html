@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Product Families</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        background-color: rgba(255, 255, 255, 0);
+        /* transparent white */
+        backdrop-filter: blur(3px);
+        /* blur effect */
+        -webkit-backdrop-filter: blur(3px);
+        /* Safari support */
+        position: fixed;
+        /* make it float */
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        padding: 5px 2rem;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+    }
+
+    .nav-link {
+        color: rgb(0, 0, 0) !important;
+        font-weight: 500;
+        margin-right: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: #998202 !important;
+        transform: scale(1.05);
+    }
+
+    h6 {
+        color: #000000;
+    }
+
+    .navbar-toggler {
+        border: none;
+        outline: none;
+    }
+
+    .navbar-toggler-icon {
+        display: none;
+        /* Hide default toggler icon */
+    }
+
+    .navbar-toggler i {
+        color: #998202;
+        font-size: 1.8rem;
+    }
+
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar-nav .nav-item {
+        opacity: 0;
+        animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .navbar-nav .nav-item:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    .navbar-nav .nav-item:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+
+    .navbar-nav .nav-item:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+
+    .navbar-nav .nav-item:nth-child(5) {
+        animation-delay: 1s;
+    }
+
+    .dropdown-menu {
+        border-radius: 1rem;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        min-width: 200px;
+    }
+
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        left: 90%;
+        margin-left: 0.2rem;
+        transform: translateX(10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover>.dropdown-menu {
+        display: block;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mega-dropdown {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mega-dropdown>div {
+        flex: 1;
+        min-width: 200px;
+        padding: 0.5rem 1rem;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f1f5f9;
+        color: #1e40af;
+    }
+
+    .text-primary {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991.98px) {
+        .mega-dropdown {
+            flex-direction: column;
+        }
+
+        .dropdown-menu {
+            min-width: 100%;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+            left: auto;
+            position: relative;
+            transform: translateX(0);
+            margin-top: 0.5rem;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero {
+        background: url('./img/carousel-5.jpg') center/cover no-repeat;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        height: 60vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+  .header-image {
+    background-image: url('./img/carousel-2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Add this */
+    color: white;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0; 
+}
+
+    .icon-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .icon-box i {
+      font-size: 50px;
+      color: #007bff;
+    }
+    .icon-box h5 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    .right{
+         animation: fadeInRight 1s ease-in-out;
+    }
+    @keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+  .left{
+         animation: fadeInLeft 1s ease-in-out;
+    }
+@keyframes fadeInLeft {
+    from {
+        opacity:0;
+        -webkit-transform: translatex(-100px);
+        -moz-transform: translatex(-100px);
+        -o-transform: translatex(-100px);
+        transform: translatex(-100px);
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -o-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+.in-left {
+    -webkit-animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    -o-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-duration:1s;
+    animation-delay: 1s;
+}
+
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+<!-- Header Section -->
+  <div class="header-image">
+    <div class="header-title">
+      Product Families
+    </div>
+  </div>
+      <!-- Breadcrumbs  -->
+<div class="container py-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Wabginet</a></li>
+             <li class="breadcrumb-item"><a href="Distributed_Brands.html">Distributed Brands</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Product Families</a></li>
+        </ol>
+    </nav>
+</div>
+
+  <!-- Icons and Text -->
+  <div class="container my-5">
+    <h2 class="my-5">Product Families</h2>
+    <div class="row text-center">
+      <div class="col-md-3 icon-box left ">
+        <i class="bi bi-house-door"></i>
+        <h5>Appliances and Accessories</h5>
+      </div>
+      <div class="col-md-3 icon-box left">
+        <i class="bi bi-lightning"></i>
+        <h5>Protection and Distribution</h5>
+      </div>
+      <div class="col-md-3 icon-box right">
+        <i class="bi bi-building"></i>
+        <h5>Cabinets</h5>
+      </div>
+      <div class="col-md-3 icon-box right">
+        <i class="bi bi-house-door"></i>
+        <h5>Cables and Routing</h5>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-3 icon-box left">
+        <i class="bi bi-sun"></i>
+        <h5>Lighting</h5>
+      </div>
+      <div class="col-md-3 icon-box left">
+        <i class="bi bi-shield-lock"></i>
+        <h5>Security and Communication</h5>
+      </div>
+      <div class="col-md-3 icon-box right">
+        <i class="bi bi-house-door"></i>
+        <h5>Home Automation</h5>
+      </div>
+      <div class="col-md-3 icon-box right">
+        <i class="bi bi-house-door"></i>
+        <h5>Building Management System</h5>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-3 icon-box left">
+        <i class="bi bi-sun"></i>
+        <h5>Climate Control</h5>
+      </div>
+      <div class="col-md-3 icon-box left">
+        <i class="bi bi-sun"></i>
+        <h5>Photovoltaic</h5>
+      </div>
+      <div class="col-md-3 icon-box right">
+        <i class="bi bi-tools"></i>
+        <h5>Industrial Automation and Control</h5>
+      </div>
+      <div class="col-md-3 icon-box right">
+        <i class="bi bi-tools"></i>
+        <h5>Tools</h5>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </script>
+    <script>
+        class MyNavbar extends HTMLElement {
+            connectedCallback() {
+                fetch('navbar.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-navbar', MyNavbar);
+    </script>
+    <script>
+        class MyFooter extends HTMLElement {
+            connectedCallback() {
+                fetch('footer.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-footer', MyFooter);
+    </script>
+</body>
+
+</html>

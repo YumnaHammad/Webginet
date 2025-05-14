@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>IT Network</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+    <style>
+        .bg-gradient {
+            background: linear-gradient(to right, #00b4d8, #0096c7);
+        }
+        .card-img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .btn-custom {
+            background-color: #00b4d8;
+            color: white;
+            border-radius: 50px;
+        }
+       body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0); /* transparent white */
+      backdrop-filter: blur(3px); /* blur effect */
+      -webkit-backdrop-filter: blur(3px); /* Safari support */
+      position: fixed; /* make it float */
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      padding: 5px 2rem;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: rgb(0, 0, 0) !important;
+      font-weight: 500;
+      margin-right: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #998202 !important;
+      transform: scale(1.05);
+    }
+
+    h6 {
+      color: #000000;
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none; /* Hide default toggler icon */
+    }
+
+    .navbar-toggler i {
+      color: #998202;
+      font-size: 1.8rem;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    .dropdown-menu {
+      border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    .text-primary {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+    }
+       .hero {
+      background: url('./img/carousel-5.jpg') center/cover no-repeat;
+      color: white;
+      padding: 40px 20px;
+       text-align: center;
+       height: 60vh;
+       align-items: center;
+       display: flex;
+       justify-content: center;
+    }
+    </style>
+<body>
+   <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+  <!-- Hero Section -->
+    <section class="hero text-center text-white py-5 ">
+        <div class="overlay"></div>
+        <div class="container content py-5">
+            <h1 class="display-4">IT Network</h1>
+            <p class="lead">POWER YOUR PLANT FLOOR WITH WACHTER'S CONSTANT PRESENCE</p>
+        </div>
+    </section>
+
+    <!-- Header Section -->
+    <header class="bg-gradient py-5">
+        <div class="container text-center">
+            <h1 class="section-header">TOP IT NETWORK SOLUTIONS PROVIDER</h1>
+            <p class="section-subheader">Wachter is your experienced network solutions provider, delivering quality IT network services nationwide.</p>
+        </div>
+    </header>
+
+    <!-- WTS Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./img/carousel-2.jpg" alt="Tech Image" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-header">WTS: Wachter Technology Solutions</h2>
+                    <p>WTS, Wachter’s technology-focused team, provides your cloud, mobility, voice, managed services, and other business technology needs.</p>
+                    <a href="#" class="btn btn-custom">Learn More About WTS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certified Experts Section -->
+    <section class=" py-5">
+        <div class="container text-center">
+            <h2 class="section-header">Certified Experts</h2>
+            <p class="section-subheader">Our certified experts are ready to handle your IT networking solutions with proven skills and certifications.</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="./img/carousel-3.jpg" class="card-img" alt="Cert Image">
+                    <p>CCIE</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="./img/carousel-5.jpg" class="card-img" alt="Cert Image">
+                    <p>CCNA, CCNP</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="./img/carousel-6.jpg" class="card-img" alt="Cert Image">
+                    <p>Network Specialists</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="./img/carousel-7.jpg" class="card-img" alt="Cert Image">
+                    <p>Application Developers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structured Cabling Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-header">Structured Cabling</h2>
+            <p>Data cabling – connecting businesses to what matters – is at the heart of what we do.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./img/carousel-10.jpg" class="img-fluid" alt="Cabling Image">
+                </div>
+                <div class="col-md-6">
+                    <p>Wachter partners with top low-voltage cable manufacturers to install the best structured cable products available.</p>
+                    <a href="#" class="btn btn-custom">Learn More About Structured Cabling</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- National & Regional Rollouts Section -->
+    <section class="py-5" style="background-color: #30d9fa;">
+        <div class="container">
+            <h2 class="section-header">National & Regional Rollouts</h2>
+            <p>With 1,400 WTS employees, Wachter can complete national or regional rollouts on time and on budget.</p>
+        </div>
+    </section>
+
+    <!-- IT Professional Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-header">IT Professional Services</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>IT Network Design and Analysis</h4>
+                </div>
+                <div class="col-md-3">
+                    <h4>Site Survey</h4>
+                </div>
+                <div class="col-md-3">
+                    <h4>CAD Services</h4>
+                </div>
+                <div class="col-md-3">
+                    <h4>Cybersecurity Solutions</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Modernization Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-header">IT Modernization</h2>
+            <ul>
+                <li>Migrations</li>
+                <li>Hardware & Software Upgrades</li>
+                <li>Optimization</li>
+                <li>Cloud Computing</li>
+                <li>Virtualization</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Additional IT Networking Solutions Section -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="section-header">Additional IT Networking Solutions</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="./img/carousel-9.jpg" class="card-img" alt="Solution Image">
+                    <p>Staff Augmentation</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="./img/carousel-10.jpg" class="card-img" alt="Solution Image">
+                    <p>Integration Center</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="./img/carousel-3.jpg" class="card-img" alt="Solution Image">
+                    <p>Site Prep & Installation</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="./img/carousel-4.jpg" class="card-img" alt="Solution Image">
+                    <p>Preventative Maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+
+</html>
