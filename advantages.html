@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Product Families</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- AOS JS -->
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    /* Global Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero {
+        background: url('./img/carousel-5.jpg') center/cover no-repeat;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        height: 60vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+  .header-image {
+    background-image: url('./img/carousel-2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Add this */
+    color: white;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0; 
+}
+
+    .icon-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .icon-box i {
+      font-size: 50px;
+      color: #007bff;
+    }
+    .icon-box h5 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    .right{
+         animation: fadeInRight 1s ease-in-out;
+    }
+    @keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+  .left{
+         animation: fadeInLeft 1s ease-in-out;
+    }
+@keyframes fadeInLeft {
+    from {
+        opacity:0;
+        -webkit-transform: translatex(-100px);
+        -moz-transform: translatex(-100px);
+        -o-transform: translatex(-100px);
+        transform: translatex(-100px);
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -o-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+.in-left {
+    -webkit-animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    -o-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-duration:1s;
+    animation-delay: 1s;
+}
+
+</style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-headeradvantage mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Webginet Advantages</h1>
+    </div>
+    <!-- Page Header End -->
+
+
+
+<!-- Section 1: Competitive Edge -->
+<section class="container my-5 py-5" data-aos="fade-up">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-lightning-charge"></i> Competitive Edge</h1>
+      <p>Webginet stays ahead with fast-paced innovation, strong vendor alliances, and advanced digital solutions that provide unmatched value to customers. We adapt quickly to changing technologies, helping clients stay competitive in their industries.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/consult (5).jpg" alt="Competitive Edge" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Customer-Centric Approach -->
+ <div class="container-fluid bg-light">
+<section class="container my-5 py-5 rounded" data-aos="fade-right">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <h1><i class="bi bi-emoji-smile"></i> Customer-Centric Approach</h1>
+      <p>We put our customers first by offering tailored solutions, 24/7 support, and proactive communication. Our satisfaction-driven philosophy ensures loyalty, long-term partnerships, and continuous improvement.</p>
+    </div>
+    <div class="col-md-6 order-md-1 text-center">
+      <img src="/img/help (3).jpg" alt="Customer Focus" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid">
+    </div>
+  </div>
+</section>
+</div>
+<!-- Section 3: Smart Infrastructure -->
+<section class="container my-5 py-5" data-aos="fade-left">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-building-check"></i> Smart Infrastructure</h1>
+      <p>Our intelligent systems include IoT-ready devices, automation platforms, and energy-efficient components. Webginet provides future-ready infrastructure for businesses seeking efficiency and scalability.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/Smart-1.jpg" alt="Smart Infrastructure" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Sustainability Commitment -->
+ <div class="container-fluid bg-light">
+<section class="container my-5 py-5  rounded" data-aos="zoom-in">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <h1><i class="bi bi-tree"></i> Sustainability Commitment</h1>
+      <p>Our eco-conscious operations and green product lines help reduce environmental impact. From recyclable materials to renewable energy projects, we are committed to a more sustainable planet.</p>
+    </div>
+    <div class="col-md-6 order-md-1 text-center">
+      <img src="/img/indust (1).jpg" alt="Sustainability" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+</div>
+<!-- Section 5: Trusted Partnerships -->
+<section class="container my-5 py-5" data-aos="fade-up">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-handshake"></i> Trusted Partnerships</h1>
+      <p>We collaborate with leading brands and local experts to deliver premium-quality products and reliable services. These partnerships enable us to deliver excellence across industries including education, healthcare, retail, and manufacturing.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/commitment (1).jpg" alt="Trusted Partnerships" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<section class="container my-5 py-5 border-bottom" data-aos="fade-up">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-shield-check"></i> Reliability You Can Count On</h1>
+      <p>At Webginet, reliability is at the core of our operations. Our robust systems and proactive support ensure you experience uninterrupted services with maximum uptime and dependability.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/Home-4.jpg" alt="Reliability" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Cutting-Edge Technology -->
+ <div class="container-fluid bg-light">
+
+<section class="container my-5 py-5  rounded" data-aos="fade-left">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <h1><i class="bi bi-cpu"></i> Leading with Technology</h1>
+      <p>We leverage the latest in smart automation, AI, and IoT to provide futuristic solutions. Our innovation-first mindset helps clients stay ahead in an evolving digital landscape.</p>
+    </div>
+    <div class="col-md-6 order-md-1 text-center">
+      <img src="/img/commerce (1).jpg" alt="Technology" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+</div>
+<!-- Section 3: Scalable Solutions -->
+<section class="container my-5 py-5 border-bottom" data-aos="zoom-in">
+  <div class="row">
+    <div class="col-md-6">
+      <h1><i class="bi bi-arrows-expand"></i> Scalable for Growth</h1>
+      <p>Whether you're a startup or a large enterprise, our scalable systems and services grow with your needs. We build flexible infrastructures that evolve with you.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/Service (1).jpg" alt="Scalable Solutions" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Sustainability Commitment -->
+ <div class="container-fluid bg-light">
+<section class="container my-5 py-5  rounded" data-aos="fade-right">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-leaf"></i> Built for Sustainability</h1>
+      <p>Webginet integrates eco-friendly practices in all its solutions, supporting clients on their path to sustainability. From energy-efficient systems to green sourcing, we care for the planet.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/brand (3).jpg" alt="Sustainability" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+</div>
+<!-- Section 5: Expert Support -->
+<section class="container my-5 py-5 border-bottom" data-aos="fade-up-right">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-headset"></i> Expert Support</h1>
+      <p>Our team of dedicated specialists ensures every project gets personalized attention and expert insight. With 24/7 support and continuous consultation, you're never alone on your tech journey.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/help (1).jpg" alt="Support" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section 6: Integration & Compatibility -->
+ <div class="container-fluid bg-light">
+<section class="container my-5 py-5  rounded" data-aos="zoom-in-up">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <h1><i class="bi bi-plug"></i> Seamless Integration</h1>
+      <p>Webginet solutions are designed to be compatible with a wide range of platforms and devices, ensuring hassle-free deployment and connectivity.</p>
+    </div>
+    <div class="col-md-6 order-md-1 text-center">
+      <img src="/img/indust (3).jpg" alt="Integration" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+</div>
+<!-- Section 7: Customer-Centric Design -->
+<section class="container my-5 py-5 border-bottom" data-aos="flip-left">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-emoji-smile"></i> User-Friendly Experience</h1>
+      <p>Our solutions are developed with the end-user in mind. From intuitive interfaces to thoughtful workflows, we make technology accessible and enjoyable.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/commerce (3).jpg" alt="User Friendly" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section 8: Innovation Driven Culture -->
+ <div class="container-fluid bg-light">
+<section class="container my-5 py-5  rounded" data-aos="fade-up">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-lightbulb"></i> Innovation at Heart</h1>
+      <p>Webginet fosters a culture of innovation where ideas flourish and progress thrives. We continuously invest in R&D to stay ahead of the curve and deliver disruptive solutions.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/product-1.jpg" alt="Innovation" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section></div>
+
+<div class="container my-5">
+  <h1 class="my-5 text-center"> Webginet Product Families</h1>
+
+  <div class="row text-center g-4">
+    <!-- Row 1 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-plug"></i><h5>Electrical Wiring Devices</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-lightning"></i><h5>Power Distribution</h5></div>
+
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-camera-video"></i><h5>Surveillance Systems</h5></div>
+
+    <!-- Row 2 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-hdd-network"></i><h5>Servers & Storage</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-box"></i><h5>Enclosures & Racks</h5></div>
+
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-door-open"></i><h5>Access Control</h5></div>
+
+    <!-- Row 3 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-brightness-high"></i><h5>LED Lighting Systems</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-thermometer-sun"></i><h5>HVAC & Climate Control</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-cpu"></i><h5>Automation Components</h5></div>
+
+
+    <!-- Row 4 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-shield-lock"></i><h5>Security & Communication</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-broadcast-pin"></i><h5>Smart Building Tech</h5></div>
+
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-tools"></i><h5>Tools & Accessories</h5></div>
+
+  <!-- Row 5 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-lightbulb"></i><h5>Smart Lighting</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-mic"></i><h5>Voice Control Devices</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-cast"></i><h5>AV Integration</h5></div>
+
+
+
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-droplet"></i><h5>Water Leak Detection</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-snow2"></i><h5>Cooling Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-battery-charging"></i><h5>UPS & Power Backup</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-power"></i><h5>Power Supplies</h5></div>
+
+
+<!-- Row 7 -->
+
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-shield-exclamation"></i><h5>Fire & Safety Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-door-closed"></i><h5>Smart Door Locks</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-broadcast"></i><h5>Network Extenders</h5></div>
+
+
+<!-- Row 8 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-diagram-3"></i><h5>IoT Platforms</h5></div>
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-bug"></i><h5>Testing & Inspection</h5></div>
+<!-- Row 9 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-camera-video"></i><h5>Video Surveillance</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-display"></i><h5>Display Panels</h5></div>
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-wifi"></i><h5>Wireless Access Points</h5></div>
+
+<!-- Row 10 -->
+
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-cpu"></i><h5>Control Units</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-reception-4"></i><h5>Signal Boosters</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-lightning-charge"></i><h5>Surge Protectors</h5></div>
+
+
+<!-- Row 11 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-hdd"></i><h5>Data Storage Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-thermometer-half"></i><h5>Temperature Sensors</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-volume-up"></i><h5>Public Address Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-door-open"></i><h5>Access Control</h5></div>
+
+
+<!-- Row 12 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-broadcast-pin"></i><h5>Telecommunication Hardware</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-graph-up"></i><h5>Energy Optimization</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-brightness-high"></i><h5>Daylight Sensors</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-sliders"></i><h5>Environmental Monitoring</h5></div>
+
+
+<!-- Row 13 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-battery-full"></i><h5>Battery Systems</h5></div>
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-speaker"></i><h5>Audio Equipment</h5></div>
+
+
+
+<!-- Row 14 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-calendar-check"></i><h5>Time & Attendance</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-capslock"></i><h5>Keypad Controllers</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-window"></i><h5>Smart Glass</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-plug"></i><h5>Power Connectors</h5></div>
+
+
+<!-- Row 15 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-lock"></i><h5>Smart Locks</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-eye"></i><h5>Biometric Devices</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-camera"></i><h5>IP Cameras</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-lightning-fill"></i><h5>High Voltage Systems</h5></div>
+
+
+<!-- Row 16 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-journal-code"></i><h5>Programming Modules</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-terminal"></i><h5>Automation Software</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-globe2"></i><h5>Cloud Control</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-server"></i><h5>Edge Devices</h5></div>
+
+
+
+</div>
+
+</div>
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+  
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

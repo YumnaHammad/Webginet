@@ -7,6 +7,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -36,193 +38,202 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
+    /* Global Styles */
     body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        overflow-x: hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-        background-color: rgba(255, 255, 255, 0);
-        /* transparent white */
-        backdrop-filter: blur(3px);
-        /* blur effect */
-        -webkit-backdrop-filter: blur(3px);
-        /* Safari support */
-        position: fixed;
-        /* make it float */
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-
-        padding: 5px 2rem;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
-        height: 50px;
+      height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-        color: rgb(0, 0, 0) !important;
-        font-weight: 500;
-        margin-right: 1rem;
-        transition: all 0.3s ease;
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-        color: #998202 !important;
-        transform: scale(1.05);
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
-    h6 {
-        color: #000000;
-    }
-
+    /* Navbar Toggler Icon */
     .navbar-toggler {
-        border: none;
-        outline: none;
+      border: none;
+      outline: none;
     }
 
     .navbar-toggler-icon {
-        display: none;
-        /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-        color: #998202;
-        font-size: 1.8rem;
+      color: #ffffff;
+      font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
-        0% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .navbar-nav .nav-item {
-        opacity: 0;
-        animation: slideDown 0.5s ease forwards;
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
     }
 
     .navbar-nav .nav-item:nth-child(1) {
-        animation-delay: 0.2s;
+      animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
-        animation-delay: 0.4s;
+      animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
-        animation-delay: 0.6s;
+      animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
-        animation-delay: 0.8s;
+      animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
-        animation-delay: 1s;
+      animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-        border-radius: 1rem;
-        padding: 1rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        background-color: white;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        min-width: 200px;
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
     }
 
-    .dropdown:hover>.dropdown-menu {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .dropdown-submenu {
-        position: relative;
+      position: relative;
     }
 
-    .dropdown-submenu>.dropdown-menu {
-        top: 0;
-        left: 90%;
-        margin-left: 0.2rem;
-        transform: translateX(10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
 
-    .dropdown-submenu:hover>.dropdown-menu {
-        display: block;
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
-        display: flex;
-        flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    .mega-dropdown>div {
-        flex: 1;
-        min-width: 200px;
-        padding: 0.5rem 1rem;
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
-        background-color: #f1f5f9;
-        color: #1e40af;
+      background-color: #f1f5f9;
+      color: #1e40af;
     }
 
-    .text-primary {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
-        .mega-dropdown {
-            flex-direction: column;
-        }
+      .mega-dropdown {
+        flex-direction: column;
+      }
 
-        .dropdown-menu {
-            min-width: 100%;
-        }
+      .dropdown-menu {
+        min-width: 100%;
+      }
 
-        .dropdown-submenu>.dropdown-menu {
-            left: auto;
-            position: relative;
-            transform: translateX(0);
-            margin-top: 0.5rem;
-        }
-    }
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
 
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .hero {
-        background: url('./img/carousel-5.jpg') center/cover no-repeat;
-        color: white;
-        padding: 40px 20px;
-        text-align: center;
-        height: 60vh;
-        align-items: center;
-        display: flex;
-        justify-content: center;
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
     .supplier-logo {
     max-width: 100%;   /* Ensures logos scale well within their containers */
@@ -255,37 +266,29 @@
     <my-navbar></my-navbar>
     <!-- Navbar End -->
     <!-- Page Header Start -->
-    <div class="container-fluid page-headerclimate mb-5 py-5 justify-content-center d-flex align-items-center">
-        <!-- <h1 class="display-3 text-white mb-3 animated slideInDown text-uppercase">Suppliers</h1> -->
+    <div class="container-fluid page-headerdist mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Distributed Brands</h1>
     </div>
     <!-- Page Header End -->
 
-    <!-- About Start -->
-    <div class="px-5 py-5 wow fadeInUp " data-wow-delay="0.1s"
-        style="width: 73%;margin-top: -17%; background-color: white;">
-        <h1 class=" mb-3 animated slideInDown text-uppercase">Suppliers</h1>
-        <p class="mb-5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
-            hidden in the middle of text.</p>
-        <hr style="width: 23%;" />
-    </div>
+
+
     <!-- About End -->
     <div class="container-custom">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex align-items-center">
-                    <img src="./img/carousel-7.jpg" alt="Supplier Image" class="img-fluid w-50">
-                    <div class="ms-5">
+                    <img src="./img/consult (4).jpg" alt="Supplier Image" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid w-50">
+                    <div class="ms-5 my-5">
                         <h1 class="section-header">Suppliers</h1>
                         <p>
-                            Rexel works with national and international suppliers to offer its customers a selection
+                            Webginet works with national and international suppliers to offer its customers a selection
                             that meets their needs as well as efficient and available solutions at the right price.
                         </p>
-                        <h3 class="blue-text">DISCOVER ALL THE BRANDS AVAILABLE AT REXEL</h3>
+                        <h5 class="blue-text">DISCOVER ALL THE BRANDS AVAILABLE AT Webginet</h5>
                         <p>
-                            Working with well-known suppliers, Rexel offers a comprehensive line of innovative and
-                            durable products and services. Thus, Rexel customers are guaranteed:
+                            Working with well-known suppliers, Webginet offers a comprehensive line of innovative and
+                            durable products and services. Thus, Webginet customers are guaranteed:
                         </p>
                         <ul>
                             <li>The best choices to meet their needs as well as the most efficient and reliable
@@ -299,9 +302,9 @@
             </div>
 
             <div class="brand-logo-container mt-5 ">
-                <h2 class="text-center">Discover all the brands available at Rexel</h2>
-                <p class="text-center d-flex justify-content-center">Working with well-known suppliers, Rexel offers a
-                    comprehensive line of innovative and durable products and services. Thus, Rexel customers are
+                <h2 class="text-center">Discover all the brands available at Webginet</h2>
+                <p class="text-center d-flex justify-content-center">Working with well-known suppliers, Webginet offers a
+                    comprehensive line of innovative and durable products and services. Thus, Webginet customers are
                     guaranteed:</p>
                 <ul>
                     <li>The best choices to meet their needs as well as the most efficient and reliable solutions,
@@ -311,74 +314,99 @@
                 </ul>
 
                 </p>
-             <div class="container my-5">
-    <div class="row justify-content-center d-flex g-4">
-        <!-- First row -->
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-10.jpg" alt="3M" class="supplier-logo">
-            <p>3M</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-9.jpg" alt="ABB" class="supplier-logo">
-            <p>ABB</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-8.jpg" alt="Acuity Brands" class="supplier-logo">
-            <p>Acuity Brands</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-7.jpg" alt="Atkore" class="supplier-logo">
-            <p>Atkore</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-6.jpg" alt="Atlantic" class="supplier-logo">
-            <p>Atlantic</p>
-        </div>
-        <!-- Second row -->
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-5.jpg" alt="CME Wire & Cable" class="supplier-logo">
-            <p>CME Wire & Cable</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-4.jpg" alt="Eaton" class="supplier-logo">
-            <p>Eaton</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-3.jpg" alt="Emerson" class="supplier-logo">
-            <p>Emerson</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-10.jpg" alt="General Electric" class="supplier-logo">
-            <p>General Electric</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-8.jpg" alt="Hager" class="supplier-logo">
-            <p>Hager</p>
-        </div>
+<div class="container my-5">
+<div class="row justify-content-center d-flex g-4">
+  <!-- Row 1 -->
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up">
+    <img src="./img/carousel-11.jpg" alt="3M" class="supplier-logo">
+    <p>3M</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="100">
+    <img src="./img/commerce (1).jpg" alt="ABB" class="supplier-logo">
+    <p>ABB</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="200">
+    <img src="./img/commerce (2).jpg" alt="Acuity Brands" class="supplier-logo">
+    <p>Acuity Brands</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="300">
+    <img src="./img/contact.jpg" alt="Atkore" class="supplier-logo">
+    <p>Atkore</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="400">
+    <img src="./img/consult (4).jpg" alt="Atlantic" class="supplier-logo">
+    <p>Atlantic</p>
+  </div>
 
-        <!-- Third row -->
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-5.jpg" alt="CME Wire & Cable" class="supplier-logo">
-            <p>CME Wire & Cable</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-4.jpg" alt="Eaton" class="supplier-logo">
-            <p>Eaton</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-3.jpg" alt="Emerson" class="supplier-logo">
-            <p>Emerson</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-10.jpg" alt="General Electric" class="supplier-logo">
-            <p>General Electric</p>
-        </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img src="./img/carousel-8.jpg" alt="Hager" class="supplier-logo">
-            <p>Hager</p>
-        </div>
-    </div>
+  <!-- Row 2 -->
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="500">
+    <img src="./img/help (1).jpg" alt="CME Wire & Cable" class="supplier-logo">
+    <p>CME Wire & Cable</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="600">
+    <img src="./img/Energy.jpg" alt="Eaton" class="supplier-logo">
+    <p>Eaton</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="700">
+    <img src="./img/Datacom-1.jpg" alt="Emerson" class="supplier-logo">
+    <p>Emerson</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="800">
+    <img src="./img/help (3).jpg" alt="GE" class="supplier-logo">
+    <p>General Electric</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="900">
+    <img src="./img/Datacom-2.jpg" alt="Hager" class="supplier-logo">
+    <p>Hager</p>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1000">
+    <img src="./img/help (2).jpg" alt="Honeywell" class="supplier-logo">
+    <p>Honeywell</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1100">
+    <img src="./img/commerce (3).jpg" alt="Schneider Electric" class="supplier-logo">
+    <p>Schneider Electric</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1200">
+    <img src="./img/managed (2).jpg" alt="Philips" class="supplier-logo">
+    <p>Philips</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1300">
+    <img src="./img/multi (2).jpg" alt="Belden" class="supplier-logo">
+    <p>Belden</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1400">
+    <img src="./img/offer (2).jpg" alt="Legrand" class="supplier-logo">
+    <p>Legrand</p>
+  </div>
+
+  <!-- Row 4 -->
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1500">
+    <img src="./img/offer (3).jpg" alt="Fluke" class="supplier-logo">
+    <p>Fluke</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1600">
+    <img src="./img/offer (5).jpg" alt="Leviton" class="supplier-logo">
+    <p>Leviton</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1700">
+    <img src="./img/offer (4).jpg" alt="Panduit" class="supplier-logo">
+    <p>Panduit</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1800">
+    <img src="./img/Service (1).jpg" alt="Cisco" class="supplier-logo">
+    <p>Cisco</p>
+  </div>
+  <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="1900">
+    <img src="./img/smart-3.jpg" alt="Hikvision" class="supplier-logo">
+    <p>Hikvision</p>
+  </div>
 </div>
+
+</div>
+
 
 
          <div class="container mt-5">
@@ -386,10 +414,10 @@
     <!-- Text Column -->
     <div class="col-md-6 d-flex align-items-center">
       <div>
-        <h3 class="blue-text">REXEL BRANDS</h3>
+        <h3 class="blue-text">Webginet BRANDS</h3>
         <p>
           In order to meet specific needs, complete and enrich product lines, and provide efficient solutions
-          at the best prices, Rexel offers around 20 private label brands. One example is BizLine, providing
+          at the best prices, Webginet offers around 20 private label brands. One example is BizLine, providing
           electrical tools and accessories.
         </p>
       </div>
@@ -397,7 +425,7 @@
 
     <!-- Image Column -->
     <div class="col-md-6">
-      <img src="./img/carousel-7.jpg" alt="BizLine" class="img-fluid supplier-logo">
+      <img src="./img/consult (2).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); "alt="BizLine" class="img-fluid supplier-logo">
     </div>
   </div>
 </div>
@@ -455,6 +483,12 @@
         }
         customElements.define('my-footer', MyFooter);
     </script>
+    <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 
 </html>

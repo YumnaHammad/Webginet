@@ -36,6 +36,14 @@
   />
 </head>
     <style>
+          /* Global Styles */
+      .col img {
+    transition: transform 0.3s ease;
+  }
+
+  .col:hover img {
+    transform: scale(1.2);
+  }
         .bg-gradient {
             background: linear-gradient(to right, #00b4d8, #0096c7);
         }
@@ -44,69 +52,89 @@
             object-fit: cover;
         }
         .btn-custom {
-            background-color: #00b4d8;
+            
             color: white;
-            border-radius: 50px;
+          
         }
-       body {
+      /* Global Styles */
+    body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-      background-color: rgba(255, 255, 255, 0); /* transparent white */
-      backdrop-filter: blur(3px); /* blur effect */
-      -webkit-backdrop-filter: blur(3px); /* Safari support */
-      position: fixed; /* make it float */
-      width: 100%;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-
-      padding: 5px 2rem;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
       height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-      color: rgb(0, 0, 0) !important;
+      color: #ffffff !important;
       font-weight: 500;
       margin-right: 1rem;
+
       transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #998202 !important;
+      color: #000000 !important;
       transform: scale(1.05);
     }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    h6 {
-      color: #000000;
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
+    /* Navbar Toggler Icon */
     .navbar-toggler {
       border: none;
       outline: none;
     }
 
     .navbar-toggler-icon {
-      display: none; /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-      color: #998202;
+      color: #ffffff;
       font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -121,31 +149,29 @@
     .navbar-nav .nav-item:nth-child(1) {
       animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
       animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
       animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
       animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
       animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-      border-radius: 1rem;
+            border-radius: 1rem;
       padding: 1rem;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       min-width: 200px;
     }
@@ -178,6 +204,7 @@
       visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
       display: flex;
       flex-wrap: wrap;
@@ -189,16 +216,18 @@
       padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
       background-color: #f1f5f9;
       color: #1e40af;
     }
 
-    .text-primary {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
       .mega-dropdown {
         flex-direction: column;
@@ -214,16 +243,15 @@
         transform: translateX(0);
         margin-top: 0.5rem;
       }
-    }
-       .hero {
-      background: url('./img/carousel-5.jpg') center/cover no-repeat;
-      color: white;
-      padding: 40px 20px;
-       text-align: center;
-       height: 60vh;
-       align-items: center;
-       display: flex;
-       justify-content: center;
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
     </style>
 <body>
@@ -240,149 +268,213 @@
   <my-navbar></my-navbar>
     <!-- Navbar End -->
 
-  <!-- Hero Section -->
-    <section class="hero text-center text-white py-5 ">
-        <div class="overlay"></div>
-        <div class="container content py-5">
-            <h1 class="display-4">IT Network</h1>
-            <p class="lead">POWER YOUR PLANT FLOOR WITH WACHTER'S CONSTANT PRESENCE</p>
-        </div>
-    </section>
+    <!-- Page Header Start -->
+    <div class="container-fluid page-headerIT mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">IT Networks</h1>
+    </div>
+    <!-- Page Header End -->
+<!-- Header Section -->
+<header class="bg-gradient py-5">
+    <div class="container text-center">
+        <h1 class="section-header">EXPERT IT NETWORK SOLUTIONS</h1>
+        <p class="section-subheader">Providing scalable and secure IT network services for modern enterprises.</p>
+    </div>
+</header>
 
-    <!-- Header Section -->
-    <header class="bg-gradient py-5">
-        <div class="container text-center">
-            <h1 class="section-header">TOP IT NETWORK SOLUTIONS PROVIDER</h1>
-            <p class="section-subheader">Wachter is your experienced network solutions provider, delivering quality IT network services nationwide.</p>
-        </div>
-    </header>
-
-    <!-- WTS Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="./img/carousel-2.jpg" alt="Tech Image" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <h2 class="section-header">WTS: Wachter Technology Solutions</h2>
-                    <p>WTS, Wachter’s technology-focused team, provides your cloud, mobility, voice, managed services, and other business technology needs.</p>
-                    <a href="#" class="btn btn-custom">Learn More About WTS</a>
-                </div>
+<!-- About IT Networks Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./img/Datacom-2.jpg" alt="Network Overview" style="box-shadow: 0 8px 20px rgb(0, 0, 0);" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-header">What Are IT Networks?</h2>
+                <p>IT networks are the backbone of digital communication, connecting computers, devices, and systems for efficient data sharing and management across organizations.</p>
+                <a href="#" class="btn btn-custom" style="background-color: #2e3964">Learn More</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Certified Experts Section -->
-    <section class=" py-5">
-        <div class="container text-center">
-            <h2 class="section-header">Certified Experts</h2>
-            <p class="section-subheader">Our certified experts are ready to handle your IT networking solutions with proven skills and certifications.</p>
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="./img/carousel-3.jpg" class="card-img" alt="Cert Image">
-                    <p>CCIE</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="./img/carousel-5.jpg" class="card-img" alt="Cert Image">
-                    <p>CCNA, CCNP</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="./img/carousel-6.jpg" class="card-img" alt="Cert Image">
-                    <p>Network Specialists</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="./img/carousel-7.jpg" class="card-img" alt="Cert Image">
-                    <p>Application Developers</p>
-                </div>
+<!-- Certified Network Experts Section -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="section-header">Certified Network Experts</h2>
+        <p class="section-subheader">Skilled professionals with industry-standard certifications ensure reliable network design and support.</p>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="./img/indust (4).jpg" class="card-img" alt="CCIE">
+                <p>CCIE Certified Engineers</p>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/commerce (1).jpg" class="card-img" alt="CCNA">
+                <p>CCNA & CCNP Professionals</p>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/indust (6).jpg" class="card-img" alt="Specialist">
+                <p>Network Infrastructure Specialists</p>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/offer (2).jpg" class="card-img" alt="App Dev">
+                <p>Network Application Developers</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Structured Cabling Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-header">Structured Cabling</h2>
-            <p>Data cabling – connecting businesses to what matters – is at the heart of what we do.</p>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="./img/carousel-10.jpg" class="img-fluid" alt="Cabling Image">
-                </div>
-                <div class="col-md-6">
-                    <p>Wachter partners with top low-voltage cable manufacturers to install the best structured cable products available.</p>
-                    <a href="#" class="btn btn-custom">Learn More About Structured Cabling</a>
-                </div>
+<!-- Structured Network Cabling -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-header">Structured Network Cabling</h2>
+        <p>Reliable and organized cabling systems ensure high performance and easy maintenance for IT networks.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./img/offer (5).jpg" class="img-fluid" style="box-shadow: 0 8px 20px rgb(0, 0, 0);" alt="Cabling">
+            </div>
+            <div class="col-md-6">
+                <p>We use top-tier cable solutions from leading manufacturers to support network infrastructure of all sizes.</p>
+                <a href="#" class="btn btn-custom" style="background-color: #2e3964">Explore Cabling Solutions</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- National & Regional Rollouts Section -->
-    <section class="py-5" style="background-color: #30d9fa;">
-        <div class="container">
-            <h2 class="section-header">National & Regional Rollouts</h2>
-            <p>With 1,400 WTS employees, Wachter can complete national or regional rollouts on time and on budget.</p>
-        </div>
-    </section>
+<!-- Network Deployment Section -->
+<section class="py-5" style="background-color: #2e3964">
+    <div class="container text-center">
+        <h2 class="section-header text-white">Nationwide Network Deployments</h2>
+        <p class="text-white">Our expert teams deliver network installations and upgrades across regional and national locations.</p>
+    </div>
+</section>
 
-    <!-- IT Professional Services Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-header">IT Professional Services</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <h4>IT Network Design and Analysis</h4>
-                </div>
-                <div class="col-md-3">
-                    <h4>Site Survey</h4>
-                </div>
-                <div class="col-md-3">
-                    <h4>CAD Services</h4>
-                </div>
-                <div class="col-md-3">
-                    <h4>Cybersecurity Solutions</h4>
-                </div>
+<!-- Network Modernization -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="section-header">Modern IT Network Services</h2>
+        <ul>
+            <li>Network Migrations</li>
+            <li>Hardware Upgrades</li>
+            <li>Performance Optimization</li>
+            <li>Cloud Network Integration</li>
+            <li>Virtual Network Solutions</li>
+        </ul>
+    </div>
+</section>
+
+<!-- IT Networking Features -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="section-header">Comprehensive IT Networking Solutions</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="./img/commerce (1).jpg" class="card-img" alt="Staff">
+                <p>IT Staff Augmentation</p>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/offer (4).jpg" class="card-img" alt="Integration">
+                <p>Network Integration Services</p>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/multi (3).jpg" class="card-img" alt="Installation">
+                <p>On-Site Network Installations</p>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/Datacom-1.jpg" class="card-img" alt="Maintenance">
+                <p>Preventative Network Maintenance</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- IT Modernization Section -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="section-header">IT Modernization</h2>
-            <ul>
-                <li>Migrations</li>
-                <li>Hardware & Software Upgrades</li>
-                <li>Optimization</li>
-                <li>Cloud Computing</li>
-                <li>Virtualization</li>
-            </ul>
-        </div>
-    </section>
+<div class="container my-5">
+  <h2 class="section-title text-center mt-5">Webginet’s IT Network Solutions</h2>
+  <p class="text-center mb-4">Providing robust, scalable, and secure network infrastructure services to power your business.</p>
 
-    <!-- Additional IT Networking Solutions Section -->
-    <section class="py-5">
-        <div class="container text-center">
-            <h2 class="section-header">Additional IT Networking Solutions</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="./img/carousel-9.jpg" class="card-img" alt="Solution Image">
-                    <p>Staff Augmentation</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="./img/carousel-10.jpg" class="card-img" alt="Solution Image">
-                    <p>Integration Center</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="./img/carousel-3.jpg" class="card-img" alt="Solution Image">
-                    <p>Site Prep & Installation</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="./img/carousel-4.jpg" class="card-img" alt="Solution Image">
-                    <p>Preventative Maintenance</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/router.png" alt="Network Design">
+      <p><strong>Network Design & Architecture</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/firewall.png" alt="Firewall">
+      <p><strong>Firewall & Security</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/server.png" alt="Server Deployment">
+      <p><strong>Server Deployment</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/cloud-network.png" alt="Cloud Networking">
+      <p><strong>Cloud Networking</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/ethernet-on.png" alt="Structured Cabling">
+      <p><strong>Structured Cabling</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/wifi-logo.png" alt="Wireless Networks">
+      <p><strong>Wireless Networks</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/vpn.png" alt="VPN Services">
+      <p><strong>VPN & Remote Access</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/settings.png" alt="Network Monitoring">
+      <p><strong>Network Monitoring</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/data-in-both-directions.png" alt="Data Migration">
+      <p><strong>Data Migration</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/cloud-backup-restore.png" alt="Backup Solutions">
+      <p><strong>Backup & Recovery</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/computer-support.png" alt="IT Support">
+      <p><strong>24/7 IT Support</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/network-card.png" alt="Network Optimization">
+      <p><strong>Network Optimization</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/network.png" alt="Switching & Routing">
+      <p><strong>Switching & Routing</strong></p>
+    </div>
+
+     <div class="col">
+      <img src="https://img.icons8.com/ios/50/network-cable.png" alt="LAN/WAN">
+      <p><strong>LAN/WAN Setup</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/cyber-security.png" alt="Cybersecurity">
+      <p><strong>Cybersecurity Solutions</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/internet.png" alt="Internet Services">
+      <p><strong>Managed Internet Services</strong></p>
+    </div>
+
+  </div>
+</div>
 
 
     <!-- Footer Start -->

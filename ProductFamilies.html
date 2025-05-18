@@ -10,6 +10,10 @@
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- AOS JS -->
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,177 +40,202 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
+    /* Global Styles */
     body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        overflow-x: hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Modern Floating Navbar */
     .navbar {
-        background-color: rgba(255, 255, 255, 0);
-        /* transparent white */
-        backdrop-filter: blur(3px);
-        /* blur effect */
-        -webkit-backdrop-filter: blur(3px);
-        /* Safari support */
-        position: fixed;
-        /* make it float */
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-
-        padding: 5px 2rem;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
-        height: 50px;
+      height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-        color: rgb(0, 0, 0) !important;
-        font-weight: 500;
-        margin-right: 1rem;
-        transition: all 0.3s ease;
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-        color: #998202 !important;
-        transform: scale(1.05);
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
-    h6 {
-        color: #000000;
-    }
-
+    /* Navbar Toggler Icon */
     .navbar-toggler {
-        border: none;
-        outline: none;
+      border: none;
+      outline: none;
     }
 
     .navbar-toggler-icon {
-        display: none;
-        /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-        color: #998202;
-        font-size: 1.8rem;
+      color: #ffffff;
+      font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
-        0% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .navbar-nav .nav-item {
-        opacity: 0;
-        animation: slideDown 0.5s ease forwards;
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
     }
 
     .navbar-nav .nav-item:nth-child(1) {
-        animation-delay: 0.2s;
+      animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
-        animation-delay: 0.4s;
+      animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
-        animation-delay: 0.6s;
+      animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
-        animation-delay: 0.8s;
+      animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
-        animation-delay: 1s;
+      animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-        border-radius: 1rem;
-        padding: 1rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        background-color: white;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        min-width: 200px;
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
     }
 
-    .dropdown:hover>.dropdown-menu {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .dropdown-submenu {
-        position: relative;
+      position: relative;
     }
 
-    .dropdown-submenu>.dropdown-menu {
-        top: 0;
-        left: 90%;
-        margin-left: 0.2rem;
-        transform: translateX(10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
 
-    .dropdown-submenu:hover>.dropdown-menu {
-        display: block;
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
-        display: flex;
-        flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    .mega-dropdown>div {
-        flex: 1;
-        min-width: 200px;
-        padding: 0.5rem 1rem;
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
-        background-color: #f1f5f9;
-        color: #1e40af;
+      background-color: #f1f5f9;
+      color: #1e40af;
     }
 
-    .text-primary {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
-        .mega-dropdown {
-            flex-direction: column;
-        }
+      .mega-dropdown {
+        flex-direction: column;
+      }
 
-        .dropdown-menu {
-            min-width: 100%;
-        }
+      .dropdown-menu {
+        min-width: 100%;
+      }
 
-        .dropdown-submenu>.dropdown-menu {
-            left: auto;
-            position: relative;
-            transform: translateX(0);
-            margin-top: 0.5rem;
-        }
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
 
     img {
@@ -321,11 +350,12 @@
     <!-- Navbar End -->
 
 <!-- Header Section -->
-  <div class="header-image">
-    <div class="header-title">
-      Product Families
+    <!-- Page Header Start -->
+    <div class="container-fluid page-headerProfam mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Webginet Product Families</h1>
     </div>
-  </div>
+    <!-- Page Header End -->
+
       <!-- Breadcrumbs  -->
 <div class="container py-4">
     <nav aria-label="breadcrumb">
@@ -337,67 +367,130 @@
     </nav>
 </div>
 
-  <!-- Icons and Text -->
-  <div class="container my-5">
-    <h2 class="my-5">Product Families</h2>
-    <div class="row text-center">
-      <div class="col-md-3 icon-box left ">
-        <i class="bi bi-house-door"></i>
-        <h5>Appliances and Accessories</h5>
-      </div>
-      <div class="col-md-3 icon-box left">
-        <i class="bi bi-lightning"></i>
-        <h5>Protection and Distribution</h5>
-      </div>
-      <div class="col-md-3 icon-box right">
-        <i class="bi bi-building"></i>
-        <h5>Cabinets</h5>
-      </div>
-      <div class="col-md-3 icon-box right">
-        <i class="bi bi-house-door"></i>
-        <h5>Cables and Routing</h5>
-      </div>
-    </div>
+<!-- Icons and Text -->
+<div class="container my-5">
+  <h2 class="my-5 text-center">Product Families</h2>
 
-    <div class="row text-center">
-      <div class="col-md-3 icon-box left">
-        <i class="bi bi-sun"></i>
-        <h5>Lighting</h5>
-      </div>
-      <div class="col-md-3 icon-box left">
-        <i class="bi bi-shield-lock"></i>
-        <h5>Security and Communication</h5>
-      </div>
-      <div class="col-md-3 icon-box right">
-        <i class="bi bi-house-door"></i>
-        <h5>Home Automation</h5>
-      </div>
-      <div class="col-md-3 icon-box right">
-        <i class="bi bi-house-door"></i>
-        <h5>Building Management System</h5>
-      </div>
-    </div>
+  <div class="row text-center g-4">
+    <!-- Row 1 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-plug"></i><h5>Electrical Wiring Devices</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-lightning"></i><h5>Power Distribution</h5></div>
 
-    <div class="row text-center">
-      <div class="col-md-3 icon-box left">
-        <i class="bi bi-sun"></i>
-        <h5>Climate Control</h5>
-      </div>
-      <div class="col-md-3 icon-box left">
-        <i class="bi bi-sun"></i>
-        <h5>Photovoltaic</h5>
-      </div>
-      <div class="col-md-3 icon-box right">
-        <i class="bi bi-tools"></i>
-        <h5>Industrial Automation and Control</h5>
-      </div>
-      <div class="col-md-3 icon-box right">
-        <i class="bi bi-tools"></i>
-        <h5>Tools</h5>
-      </div>
-    </div>
-  </div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-camera-video"></i><h5>Surveillance Systems</h5></div>
 
+    <!-- Row 2 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-hdd-network"></i><h5>Servers & Storage</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-box"></i><h5>Enclosures & Racks</h5></div>
+
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-door-open"></i><h5>Access Control</h5></div>
+
+    <!-- Row 3 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-brightness-high"></i><h5>LED Lighting Systems</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-thermometer-sun"></i><h5>HVAC & Climate Control</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-cpu"></i><h5>Automation Components</h5></div>
+
+
+    <!-- Row 4 -->
+    <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-shield-lock"></i><h5>Security & Communication</h5></div>
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-broadcast-pin"></i><h5>Smart Building Tech</h5></div>
+
+    <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-tools"></i><h5>Tools & Accessories</h5></div>
+
+  <!-- Row 5 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-lightbulb"></i><h5>Smart Lighting</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-mic"></i><h5>Voice Control Devices</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-cast"></i><h5>AV Integration</h5></div>
+
+
+
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-droplet"></i><h5>Water Leak Detection</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-snow2"></i><h5>Cooling Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-battery-charging"></i><h5>UPS & Power Backup</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-power"></i><h5>Power Supplies</h5></div>
+
+
+<!-- Row 7 -->
+
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-shield-exclamation"></i><h5>Fire & Safety Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-door-closed"></i><h5>Smart Door Locks</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-broadcast"></i><h5>Network Extenders</h5></div>
+
+
+<!-- Row 8 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-diagram-3"></i><h5>IoT Platforms</h5></div>
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-bug"></i><h5>Testing & Inspection</h5></div>
+<!-- Row 9 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-camera-video"></i><h5>Video Surveillance</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-display"></i><h5>Display Panels</h5></div>
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-wifi"></i><h5>Wireless Access Points</h5></div>
+
+<!-- Row 10 -->
+
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-cpu"></i><h5>Control Units</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-reception-4"></i><h5>Signal Boosters</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-lightning-charge"></i><h5>Surge Protectors</h5></div>
+
+
+<!-- Row 11 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-hdd"></i><h5>Data Storage Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-thermometer-half"></i><h5>Temperature Sensors</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-volume-up"></i><h5>Public Address Systems</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-door-open"></i><h5>Access Control</h5></div>
+
+
+<!-- Row 12 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-broadcast-pin"></i><h5>Telecommunication Hardware</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-graph-up"></i><h5>Energy Optimization</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-brightness-high"></i><h5>Daylight Sensors</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-sliders"></i><h5>Environmental Monitoring</h5></div>
+
+
+<!-- Row 13 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-battery-full"></i><h5>Battery Systems</h5></div>
+
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-speaker"></i><h5>Audio Equipment</h5></div>
+
+
+
+<!-- Row 14 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-calendar-check"></i><h5>Time & Attendance</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-capslock"></i><h5>Keypad Controllers</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-window"></i><h5>Smart Glass</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-plug"></i><h5>Power Connectors</h5></div>
+
+
+<!-- Row 15 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-lock"></i><h5>Smart Locks</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-eye"></i><h5>Biometric Devices</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-camera"></i><h5>IP Cameras</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-lightning-fill"></i><h5>High Voltage Systems</h5></div>
+
+
+<!-- Row 16 -->
+
+  <div class="col-md-3 icon-box" data-aos="fade-up"><i class="bi bi-journal-code"></i><h5>Programming Modules</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-terminal"></i><h5>Automation Software</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-globe2"></i><h5>Cloud Control</h5></div>
+  <div class="col-md-3 icon-box" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-server"></i><h5>Edge Devices</h5></div>
+
+
+
+</div>
+
+</div></div>
     <!-- Footer Start -->
     <my-footer></my-footer>
     <!-- Footer End -->
@@ -419,7 +512,10 @@
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     </script>

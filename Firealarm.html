@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Production_Parts</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+.partner-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.partner-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+    /* Global Styles */
+      .col img {
+    transition: transform 0.3s ease;
+  }
+
+  .col:hover img {
+    transform: scale(1.2);
+  }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+  <!-- Hero Section -->
+     <div class="container-fluid page-headerfire mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Fire Alarm</h1>
+    </div>
+  
+
+<!-- Intro Section -->
+<div class="container py-5">
+  <h2 class="section-title wow fadeInUp" data-wow-delay="0.1s">Webginet: Advanced Fire Alarm Systems for Safer Spaces</h2>
+  <p class="wow fadeInUp" data-wow-delay="0.1s">Webginet delivers reliable, cutting-edge fire alarm solutions tailored to residential, commercial, and industrial safety needs. We support builders, facility managers, and OEMs with expert system design, installation, and ongoing protection services.</p>
+</div>
+
+<!-- Bold Statement -->
+<div class="container py-4 wow fadeInUp" data-wow-delay="0.1s">
+  <p class="fw-bold">From single-unit buildings to enterprise-scale infrastructures — if it protects lives and assets, Webginet designs it, installs it, and ensures it works flawlessly when needed most.</p>
+</div>
+
+<!-- Services Section -->
+<div class="container py-5">
+
+  <!-- Fire Alarm System Design -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+    <div class="col-md-6">
+      <img src="./img/Fire (2).jpg" class="img-fluid" alt="Fire Alarm Design" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">System Design & Consultation</h4>
+      <p>We create fire alarm systems tailored to your building's layout and safety requirements — ensuring full code compliance and efficient evacuation planning.</p>
+    </div>
+  </div>
+
+  <!-- Fire Alarm Installation -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.2s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/Fire (3).jpg" class="img-fluid" alt="Fire Alarm Installation" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Professional Installation</h4>
+      <p>Our certified technicians handle everything from wiring to final device testing, ensuring seamless system integration and operational readiness.</p>
+    </div>
+  </div>
+
+  <!-- System Testing & Maintenance -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.3s">
+    <div class="col-md-6">
+      <img src="./img/Fire (4).jpg" class="img-fluid" alt="Testing and Maintenance" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">System Testing & Maintenance</h4>
+      <p>We provide regular inspections, system diagnostics, and preventive maintenance to keep your fire safety infrastructure always ready.</p>
+    </div>
+  </div>
+
+  <!-- Smoke and Heat Detection -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.4s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/Fire (5).jpg" class="img-fluid" alt="Smoke and Heat Detectors" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Smoke & Heat Detection</h4>
+      <p>Advanced photoelectric and thermal detection technologies trigger alarms at the earliest sign of danger, giving occupants precious time to act.</p>
+    </div>
+  </div>
+
+  <!-- Control Panels -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.5s">
+    <div class="col-md-6">
+      <img src="./img/Fire.jpg" class="img-fluid" alt="Control Panels" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Fire Alarm Control Panels</h4>
+      <p>Centralized fire alarm control panels manage and monitor all sensors and alerts. Our systems provide real-time diagnostics and emergency response activation.</p>
+    </div>
+  </div>
+
+  <!-- Emergency Evacuation Alerts -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.6s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/Fire (1).jpg" class="img-fluid" alt="Evacuation Alerts" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Emergency Evacuation Systems</h4>
+      <p>Integrate strobe lights, sirens, and voice alarms for effective occupant evacuation and safe building clearance during emergencies.</p>
+    </div>
+  </div>
+
+  <!-- Smart Monitoring -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.7s">
+    <div class="col-md-6">
+      <img src="./img/contact.jpg" class="img-fluid" alt="Smart Monitoring" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">24/7 Remote Monitoring</h4>
+      <p>Our cloud-connected systems let you monitor fire alerts and equipment status remotely from any device, ensuring real-time response capability.</p>
+    </div>
+  </div>
+
+  <!-- Fire Code Compliance -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.8s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/Home-4.jpg" class="img-fluid" alt="Code Compliance" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Fire Code Compliance</h4>
+      <p>We help businesses meet local and national fire safety codes — from NFPA guidelines to UL standards — through design, documentation, and certification.</p>
+    </div>
+  </div>
+
+  <!-- Partners Section -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.9s">
+    <div class="col-md-6">
+      <img src="./img/commitment (3).jpg" class="img-fluid" alt="Trusted Fire Safety Partners" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Trusted Partners in Fire Safety</h4>
+      <p>Webginet partners with top-tier brands like Honeywell, Siemens, Bosch, and Notifier to bring you certified, best-in-class fire alarm technology and components — ensuring long-term reliability and global safety recognition.</p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Capabilities -->
+<div class="container my-5">
+  <h2 class="section-title text-center mt-5">Webginet’s Fire Alarm Capabilities</h2>
+  <p class="text-center mb-4">Providing unmatched safety, compliance, and technology integration.</p>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/fire-alarm.png" alt="Detection">
+      <p><strong>Smoke & Heat Detection</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/security-checked.png" alt="Monitoring">
+      <p><strong>24/7 Remote Monitoring</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/control-panel.png" alt="Control">
+      <p><strong>Smart Control Panels</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/alarm.png" alt="Audible">
+      <p><strong>Audible & Visual Alerts</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/inspection.png" alt="Inspection">
+      <p><strong>Annual Inspections</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/engineering.png" alt="Engineering">
+      <p><strong>System Engineering</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/network.png" alt="Integration">
+      <p><strong>System Integration</strong></p>
+    </div>
+
+    <div class="col">
+      <img src="https://img.icons8.com/ios/50/siren.png" alt="Siren">
+      <p><strong>Emergency Alerts</strong></p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Trusted Partners Section -->
+<div class="container my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <h2 class="text-center display-5 fw-bold mb-3 position-relative">
+    Trusted Partners in Fire Safety
+    <span style="display: block; width: 80px; height: 4px; background: linear-gradient(to right, #dc3545, #ff6347); margin: 10px auto 0 auto;"></span>
+  </h2>
+  <p class="text-center fs-5 text-muted mb-5">We collaborate with leading fire alarm brands and safety system providers to deliver trusted, end-to-end protection solutions.</p>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Honeywell Fire</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Siemens Fire Safety</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Edwards (EST)</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Notifier by Honeywell</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Bosch Security Systems</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Simplex by Johnson Controls</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Gent by Honeywell</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Tyco Fire Protection</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Panasonic Fire Solutions</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Mircom Group</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Apollo Fire Detectors</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 shadow-sm rounded bg-light h-100 partner-card d-flex align-items-center justify-content-center">
+        <p class="fw-bold mb-0">Hochiki America</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+
+</html>

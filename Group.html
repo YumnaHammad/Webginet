@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>lightening</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+           border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-headergroup mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Webginet Group</h1>
+    </div>
+    <!-- Page Header End -->
+
+<!-- Section: History of the Webginet Group -->
+<section class="container my-5 py-5 border-bottom" data-aos="fade-up">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-clock-history"></i> Our Origins</h1>
+      <p>Webginet was founded with the vision of transforming technology distribution through innovation, agility, and service excellence. Inspired by the legacy of Webginet Group’s global expertise, we have become a trusted name in delivering cutting-edge network and automation solutions. We started as a local distributor and rapidly expanded into a regional powerhouse, building strong relationships with clients and suppliers alike.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/multi (2).jpg" alt="History"  style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section: Webginet’s Purpose -->
+ <div class="container-fluid bg-light">
+<section class="container my-5 py-5 bg-light rounded" data-aos="fade-left">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <h1><i class="bi bi-bullseye"></i> Our Purpose</h1>
+      <p>To empower industries and communities with seamless IT networking, smart automation, and sustainable electrical systems, driving progress for a more connected future. Our purpose fuels our day-to-day operations and long-term vision for a digitally transformed world where technology works in harmony with people and the planet.</p>
+    </div>
+    <div class="col-md-6 order-md-1 text-center">
+      <img src="/img/consult (1).jpg" alt="Purpose" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " class="img-fluid ">
+    </div>
+  </div>
+</section>
+</div>
+<!-- Section: Activities -->
+<section class="container my-5 py-5 border-bottom" data-aos="fade-up">
+  <div class="row">
+    <div class="col-md-6">
+      <h1><i class="bi bi-activity"></i> What We Do</h1>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">IT Network Distribution</li>
+        <li class="list-group-item">Smart Building Automation</li>
+        <li class="list-group-item">Energy Efficiency Consulting</li>
+        <li class="list-group-item">B2B Supply Chain Management</li>
+        <li class="list-group-item">Cybersecurity Solutions</li>
+        <li class="list-group-item">Green Energy Transition Services</li>
+      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/consult (5).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Activities" class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section: Governance -->
+ <div class="conatiner-fluid bg-light">
+<section class="container my-5 py-5  rounded" data-aos="fade-right">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-diagram-3"></i> Governance</h1>
+      <p>Webginet is managed by a diverse board of industry veterans and technology experts. We practice transparent governance to ensure stakeholder value and long-term sustainability. Our policies are reviewed periodically and are guided by ethical leadership, strategic alignment, and responsible corporate citizenship.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/indust (5).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Governance" class="img-fluid ">
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- Section: Commitments -->
+<section class="container my-5 py-5 border-bottom" data-aos="zoom-in">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <h1><i class="bi bi-flag"></i> Our Commitments</h1>
+      <p>We are committed to sustainability, quality, safety, and customer satisfaction. Our operations align with global best practices in compliance and innovation. These commitments extend to every aspect of our business from ethical sourcing to employee well-being and inclusive growth.</p>
+    </div>
+    <div class="col-md-6 order-md-1 text-center">
+      <img src="/img/commitment (2).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Commitments" class="img-fluid ">
+    </div>
+  </div>
+</section>
+
+<!-- Section: Values -->
+ <div class="conatiner-fluid bg-light">
+<section class="container my-5 py-5  rounded" data-aos="fade-up-right">
+  <div class="row">
+    <div class="col-md-6">
+      <h1><i class="bi bi-heart"></i> Our Core Values</h1>
+      <ul class="list-group">
+        <li class="list-group-item"><i class="bi bi-check-circle"></i> Integrity – Always doing what’s right for our clients and community.</li>
+        <li class="list-group-item"><i class="bi bi-lightbulb"></i> Innovation – Embracing creative solutions that drive progress.</li>
+        <li class="list-group-item"><i class="bi bi-people"></i> Collaboration – Working together to create lasting value.</li>
+        <li class="list-group-item"><i class="bi bi-globe"></i> Sustainability – Building responsibly for a better tomorrow.</li>
+      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/offer (4).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Values" class="img-fluid ">
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- Section: Key Figures -->
+<section class="container my-5 py-5" data-aos="flip-left">
+  <div class="text-center mb-4">
+    <h1><i class="bi bi-bar-chart-line"></i> Key Figures</h1>
+    <p class="lead">A snapshot of our growth and market impact</p>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-3">
+      <h3><i class="bi bi-people-fill"></i> 500+</h3>
+      <p>Employees</p>
+    </div>
+    <div class="col-md-3">
+      <h3><i class="bi bi-briefcase-fill"></i> 1200+</h3>
+      <p>Corporate Clients</p>
+    </div>
+    <div class="col-md-3">
+      <h3><i class="bi bi-globe2"></i> 8+</h3>
+      <p>Countries Served</p>
+    </div>
+    <div class="col-md-3">
+      <h3><i class="bi bi-building"></i> 15</h3>
+      <p>Warehouses</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Countries and Banners -->
+ <div class="conatiner-fluid bg-light">
+<section class="container my-5 py-5  rounded" data-aos="fade-up">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1><i class="bi bi-geo-alt"></i> Global Reach</h1>
+      <p>Webginet operates under the umbrella of Webginet’s global network. We deliver to over 8 countries including Pakistan, UAE, Saudi Arabia, and Malaysia. Our localized banners ensure quality service and expertise tailored to regional needs.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="/img/Datacom-1.jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Countries" class="img-fluid ">
+    </div>
+  </div>
+</section>
+ </div>
+
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>

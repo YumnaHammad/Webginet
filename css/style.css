@@ -279,10 +279,54 @@
     background-size: cover;
     height: 500px;
 }
+.page-headerProfam{
+background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/brand\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerdist{
+background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/brand\ \(1\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerIT{
+background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(3\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
-
+.page-headervoice{
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Home-2.jpg) center center no-repeat;
+      background-size: cover;
+      height: 500px;
+}
+.page-headergroup{
+background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(4\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headeradvantage{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(6\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerNewCon{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/remodel\ \(1\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerfire{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Fire.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerconsulting{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/consultingg.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
 .iconnn-text {
   padding: 30px; /* or use padding-left/right/top/bottom as needed */
 }
