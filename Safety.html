@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Safety</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        background-color: rgba(255, 255, 255, 0);
+        /* transparent white */
+        backdrop-filter: blur(3px);
+        /* blur effect */
+        -webkit-backdrop-filter: blur(3px);
+        /* Safari support */
+        position: fixed;
+        /* make it float */
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        padding: 5px 2rem;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+    }
+
+    .nav-link {
+        color: rgb(0, 0, 0) !important;
+        font-weight: 500;
+        margin-right: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: #998202 !important;
+        transform: scale(1.05);
+    }
+
+    h6 {
+        color: #000000;
+    }
+
+    .navbar-toggler {
+        border: none;
+        outline: none;
+    }
+
+    .navbar-toggler-icon {
+        display: none;
+        /* Hide default toggler icon */
+    }
+
+    .navbar-toggler i {
+        color: #998202;
+        font-size: 1.8rem;
+    }
+
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar-nav .nav-item {
+        opacity: 0;
+        animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .navbar-nav .nav-item:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    .navbar-nav .nav-item:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+
+    .navbar-nav .nav-item:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+
+    .navbar-nav .nav-item:nth-child(5) {
+        animation-delay: 1s;
+    }
+
+    .dropdown-menu {
+        border-radius: 1rem;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        min-width: 200px;
+    }
+
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        left: 90%;
+        margin-left: 0.2rem;
+        transform: translateX(10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover>.dropdown-menu {
+        display: block;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mega-dropdown {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mega-dropdown>div {
+        flex: 1;
+        min-width: 200px;
+        padding: 0.5rem 1rem;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f1f5f9;
+        color: #1e40af;
+    }
+
+    .text-primary {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991.98px) {
+        .mega-dropdown {
+            flex-direction: column;
+        }
+
+        .dropdown-menu {
+            min-width: 100%;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+            left: auto;
+            position: relative;
+            transform: translateX(0);
+            margin-top: 0.5rem;
+        }
+    }
+
+    .hero {
+        background: url('./img/carousel-5.jpg') center/cover no-repeat;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        height: 60vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .section-header {
+        font-weight: bold;
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .section-subheader {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+
+    .history-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .history-card .card-body {
+        padding: 20px;
+    }
+            .icon-box {
+      text-align: center;
+      padding: 30px;
+      border: 2px solid #f0f0f0;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    .icon-box i {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    .icon-box h5 {
+      margin-bottom: 10px;
+    }
+    /* Animate on hover */
+.icon-box {
+  text-align: center;
+  padding: 30px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade-in animation on load */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon-box {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger animation delay */
+.icon-box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.icon-box:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.icon-box:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.icon-box:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+</style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <my-navbar></my-navbar>
+    <!-- Navbar End -->
+    <section class="hero text-center text-white py-5 ">
+        <div class="overlay"></div>
+        <div class="container content py-5 wow fadeInUp mt-5" data-wow-delay="0.1s">
+            <h1>SAFETY</h1>
+        </div>
+    </section>
+    <!-- THistory header Section -->
+    <section>
+        <div class="container text-center mt-5 mb-5">
+            <h2 class="section-header">SAFETY</h2>
+            <h5>A legacy of building lasting relationships</h5>
+            <p>In 1930, William Wachter founded our company with a simple vision — build lasting customer relationships
+                by providing quality electrical services at a competitive price.
+            <p>Guided by that vision, Wachter has grown into a nationwide leader in business transformation and
+                technology deployment for the Fortune 500 and local businesses alike.</p>
+            </p>
+        </div>
+    </section>
+    <!-- The Wachter Advantage Section -->
+    <section class="container section-padding my-3">
+        <div class="row">
+            <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
+                <h2>Four Generations, Family-Owned</h2>
+                <p>William Wachter was born in Zurich, Switzerland in 1898. He completed 12 years of formal schooling before learning the electrical trade by apprenticing with a local electrician.</p>
+                <p>In 1921, William completed his apprenticeship and sailed to America to begin a remarkable life journey.</p>
+                 <p>With $150 in savings and the skills of a tradesman, William arrived on Ellis Island. Speaking no English, he wore a sign around his neck declaring his destination, Kansas City, where he joined two uncles and a sister.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="./img/brand (1).jpg" alt="Wachter Advantage" class="img-fluid">
+            </div>
+        </div>
+    </section>
+    <!-- Section 2-->
+    <section class="container section-padding my-3">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./img/brand (1).jpg" alt="Wachter Advantage" class="img-fluid">
+            </div>
+            <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
+                <h2>Humble Beginnings, A $500 Investment</h2>
+                <p>William worked first for the Kansas City Streetcar Company, and later, La Pierre Electric, where he worked on the Walnut Towers that still stand above the Plaza area today.</p>
+                <p>When La Pierre went bankrupt, William cashed in a $500 life insurance policy and founded Wachter Electric.</p>
+                 <p>Fittingly, one of the company’s first projects was to complete the Walnut Towers that William began at La Pierre.</p>
+            </div>     
+        </div>
+    </section>
+        <!-- Section 3-->
+    <section class="container section-padding my-3">
+        <div class="row">
+            <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
+                <h2>Four Generations, Family-Owned</h2>
+                <p>William Wachter was born in Zurich, Switzerland in 1898. He completed 12 years of formal schooling before learning the electrical trade by apprenticing with a local electrician.</p>
+                <p>In 1921, William completed his apprenticeship and sailed to America to begin a remarkable life journey.</p>
+                 <p>With $150 in savings and the skills of a tradesman, William arrived on Ellis Island. Speaking no English, he wore a sign around his neck declaring his destination, Kansas City, where he joined two uncles and a sister.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="./img/brand (1).jpg" alt="Wachter Advantage" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+        <!-- Icon Section -->
+<section>
+     <div class="container">
+    <div class="row text-center">
+      <!-- History Section -->
+      <div class="col-md-3 col-sm-6">
+        <div class="icon-box">
+          <i class="bi bi-clock"></i> <!-- Clock icon for History -->
+          <h5>HISTORY</h5>
+          <a href="./History.html">Learn More »</a>
+        </div>
+      </div>
+
+      <!-- Safety Section -->
+      <div class="col-md-3 col-sm-6">
+        <div class="icon-box">
+         <i class="fa-solid fa-circle-info"></i> <!-- Icon for Safety -->
+          <h5>ABOUT</h5>
+          <a href="./History.html">Learn More »</a>
+        </div>
+      </div>
+
+      <!-- News Section -->
+      <div class="col-md-3 col-sm-6">
+        <div class="icon-box">
+          <i class="bi bi-newspaper"></i> <!-- Newspaper icon for News -->
+          <h5>NEWS</h5>
+          <a href="./History.html">Learn More »</a>
+        </div>
+      </div>
+
+      <!-- Careers Section -->
+      <div class="col-md-3 col-sm-6">
+        <div class="icon-box">
+          <i class="fa-solid fa-rocket"></i> <!-- Rocket icon for Careers -->
+          <h5>CAREERS</h5>
+          <a href="./History.html">Learn More »</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </script>
+    <script>
+        class MyNavbar extends HTMLElement {
+            connectedCallback() {
+                fetch('navbar.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-navbar', MyNavbar);
+    </script>
+    <script>
+        class MyFooter extends HTMLElement {
+            connectedCallback() {
+                fetch('footer.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-footer', MyFooter);
+    </script>
+</body>
+
+</html>
