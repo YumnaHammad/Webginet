@@ -327,6 +327,46 @@ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/in
     background-size: cover;
     height: 500px;
 }
+.page-headerinstall{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(3\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerfacailty{
+   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Facality\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerbg1{
+background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(1\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerbg2{
+background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headersup{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Facality\ \(1\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerdesign{
+ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/multi\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerstaging{
+ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/commerce\ \(1\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headernational{
+ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(1\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
 .iconnn-text {
   padding: 30px; /* or use padding-left/right/top/bottom as needed */
 }
@@ -538,18 +578,18 @@ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/in
 }
 
 /* Optional: Ensure the carousel container doesn’t clip cards */
-.owl-carousell .owl-item {
+.owl-carousel .owll .owl-item {
   display: flex;
 }
 
-.owl-carousell .service-cardd {
+.owl-carousel .owll .service-cardd {
   width: 100%;
 }
-.owl-carousell .owl-stage-outer {
+.owl-carousel .owll .owl-stage-outer {
   display: flex;
 }
 
-.owl-carousell .owl-stage {
+.owl-carousel .owll .owl-stage {
   display: flex;
 }
 @media (max-width: 768px) {
@@ -557,8 +597,8 @@ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/in
     min-height: 450px;
   }
 }
-.owl-carousell .owl-nav .owl-prev,
-.owl-carousell .owl-nav .owl-next {
+.owl-carousel .owll .owl-nav .owl-prev,
+.owl-carousel .owll .owl-nav .owl-next {
    
     color: #ffffff;
    

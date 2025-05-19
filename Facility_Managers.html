@@ -35,69 +35,88 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
-  <style>
-    .feature-box {
-      padding: 50px 0;
-      text-align: center;
-    }
-    .feature-box img {
-      max-width: 60px;
-      margin-bottom: 20px;
-    }
-       .navbar {
-      background-color: rgba(255, 255, 255, 0); /* transparent white */
-      backdrop-filter: blur(3px); /* blur effect */
-      -webkit-backdrop-filter: blur(3px); /* Safari support */
-      position: fixed; /* make it float */
-      width: 100%;
-      top: 0;
-      left: 0;
+<style>
+  .feature-box {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .feature-box img {
+    max-width: 60px;
+    margin-bottom: 20px;
+  }
+
+   /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-
-      padding: 5px 2rem;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
       height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-      color: rgb(0, 0, 0) !important;
+      color: #ffffff !important;
       font-weight: 500;
       margin-right: 1rem;
+
       transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #998202 !important;
+      color: #000000 !important;
       transform: scale(1.05);
     }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    h6 {
-      color: #000000;
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
+    /* Navbar Toggler Icon */
     .navbar-toggler {
       border: none;
       outline: none;
     }
 
     .navbar-toggler-icon {
-      display: none; /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-      color: #998202;
+      color: #ffffff;
       font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -112,31 +131,29 @@
     .navbar-nav .nav-item:nth-child(1) {
       animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
       animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
       animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
       animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
       animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-      border-radius: 1rem;
+            border-radius: 1rem;
       padding: 1rem;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.3s ease;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       min-width: 200px;
     }
@@ -169,6 +186,7 @@
       visibility: visible;
     }
 
+    /* Mega Dropdown Grid */
     .mega-dropdown {
       display: flex;
       flex-wrap: wrap;
@@ -180,16 +198,18 @@
       padding: 0.5rem 1rem;
     }
 
+    /* Dropdown Item Hover */
     .dropdown-item:hover {
       background-color: #f1f5f9;
       color: #1e40af;
     }
 
-    .text-primary {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    /* Optional Headings */
+    h6 {
+      color: #000000;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 991.98px) {
       .mega-dropdown {
         flex-direction: column;
@@ -205,27 +225,18 @@
         transform: translateX(0);
         margin-top: 0.5rem;
       }
-    }
-        .hero {
-      background: url('./img/carousel-5.jpg') center/cover no-repeat;
-      color: white;
-      padding: 40px 20px;
-       text-align: center;
-       height: 60vh;
-       align-items: center;
-       display: flex;
-       justify-content: center;
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
 
-      .service-section {
-      padding: 60px 0;
-      background-color: #f4f4f4;
-    }
-    .service-card {
-      margin-bottom: 30px;
-    }
-
-      .card {
+ .card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         overflow: hidden;
         position: relative;
@@ -281,125 +292,137 @@
     .card:hover .card-overlay-text {
         opacity: 1;
     }
-  </style>
-</head>
+</style>
+
 <body>
-      <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <!-- Spinner End -->
+  </div>
+  <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <my-navbar></my-navbar>
-    <!-- Navbar End -->
-   <!-- Hero Section -->
-<section class="hero text-center text-white py-5 ">
-        <div class="overlay"></div>
-        <div class="container content py-5 wow fadeInUp mt-5" data-wow-delay="0.1s">
-         <h1 class="display-4">The Wachter Approach</h1>
-       <p>Wachter unleashes innovative technologies to solve your real-world business problems. We're not here to sell you a widget — or a prepackaged solution, for that matter.</p>
-        </div>
-    </section>
+  <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+  <!-- Navbar End -->
+  <!-- Hero Section -->
+     <div class="container-fluid page-headerfacailty mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Facility Managers</h1>
+    </div>
+
 <!-- Header Section -->
-<section class="header-section mt-5wow fadeInUp mt-5" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-title">Facility Managers</h2>
-                <p>Facility managers are responsible for the maintenance and upkeep of buildings and facilities. They ensure that the physical environment is safe, efficient, and conducive to productivity. Facility managers often work closely with other departments, such as human resources, finance, and operations, to ensure that the facility meets the needs of the organization.</p>
-            </div>
-        </div>
-    </div>
-  <!-- Services Section -->
-<section class="markets py-5 wow fadeInUp mt-5" data-wow-delay="0.1s">
-    <div class="container">
-   <div class="row">
-            <div class="col-md-4 mb-4 wow fadeInUp mt-5" data-wow-delay="0.1s">
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="./img/offer (5).jpg" class="card-img-top" alt="Logistics">
-                        <div class="card-overlay-text">Logistics</div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Logistics</h5>
-                        <p class="card-text">
-                            As the logistics industry evolves, Webginet empowers your operations with scalable
-                            solutions — from edge analytics and process automation to smart warehousing. Our
-                            Cisco-certified engineers ensure your logistics remain efficient and competitive.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 wow fadeInUp mt-5" data-wow-delay="0.1s">
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="./img/video-1.jpg" class="card-img-top" alt="Transportation">
-                        <div class="card-overlay-text">Transportation</div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Transportation</h5>
-                        <p class="card-text">
-                            In transportation, uptime is everything. Webginet delivers end-to-end integration — planning,
-                            deploying, and managing smart transit technologies to keep people and goods moving
-                            efficiently and securely across the country.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 wow fadeInUp mt-5" data-wow-delay="0.1s">
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="./img/offer (4).jpg" class="card-img-top" alt="Corrections">
-                        <div class="card-overlay-text">Corrections</div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Corrections</h5>
-                        <p class="card-text">
-                            Webginet enhances security in correctional institutions with integrated RFID tracking,
-                            surveillance systems, and advanced access control. Our experienced teams deliver
-                            end-to-end installations that protect facilities from the inside out.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div></div></section>
+     <!-- Breadcrumbs  -->
+<div class="container py-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Webginet</a></li>
+            <li class="breadcrumb-item"><a href="./Electricians">Electricians</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Facility_Managers</a></li>
+        </ol>
+    </nav>
+</div>
 
-  <!-- Value Start -->
+<section class="header-section mt-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title">Facility Managers</h2>
+        <p>Facility managers are responsible for ensuring that buildings and facilities are well-maintained, safe, and operationally efficient. They work closely with cross-functional teams to ensure the infrastructure supports organizational productivity. Our solutions are built to empower facility managers with the tools and support needed to streamline operations, reduce costs, and future-proof their facilities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="markets py-5 wow fadeInUp mt-5" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4 mb-4 wow fadeInUp mt-5" data-wow-delay="0.1s">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="./img/offer (5).jpg" class="card-img-top" alt="Smart Building Solutions">
+            <div class="card-overlay-text">Smart Building</div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Smart Building Solutions</h5>
+            <p class="card-text">
+              Equip your facilities with intelligent automation, IoT sensors, and centralized monitoring systems to ensure real-time efficiency, reduce energy waste, and proactively manage maintenance schedules.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 wow fadeInUp mt-5" data-wow-delay="0.1s">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="./img/video-1.jpg" class="card-img-top" alt="Energy Management">
+            <div class="card-overlay-text">Energy</div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Energy Management</h5>
+            <p class="card-text">
+              Implement advanced energy monitoring and control systems to optimize power usage, reduce operational costs, and meet regulatory compliance for sustainable facility operations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 wow fadeInUp mt-5" data-wow-delay="0.1s">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="./img/offer (4).jpg" class="card-img-top" alt="Security & Access Control">
+            <div class="card-overlay-text">Security</div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Security & Access Control</h5>
+            <p class="card-text">
+              Strengthen your facility's safety with integrated access control, surveillance systems, and incident response technologies. Ensure only authorized personnel access sensitive areas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Value Start -->
 <div class="container mx-auto text-left wow fadeInUp mt-5" style="padding: 30px 20px; line-height: 2;" data-wow-delay="0.1s">
   <div class="col-10 mx-auto">
-    <h2 class="section-title">OUR ADDED VALUE</h2>
+    <h2 class="section-title">OUR ADDED VALUE FOR FACILITY MANAGERS</h2>
     <div class="row">
       <div class="col-md-6">
         <div class="value-item d-flex align-items-center">
           <div class="check-icon border border-blue mr-2">✓</div>
-          <p>A team of experts available to assist you with your entire project</p>
+          <p>Dedicated support teams with expertise in building operations and maintenance</p>
         </div>
         <div class="value-item d-flex align-items-center">
           <div class="check-icon border border-blue mr-2">✓</div>
-          <p>Innovation showrooms and trainings on demand</p>
+          <p>Real-time monitoring dashboards for infrastructure and equipment health</p>
         </div>
         <div class="value-item d-flex align-items-center">
           <div class="check-icon border border-blue mr-2">✓</div>
-          <p>Audit and calculating tools to facilitate your simulations</p>
+          <p>Compliance-ready systems with automated audit trails and reporting</p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="value-item d-flex align-items-center">
           <div class="check-icon border border-blue mr-2">✓</div>
-          <p>Selected products from the best brands</p>
+          <p>Smart energy-saving solutions tailored to your building profile</p>
         </div>
         <div class="value-item d-flex align-items-center">
           <div class="check-icon border border-blue mr-2">✓</div>
-          <p>Financing offers dedicated to professionals and individuals</p>
+          <p>Training and onboarding for facility staff to maximize technology ROI</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <!-- Value End -->
  <!-- Footer Start -->
     <my-footer></my-footer>

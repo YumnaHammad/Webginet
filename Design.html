@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Production_Parts</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+.partner-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.partner-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+    /* Global Styles */
+      .col img {
+    transition: transform 0.3s ease;
+  }
+
+  .col:hover img {
+    transform: scale(1.2);
+  }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+  <!-- Hero Section -->
+     <div class="container-fluid page-headerdesign mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Design & Engineering</h1>
+    </div>
+  
+
+<!-- Intro Section -->
+<div class="container py-5">
+  <h2 class="section-title wow fadeInUp" data-wow-delay="0.1s">Webginet: Design & Engineering for Smarter Business Outcomes</h2>
+  <p class="wow fadeInUp" data-wow-delay="0.1s">Webginet provides holistic consulting solutions to help organizations grow, adapt, and lead. Whether it's optimizing business operations, enhancing digital infrastructure, ensuring regulatory compliance, or managing large-scale projects — we bring clarity and actionable strategy to every challenge.</p>
+</div>
+
+<!-- Bold Statement -->
+<div class="container py-4 wow fadeInUp" data-wow-delay="0.1s">
+  <p class="fw-bold">From startups to enterprises — Webginet empowers transformation with expert consulting in strategy, operations, technology, and compliance.</p>
+</div>
+
+<!-- Services Section -->
+<div class="container py-5">
+
+  <!-- Business Strategy -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+    <div class="col-md-6">
+      <img src="./img/consult (5).jpg" class="img-fluid" alt="Business Strategy" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Business Strategy & Growth</h4>
+      <p>We help businesses align vision with execution. From market research to financial modeling, our strategy consultants drive sustainable growth and competitive advantage.</p>
+    </div>
+  </div>
+
+  <!-- Compliance & Governance -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.2s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/consult (4).jpg" class="img-fluid" alt="Compliance Consulting" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Compliance & Risk Advisory</h4>
+      <p>Our consultants ensure your operations meet local and global regulatory standards — from corporate governance to industry-specific compliance frameworks.</p>
+    </div>
+  </div>
+
+  <!-- Digital Transformation -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.3s">
+    <div class="col-md-6">
+      <img src="./img/consult (3).jpg" class="img-fluid" alt="Digital Transformation" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Digital Transformation</h4>
+      <p>We guide organizations through digital evolution — implementing smart technologies, improving IT architecture, and aligning tech with strategic goals.</p>
+    </div>
+  </div>
+
+  <!-- Organizational Training -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.4s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/consult (2).jpg" class="img-fluid" alt="Training & Change Management" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Training & Change Management</h4>
+      <p>Empower your teams with skill development, process adoption, and agile transformation programs tailored to modern business needs.</p>
+    </div>
+  </div>
+
+  <!-- Project & Program Management -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.5s">
+    <div class="col-md-6">
+      <img src="./img/consult (1).jpg" class="img-fluid" alt="Project Management" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Project & Program Management</h4>
+      <p>We help you plan, execute, and deliver complex projects with confidence — ensuring timelines, budgets, and quality outcomes across every industry.</p>
+    </div>
+  </div>
+
+  <!-- Process Optimization -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.6s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/commerce (1).jpg" class="img-fluid" alt="Process Improvement" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Process Optimization</h4>
+      <p>Identify inefficiencies and redesign workflows with our Lean Six Sigma and operational excellence experts — driving cost reduction and performance gains.</p>
+    </div>
+  </div>
+
+  <!-- Audit & Reporting -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.7s">
+    <div class="col-md-6">
+      <img src="./img/help (3).jpg" class="img-fluid" alt="Business Audit" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Audit & Performance Reporting</h4>
+      <p>From operational audits to performance dashboards, we provide the insight leaders need to make data-backed decisions with clarity and confidence.</p>
+    </div>
+  </div>
+
+  <!-- Advisory & Mentorship -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.8s">
+    <div class="col-md-6 order-md-2">
+      <img src="./img/Home-4.jpg" class="img-fluid" alt="Executive Advisory" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Executive Advisory & Mentorship</h4>
+      <p>We support founders, CEOs, and executives with confidential 1:1 consulting — bringing clarity to leadership, innovation, and enterprise-wide decisions.</p>
+    </div>
+  </div>
+
+  <!-- Design & Engineering -->
+  <div class="row mb-5 align-items-center wow fadeInUp" data-wow-delay="0.9s">
+    <div class="col-md-6">
+      <img src="./img/consult-design.jpg" class="img-fluid" alt="Design and Engineering" style="box-shadow: 0 8px 20px rgb(0, 0, 0);">
+    </div>
+    <div class="col-md-6">
+      <h4 class="section-title">Design & Engineering</h4>
+      <p>From concept to completion, we deliver integrated design and engineering solutions across infrastructure, product development, and industrial systems — combining innovation with technical precision to bring your vision to life.</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <!-- Industrial Technologies Section -->
+<div class="container my-5 pb-5">
+  <h2 class="section-title text-center mt-5">Webginet’s Industrial & Technology Consulting Capabilities</h2>
+  <p class="text-center mb-4">Enabling smarter industries with cutting-edge technologies, strategic integration, and tailored consulting solutions.</p>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4 text-center">
+
+    <!-- Original 12 Items -->
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/robot.png" alt="Automation">
+      <p><strong class="text-dark">Industrial Automation & Robotics</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/sensor.png" alt="IIoT">
+      <p><strong class="text-dark">IIoT (Industrial Internet of Things)</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/firewall.png" alt="Cybersecurity">
+      <p><strong class="text-dark">Industrial Cybersecurity</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/electrical.png" alt="Electrical">
+      <p><strong class="text-dark">Power & Electrical Systems</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/network-cable.png" alt="Networking">
+      <p><strong class="text-dark">Industrial Networking & Cabling</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/remote-desktop.png" alt="Monitoring">
+      <p><strong class="text-dark">Remote Monitoring & Analytics</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/control-panel.png" alt="SCADA">
+      <p><strong class="text-dark">SCADA & Control Systems</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/maintenance.png" alt="Predictive">
+      <p><strong class="text-dark">Predictive Maintenance</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/settings.png" alt="PLC Programming">
+      <p><strong class="text-dark">PLC Programming</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/robot-2.png" alt="Robotics Integration">
+      <p><strong class="text-dark">Robotics Integration</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/fingerprint-scan.png" alt="Surveillance">
+      <p><strong class="text-dark">Surveillance & Access Control</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/cloud-checked--v1.png" alt="Cloud">
+      <p><strong class="text-dark">Cloud & Edge Computing</strong></p>
+    </div>
+
+    <!-- New 16 Items -->
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/artificial-intelligence.png" alt="AI">
+      <p><strong class="text-dark">AI & Machine Learning Solutions</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/data-center.png" alt="Digital Twin">
+      <p><strong class="text-dark">Digital Twin Consulting</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/database.png" alt="Data Engineering">
+      <p><strong class="text-dark">Data Engineering & Industrial Data Lakes</strong></p>
+    </div>
+
+    
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/test-passed.png" alt="Compliance">
+      <p><strong class="text-dark">Industrial Compliance & Safety Audits</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/combo-chart--v1.png" alt="BI Dashboards">
+      <p><strong class="text-dark">BI Dashboards & Reporting Tools</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/command-line.png" alt="Firmware">
+      <p><strong class="text-dark">Embedded Systems & Firmware Consulting</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/blockchain-technology.png" alt="Blockchain">
+      <p><strong class="text-dark">Blockchain in Supply Chain & Industry</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/ai.png" alt="Vision Systems">
+      <p><strong class="text-dark">Computer Vision & Inspection Systems</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/connected-people.png" alt="Change Management">
+      <p><strong class="text-dark">Industrial Change Management</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/electricity.png" alt="Smart Grids">
+      <p><strong class="text-dark">Smart Grid & Energy Optimization</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/smart-home-automation.png" alt="Building Automation">
+      <p><strong class="text-dark">Building Automation & Smart Facilities</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/waste.png" alt="Sustainability">
+      <p><strong class="text-dark">Sustainable Industrial Design</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/mind-map.png" alt="Process Simulation">
+      <p><strong class="text-dark">Process Simulation & Modeling</strong></p>
+    </div>
+<!-- Industrial Safety Systems -->
+<div class="col icon-text">
+  <img class="iconnn" src="https://img.icons8.com/ios/100/safety-collection-place.png" alt="Industrial Safety Systems">
+  <p><strong class="text-dark">Industrial Safety Systems Consulting</strong></p>
+</div>
+
+
+
+<!-- Change Management & Training -->
+<div class="col icon-text">
+  <img class="iconnn" src="https://img.icons8.com/ios/100/training.png" alt="Training & Change Management">
+  <p><strong class="text-dark">Change Management & Training</strong></p>
+</div>
+
+
+<!-- Supply Chain Digitalization -->
+<div class="col icon-text">
+  <img class="iconnn" src="https://img.icons8.com/ios/100/supply-chain.png" alt="Supply Chain Consulting">
+  <p><strong class="text-dark">Supply Chain Digitalization</strong></p>
+</div>
+
+
+  </div>
+</div>
+
+
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/wow/wow.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/waypoints/waypoints.min.js"></script>
+ <script src="lib/counterup/counterup.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+ <script src="lib/tempusdominus/js/moment.min.js"></script>
+ <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+ <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</script>
+<script>
+    class MyNavbar extends HTMLElement {
+      connectedCallback() {
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-navbar', MyNavbar);
+  </script>
+  <script>
+    class MyFooter extends HTMLElement {
+      connectedCallback() {
+        fetch('footer.html')
+          .then(res => res.text())
+          .then(html => {
+            this.innerHTML = html;
+          });
+      }
+    }
+    customElements.define('my-footer', MyFooter);
+  </script>
+</body>
+
+</html>
