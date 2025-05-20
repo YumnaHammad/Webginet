@@ -47,205 +47,184 @@
     />
   </head>
   <style>
-    
-    /* Global Styles */
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-    }
-    
+  /* Global Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
-    /* Modern Floating Navbar */
-    .navbar {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 1900px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      padding: 10px 30px;
-      transition: all 0.4s ease-in-out;
-    }
+/* Modern Floating Navbar */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1900px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 30px;
+  transition: all 0.4s ease-in-out;
+}
 
-    /* Logo Image */
-    .navbar-brand img {
-      height: 50px;
-    }
+/* Logo Image */
+.navbar-brand img {
+  height: 50px;
+}
 
-    /* Nav Links */
-    .nav-link {
-      color: #ffffff !important;
-      font-weight: 500;
-      margin-right: 1rem;
+/* Nav Links */
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
 
-      transition: all 0.3s ease;
-    }
+.nav-link:hover,
+.nav-link.active {
+  color: #000000 !important;
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #6dd5fa, #c776ca);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+  padding: 5px 25px;
+  text-decoration: none;
+}
 
-    .nav-link:hover,
-    .nav-link.active {
-      color: #000000 !important;
-      transform: scale(1.05);
-    }
-    /* Add this to your existing CSS */
-    .nav-link:hover {
-      background: linear-gradient(90deg, #6dd5fa, #c776ca);
-      border: none;
-      outline: none;
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
 
-      text-decoration: none;
-      border-radius: 10px;
-      position: relative;
-      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
-      padding: 5px 25px; /* Optional: ensures background has room */
-    }
+.navbar-toggler-icon {
+  display: none;
+}
 
-    /* Navbar Toggler Icon */
-    .navbar-toggler {
-      border: none;
-      outline: none;
-    }
+.navbar-toggler i {
+  color: #ffffff;
+  font-size: 1.8rem;
+}
 
-    .navbar-toggler-icon {
-      display: none;
-    }
+/* Nav Slide Animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .navbar-toggler i {
-      color: #ffffff;
-      font-size: 1.8rem;
-    }
+.navbar-nav .nav-item {
+  opacity: 0;
+  animation: slideDown 0.5s ease forwards;
+}
+.navbar-nav .nav-item:nth-child(1) { animation-delay: 0.2s; }
+.navbar-nav .nav-item:nth-child(2) { animation-delay: 0.4s; }
+.navbar-nav .nav-item:nth-child(3) { animation-delay: 0.6s; }
+.navbar-nav .nav-item:nth-child(4) { animation-delay: 0.8s; }
+.navbar-nav .nav-item:nth-child(5) { animation-delay: 1s; }
 
-    /* Nav Slide Animation */
-    @keyframes slideDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+/* Dropdown Styling */
+.dropdown-menu {
+  border-radius: 1rem;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+}
 
-    .navbar-nav .nav-item {
-      opacity: 0;
-      animation: slideDown 0.5s ease forwards;
-    }
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
-    .navbar-nav .nav-item:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-    .navbar-nav .nav-item:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-    .navbar-nav .nav-item:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-    .navbar-nav .nav-item:nth-child(4) {
-      animation-delay: 0.8s;
-    }
-    .navbar-nav .nav-item:nth-child(5) {
-      animation-delay: 1s;
-    }
+.dropdown-submenu {
+  position: relative;
+}
 
-    /* Dropdown Styling */
-    .dropdown-menu {
-      border-radius: 1rem;
-      padding: 1rem;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      min-width: 200px;
-    }
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 90%;
+  margin-left: 0.2rem;
+  transform: translateX(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
 
-    .dropdown:hover > .dropdown-menu {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
 
-    .dropdown-submenu {
-      position: relative;
-    }
+/* Mega Dropdown Grid */
+.mega-dropdown {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mega-dropdown > div {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem 1rem;
+}
 
-    .dropdown-submenu > .dropdown-menu {
-      top: 0;
-      left: 90%;
-      margin-left: 0.2rem;
-      transform: translateX(10px);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
+/* Dropdown Item Hover */
+.dropdown-item:hover {
+  background-color: #f1f5f9;
+  color: #1e40af;
+}
 
-    .dropdown-submenu:hover > .dropdown-menu {
-      display: block;
-      transform: translateX(0);
-      opacity: 1;
-      visibility: visible;
-    }
+/* Optional Headings */
+h6 {
+  color: #000000;
+}
 
-    /* Mega Dropdown Grid */
-    .mega-dropdown {
-      display: flex;
-      flex-wrap: wrap;
-    }
+/* Mobile Responsiveness */
+@media (max-width: 991.98px) {
+  .mega-dropdown {
+    flex-direction: column;
+  }
 
-    .mega-dropdown > div {
-      flex: 1;
-      min-width: 200px;
-      padding: 0.5rem 1rem;
-    }
+  .dropdown-menu {
+    min-width: 100%;
+  }
 
-    /* Dropdown Item Hover */
-    .dropdown-item:hover {
-      background-color: #f1f5f9;
-      color: #1e40af;
-    }
+  .dropdown-submenu > .dropdown-menu {
+    left: auto;
+    position: relative;
+    transform: translateX(0);
+    margin-top: 0.5rem;
+  }
 
-    /* Optional Headings */
-    h6 {
-      color: #000000;
-    }
+  .navbar {
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+}
 
-    /* Mobile Responsiveness */
-    @media (max-width: 991.98px) {
-      .mega-dropdown {
-        flex-direction: column;
-      }
-
-      .dropdown-menu {
-        min-width: 100%;
-      }
-
-      .dropdown-submenu > .dropdown-menu {
-        left: auto;
-        position: relative;
-        transform: translateX(0);
-        margin-top: 0.5rem;
-      }
-
-      .navbar {
-        border-radius: 0;
-        top: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        padding: 0.5rem 1rem;
-      }
-    }
   </style>
   <body>
     <!-- Spinner Start -->
@@ -979,6 +958,17 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-  
+  <script>
+  // Enable dropdown-submenu toggle
+  document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      const submenu = this.nextElementSibling;
+      if (submenu && submenu.classList.contains('dropdown-menu')) {
+        submenu.classList.toggle('show');
+      }
+    });
+  });
+</script>
   </body>
 </html>

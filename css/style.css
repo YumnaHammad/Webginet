@@ -154,7 +154,31 @@
     background: var(--primary);
     border-color: var(--primary);
 }
-
+.page-headerNews{
+   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/sceurity-7.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headercareer{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerelectrician{
+ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headerhistory{
+ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(5\).jpg-) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.page-headersafety{
+ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-13.jpg) center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-3.jpg) center center no-repeat;
     background-size: cover;

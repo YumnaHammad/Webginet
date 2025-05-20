@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>News</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+    }
+
+   .feature-box {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .feature-box img {
+    max-width: 60px;
+    margin-bottom: 20px;
+  }
+
+   /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Nav Links */
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
+
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
+
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-menu {
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+ .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image wrapper for overlay */
+    .card-img-wrapper {
+        position: relative;
+    }
+
+    .card-img-wrapper img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Overlay effect */
+    .card-img-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(8, 81, 100, 0.9);
+        /* semi-transparent black */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+    }
+
+    .card-overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        opacity: 0;
+        z-index: 2;
+        transition: opacity 0.3s ease;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .card:hover .card-img-wrapper::before,
+    .card:hover .card-overlay-text {
+        opacity: 1;
+    }
+
+  .filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  max-width: 800px;
+}
+
+.filter-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  margin-right: 10px;
+}
+
+.filter-select {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f1f5f9;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 149, 237, 0.2);
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #6dd5fa, #c776ca);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(199, 118, 202, 0.3);
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(199, 118, 202, 0.4);
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .filter-title {
+    margin-bottom: 10px;
+  }
+}
+
+    .card img {
+        max-width: 50%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+   
+    select,
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+    }
+
+   
+
+    .post {
+        margin-bottom: 10px;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .pagination button,
+    .pagination span {
+        padding: 10px 20px;
+        border: 1px solid #aaa;
+        background-color: #f3f2f1;
+        cursor: pointer;
+    }
+
+    .pagination button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .page-numbers span {
+        margin: 0 5px;
+        cursor: pointer;
+        color: gray;
+    }
+
+    .active-page {
+        font-weight: bold;
+        color: black;
+    }
+
+    .Article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .Article-card-img-top {
+        object-fit: cover;
+          height: 286px;
+        width:50%
+    }
+
+    .card-body {
+    padding: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+    .Article-card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .Article-card-text {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .card-footer {
+        font-size: 0.8rem;
+        color: #aaa;
+        background: none;
+        border-top: none;
+        padding: 0;
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .Article-card{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+height: 18rem;
+}
+
+</style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <my-navbar></my-navbar>
+    <!-- Navbar End -->
+     <div class="container-fluid page-headerNews mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Webginet News</h1>
+    </div>
+
+
+
+    <!-- Filter Section -->
+<!-- Filter Section -->
+<section class="filter-section py-5">
+  <div class="filter-container">
+    <label class="filter-title">Filters</label>
+
+    <select id="categoryFilter" class="filter-select">
+      <option value="">Categories</option>
+      <option value="Technology">Technology</option>
+      <option value="Science">Science</option>
+      <option value="Finance">Finance</option>
+    </select>
+
+    <select id="yearFilter" class="filter-select">
+      <option value="">Years</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select>
+
+    <button class="submit-btn" onclick="applyFilters()">SUBMIT</button>
+  </div>
+
+  <div id="results"></div>
+</section>
+
+
+    <!-- News Articles Section -->
+<div id="post-container" class="container">
+    <div class="row">
+        <!-- Article 1 -->
+        <div class="col-12 mb-4">
+            <div class="Article-card">
+                <img src="./img/multi (2).jpg" class="Article-card-img-top" alt="webginet enters into an agreement to buy Talley">
+                <div class="card-body">
+                    <h5 class="Article-card-title">webginet enters into an agreement to buy Talley</h5>
+                    <p class="Article-card-text">7 May 2024</p>
+                    <p class="Article-card-text">Climate | News | Reward</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/multi (3).jpg" class="card-img-top" alt="webginet France joins the Tour de France">
+                <div class="card-body">
+                    <h5 class="card-title">webginet France joins the Tour de France as an official partner</h5>
+                    <p class="card-text">15 June 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/multi (1).jpg" class="card-img-top"
+                    alt="webginet to acquire Wasco, a leading HVAC distributor">
+                <div class="card-body">
+                    <h5 class="card-title">webginet to acquire Wasco, a leading HVAC distributor at the heart of the energy
+                        transition in the Netherlands</h5>
+                    <p class="card-text">30 May 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/brand (2).jpg" class="card-img-top" alt="webginet enters into an agreement to buy Talley">
+                <div class="card-body">
+                    <h5 class="card-title">webginet enters into an agreement to buy Talley</h5>
+                    <p class="card-text">7 May 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/carousel-1.jpg" class="card-img-top" alt="webginet France joins the Tour de France">
+                <div class="card-body">
+                    <h5 class="card-title">webginet France joins the Tour de France as an official partner</h5>
+                    <p class="card-text">15 June 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/brand (2).jpg" class="card-img-top"
+                    alt="webginet to acquire Wasco, a leading HVAC distributor">
+                <div class="card-body">
+                    <h5 class="card-title">webginet to acquire Wasco, a leading HVAC distributor at the heart of the energy
+                        transition in the Netherlands</h5>
+                    <p class="card-text">30 May 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/brand (2).jpg" class="card-img-top" alt="webginet enters into an agreement to buy Talley">
+                <div class="card-body">
+                    <h5 class="card-title">webginet enters into an agreement to buy Talley</h5>
+                    <p class="card-text">7 May 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/carousel-1.jpg" class="card-img-top" alt="webginet France joins the Tour de France">
+                <div class="card-body">
+                    <h5 class="card-title">webginet France joins the Tour de France as an official partner</h5>
+                    <p class="card-text">15 June 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/brand (2).jpg" class="card-img-top"
+                    alt="webginet to acquire Wasco, a leading HVAC distributor">
+                <div class="card-body">
+                    <h5 class="card-title">webginet to acquire Wasco, a leading HVAC distributor at the heart of the energy
+                        transition in the Netherlands</h5>
+                    <p class="card-text">30 May 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/commitment (2).jpg" class="card-img-top" alt="webginet enters into an agreement to buy Talley">
+                <div class="card-body">
+                    <h5 class="card-title">webginet enters into an agreement to buy Talley</h5>
+                    <p class="card-text">7 May 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/carousel-1.jpg" class="card-img-top" alt="webginet France joins the Tour de France">
+                <div class="card-body">
+                    <h5 class="card-title">webginet France joins the Tour de France as an official partner</h5>
+                    <p class="card-text">15 June 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Article 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="./img/brand (2).jpg" class="card-img-top"
+                    alt="webginet to acquire Wasco, a leading HVAC distributor">
+                <div class="card-body">
+                    <h5 class="card-title">webginet to acquire Wasco, a leading HVAC distributor at the heart of the energy
+                        transition in the Netherlands</h5>
+                    <p class="card-text">30 May 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Pagination Section -->
+
+   <div class="pagination">
+    <button id="prev-btn">Previous</button>
+    <div class="page-numbers" id="page-numbers"></div>
+    <button id="next-btn">Next</button>
+</div>
+    </div>
+
+
+<!-- Icon Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      
+      <!-- Card 1: Our Journey -->
+      <div class="col-md-3 col-sm-6 ">
+        <div class="card text-center h-100 py-5 shadow-lg border-0 ">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-primary">
+              <i class="bi bi-clock"></i>
+            </div>
+            <h5 class="card-title">OUR JOURNEY</h5>
+            <p class="card-text">Explore our history, milestones, and how we became trusted electricians nationwide.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./history.html" class="text-decoration-none text-primary fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Safety First -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center h-100 py-5 shadow-lg border-0">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-success">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="card-title">SAFETY FIRST</h5>
+            <p class="card-text">See how we prioritize the safety of our team and clients at every project stage.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./safety.html" class="text-decoration-none text-success fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: News & Updates -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center h-100 py-5 shadow-lg border-0">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-info">
+              <i class="bi bi-newspaper"></i>
+            </div>
+            <h5 class="card-title">NEWS & UPDATES</h5>
+            <p class="card-text">Stay informed about Webginet Electricians' latest news, projects, and innovations.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./News.html" class="text-decoration-none text-info fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Join Our Team -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center h-100 py-5 shadow-lg border-0">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-warning">
+              <i class="bi bi-person-plus-fill"></i>
+            </div>
+            <h5 class="card-title">JOIN OUR TEAM</h5>
+            <p class="card-text">Discover exciting career opportunities and become part of the Webginet family.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./Career.html" class="text-decoration-none text-warning fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <!-- Footer Start -->
+    <my-footer></my-footer>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </script>
+    <script>
+        class MyNavbar extends HTMLElement {
+            connectedCallback() {
+                fetch('navbar.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-navbar', MyNavbar);
+    </script>
+    <script>
+        class MyFooter extends HTMLElement {
+            connectedCallback() {
+                fetch('footer.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        this.innerHTML = html;
+                    });
+            }
+        }
+        customElements.define('my-footer', MyFooter);
+    </script>
+   <script>
+    const article = [
+    { title: "webginet enters into an agreement to buy Talley", category: "Technology", year: "2024", image: "./img/brand (2).jpg", date: "7 May 2024" },
+    { title: "webginet France joins the Tour de France", category: "Science", year: "2023", image: "./img/carousel-1.jpg", date: "15 June 2023" },
+    { title: "webginet to acquire Wasco, a leading HVAC distributor", category: "Finance", year: "2023", image: "./img/brand (2).jpg", date: "30 May 2023" },
+    // Add more articles here as needed
+];
+
+function applyFilters() {
+    const category = document.getElementById('categoryFilter').value;
+    const year = document.getElementById('yearFilter').value;
+
+    // Filter posts based on selected category and year
+    const filteredPosts = article.filter(post => {
+        return (!category || post.category === category) &&
+               (!year || post.year === year);
+    });
+
+    // Render filtered posts
+    renderFilteredPosts(filteredPosts);
+}
+
+function renderFilteredPosts(filteredPosts) {
+    const postContainer = document.getElementById('post-container');
+    postContainer.innerHTML = '';  // Clear previous posts
+
+    // If no posts match the filter, show a message
+    if (filteredPosts.length === 0) {
+        postContainer.innerHTML = '<p>No results found.</p>';
+    } else {
+        filteredPosts.forEach(post => {
+            const div = document.createElement('div');
+            div.className = 'col-12 mb-4';
+            div.innerHTML = `
+                <div class="Article-card">
+                    <img src="${post.image}" class="Article-card-img-top" alt="${post.title}">
+                    <div class="card-body">
+                        <h5 class="Article-card-title">${post.title}</h5>
+                        <p class="Article-card-text">${post.date}</p>
+                        <p class="Article-card-text">${post.category} | ${post.year}</p>
+                    </div>
+                </div>
+            `;
+            postContainer.appendChild(div);
+        });
+    }
+}
+    </script>
+    <script>
+const posts = Array.from({ length: 110 }, (_, i) => `Post ${i + 1}`); // Example of 110 posts
+const postsPerPage = 3;  // Show only 3 posts per page
+const totalPages = 6;
+
+let currentPage = 1;
+
+const postContainer = document.getElementById('post-container');  // Correctly referencing the container
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+// Function to render posts
+function renderPosts() {
+    postContainer.innerHTML = ''; // Clear the current posts
+
+    // Calculate the start and end index for the current page
+    const start = (currentPage - 1) * postsPerPage;
+    const end = start + postsPerPage;
+
+    const visiblePosts = posts.slice(start, end);  // Get only the posts for the current page
+
+    visiblePosts.forEach(post => {
+        const div = document.createElement('div');
+        div.className = 'col-12 mb-4';  // Ensure the correct column class
+        div.innerHTML = `
+            <div class="Article-card">
+                <img src="./img/commitment (2).jpg" class="Article-card-img-top" alt="Post image">
+                <div class="card-body">
+                    <h5 class="Article-card-title">${post}</h5>
+                    <p class="Article-card-text">
+  Stay updated with the latest news, partnerships, and innovations from Webginet across the globe.
+</p>
+                </div>
+            </div>
+        `;
+        postContainer.appendChild(div);  // Add the new post div to the container
+    });
+
+    // Disable the "Previous" button if we're on the first page
+    prevBtn.disabled = currentPage === 1;
+
+    // Disable the "Next" button if we're on the last page
+    nextBtn.disabled = currentPage === totalPages;
+}
+
+// Function to render pagination numbers (pagination)
+function renderPageNumbers() {
+    const pageNumbersContainer = document.getElementById('page-numbers');
+    pageNumbersContainer.innerHTML = ''; // Clear current page numbers
+
+    const numbersToShow = [1, 2, '...',totalPages];
+
+    const isSimple = totalPages <= 6;
+
+    const range = isSimple
+        ? Array.from({ length: totalPages }, (_, i) => i + 1)
+        : numbersToShow;
+
+    range.forEach(num => {
+        const span = document.createElement('span');
+        span.textContent = num;
+
+        // Highlight the current page
+        if (num === currentPage) {
+            span.classList.add('active-page');
+        }
+
+        // Prevent clicks on '...'
+        if (num === '...') {
+            span.style.pointerEvents = 'none';
+        } else {
+            span.addEventListener('click', () => {
+                currentPage = num;
+                renderPosts();
+                renderPageNumbers();
+            });
+        }
+
+        pageNumbersContainer.appendChild(span);
+    });
+}
+
+// Event listener for the "Previous" button
+prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        renderPosts();
+        renderPageNumbers();
+    }
+});
+
+// Event listener for the "Next" button
+nextBtn.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+        currentPage++;
+        renderPosts();
+        renderPageNumbers();
+    }
+});
+
+// Initial render of posts and page numbers
+renderPosts();
+renderPageNumbers();
+
+    </script>
+</body>
+
+</html>

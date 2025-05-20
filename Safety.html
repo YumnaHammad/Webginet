@@ -2,427 +2,513 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Safety</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="utf-8">
+  <title>installer</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
-        rel="stylesheet">
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Add Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Add Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <style>
-    body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        overflow-x: hidden;
-    }
+  .feature-box {
+    padding: 50px 0;
+    text-align: center;
+  }
 
+  .feature-box img {
+    max-width: 60px;
+    margin-bottom: 20px;
+  }
+
+   /* Modern Floating Navbar */
     .navbar {
-        background-color: rgba(255, 255, 255, 0);
-        /* transparent white */
-        backdrop-filter: blur(3px);
-        /* blur effect */
-        -webkit-backdrop-filter: blur(3px);
-        /* Safari support */
-        position: fixed;
-        /* make it float */
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-
-        padding: 5px 2rem;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
     }
 
+    /* Logo Image */
     .navbar-brand img {
-        height: 50px;
+      height: 50px;
     }
 
+    /* Nav Links */
     .nav-link {
-        color: rgb(0, 0, 0) !important;
-        font-weight: 500;
-        margin-right: 1rem;
-        transition: all 0.3s ease;
+      color: #ffffff !important;
+      font-weight: 500;
+      margin-right: 1rem;
+
+      transition: all 0.3s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-        color: #998202 !important;
-        transform: scale(1.05);
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
+
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
     }
 
-    h6 {
-        color: #000000;
-    }
-
+    /* Navbar Toggler Icon */
     .navbar-toggler {
-        border: none;
-        outline: none;
+      border: none;
+      outline: none;
     }
 
     .navbar-toggler-icon {
-        display: none;
-        /* Hide default toggler icon */
+      display: none;
     }
 
     .navbar-toggler i {
-        color: #998202;
-        font-size: 1.8rem;
+      color: #ffffff;
+      font-size: 1.8rem;
     }
 
+    /* Nav Slide Animation */
     @keyframes slideDown {
-        0% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .navbar-nav .nav-item {
-        opacity: 0;
-        animation: slideDown 0.5s ease forwards;
+      opacity: 0;
+      animation: slideDown 0.5s ease forwards;
     }
 
     .navbar-nav .nav-item:nth-child(1) {
-        animation-delay: 0.2s;
+      animation-delay: 0.2s;
     }
-
     .navbar-nav .nav-item:nth-child(2) {
-        animation-delay: 0.4s;
+      animation-delay: 0.4s;
     }
-
     .navbar-nav .nav-item:nth-child(3) {
-        animation-delay: 0.6s;
+      animation-delay: 0.6s;
     }
-
     .navbar-nav .nav-item:nth-child(4) {
-        animation-delay: 0.8s;
+      animation-delay: 0.8s;
     }
-
     .navbar-nav .nav-item:nth-child(5) {
-        animation-delay: 1s;
+      animation-delay: 1s;
     }
 
+    /* Dropdown Styling */
     .dropdown-menu {
-        border-radius: 1rem;
-        padding: 1rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        background-color: white;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        min-width: 200px;
+            border-radius: 1rem;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.63);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
     }
 
-    .dropdown:hover>.dropdown-menu {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 90%;
+      margin-left: 0.2rem;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega Dropdown Grid */
+    .mega-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mega-dropdown > div {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Dropdown Item Hover */
+    .dropdown-item:hover {
+      background-color: #f1f5f9;
+      color: #1e40af;
+    }
+
+    /* Optional Headings */
+    h6 {
+      color: #000000;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .mega-dropdown {
+        flex-direction: column;
+      }
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        left: auto;
+        position: relative;
+        transform: translateX(0);
+        margin-top: 0.5rem;
+      }
+
+      .navbar {
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+ .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
         position: relative;
     }
 
-    .dropdown-submenu>.dropdown-menu {
-        top: 0;
-        left: 90%;
-        margin-left: 0.2rem;
-        transform: translateX(10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
-    .dropdown-submenu:hover>.dropdown-menu {
+    /* Image wrapper for overlay */
+    .card-img-wrapper {
+        position: relative;
+    }
+
+    .card-img-wrapper img {
         display: block;
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .mega-dropdown {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .mega-dropdown>div {
-        flex: 1;
-        min-width: 200px;
-        padding: 0.5rem 1rem;
-    }
-
-    .dropdown-item:hover {
-        background-color: #f1f5f9;
-        color: #1e40af;
-    }
-
-    .text-primary {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
-
-    @media (max-width: 991.98px) {
-        .mega-dropdown {
-            flex-direction: column;
-        }
-
-        .dropdown-menu {
-            min-width: 100%;
-        }
-
-        .dropdown-submenu>.dropdown-menu {
-            left: auto;
-            position: relative;
-            transform: translateX(0);
-            margin-top: 0.5rem;
-        }
-    }
-
-    .hero {
-        background: url('./img/carousel-5.jpg') center/cover no-repeat;
-        color: white;
-        padding: 40px 20px;
-        text-align: center;
-        height: 60vh;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
-
-    .section-header {
-        font-weight: bold;
-        font-size: 3rem;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .section-subheader {
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin-top: 20px;
-    }
-
-    .history-card img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
-        border-radius: 8px;
     }
 
-    .history-card .card-body {
-        padding: 20px;
+    /* Overlay effect */
+    .card-img-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(8, 81, 100, 0.9);
+        /* semi-transparent black */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
     }
-            .icon-box {
-      text-align: center;
-      padding: 30px;
-      border: 2px solid #f0f0f0;
-      border-radius: 10px;
-      margin: 10px;
+
+    .card-overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        opacity: 0;
+        z-index: 2;
+        transition: opacity 0.3s ease;
+        text-align: center;
+        pointer-events: none;
     }
-    .icon-box i {
-      font-size: 40px;
-      margin-bottom: 15px;
+
+    .card:hover .card-img-wrapper::before,
+    .card:hover .card-overlay-text {
+        opacity: 1;
     }
-    .icon-box h5 {
-      margin-bottom: 10px;
-    }
-    /* Animate on hover */
-.icon-box {
-  text-align: center;
-  padding: 30px;
-  border: 2px solid #f0f0f0;
-  border-radius: 10px;
-  margin: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.icon-box:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Fade-in animation on load */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.icon-box {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Stagger animation delay */
-.icon-box:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.icon-box:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.icon-box:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.icon-box:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
 </style>
-</head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <!-- Spinner End -->
+  </div>
+  <!-- Spinner End -->
 
-    <!-- Navbar Start -->
-    <my-navbar></my-navbar>
-    <!-- Navbar End -->
-    <section class="hero text-center text-white py-5 ">
-        <div class="overlay"></div>
-        <div class="container content py-5 wow fadeInUp mt-5" data-wow-delay="0.1s">
-            <h1>SAFETY</h1>
-        </div>
-    </section>
-    <!-- THistory header Section -->
-    <section>
-        <div class="container text-center mt-5 mb-5">
-            <h2 class="section-header">SAFETY</h2>
-            <h5>A legacy of building lasting relationships</h5>
-            <p>In 1930, William Wachter founded our company with a simple vision — build lasting customer relationships
-                by providing quality electrical services at a competitive price.
-            <p>Guided by that vision, Wachter has grown into a nationwide leader in business transformation and
-                technology deployment for the Fortune 500 and local businesses alike.</p>
-            </p>
-        </div>
-    </section>
-    <!-- The Wachter Advantage Section -->
-    <section class="container section-padding my-3">
-        <div class="row">
-            <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
-                <h2>Four Generations, Family-Owned</h2>
-                <p>William Wachter was born in Zurich, Switzerland in 1898. He completed 12 years of formal schooling before learning the electrical trade by apprenticing with a local electrician.</p>
-                <p>In 1921, William completed his apprenticeship and sailed to America to begin a remarkable life journey.</p>
-                 <p>With $150 in savings and the skills of a tradesman, William arrived on Ellis Island. Speaking no English, he wore a sign around his neck declaring his destination, Kansas City, where he joined two uncles and a sister.</p>
-            </div>
-            <div class="col-md-6">
-                <img src="./img/brand (1).jpg" alt="Wachter Advantage" class="img-fluid">
-            </div>
-        </div>
-    </section>
-    <!-- Section 2-->
-    <section class="container section-padding my-3">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="./img/brand (1).jpg" alt="Wachter Advantage" class="img-fluid">
-            </div>
-            <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
-                <h2>Humble Beginnings, A $500 Investment</h2>
-                <p>William worked first for the Kansas City Streetcar Company, and later, La Pierre Electric, where he worked on the Walnut Towers that still stand above the Plaza area today.</p>
-                <p>When La Pierre went bankrupt, William cashed in a $500 life insurance policy and founded Wachter Electric.</p>
-                 <p>Fittingly, one of the company’s first projects was to complete the Walnut Towers that William began at La Pierre.</p>
-            </div>     
-        </div>
-    </section>
-        <!-- Section 3-->
-    <section class="container section-padding my-3">
-        <div class="row">
-            <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
-                <h2>Four Generations, Family-Owned</h2>
-                <p>William Wachter was born in Zurich, Switzerland in 1898. He completed 12 years of formal schooling before learning the electrical trade by apprenticing with a local electrician.</p>
-                <p>In 1921, William completed his apprenticeship and sailed to America to begin a remarkable life journey.</p>
-                 <p>With $150 in savings and the skills of a tradesman, William arrived on Ellis Island. Speaking no English, he wore a sign around his neck declaring his destination, Kansas City, where he joined two uncles and a sister.</p>
-            </div>
-            <div class="col-md-6">
-                <img src="./img/brand (1).jpg" alt="Wachter Advantage" class="img-fluid">
-            </div>
-        </div>
-    </section>
 
-        <!-- Icon Section -->
-<section>
-     <div class="container">
-    <div class="row text-center">
-      <!-- History Section -->
-      <div class="col-md-3 col-sm-6">
-        <div class="icon-box">
-          <i class="bi bi-clock"></i> <!-- Clock icon for History -->
-          <h5>HISTORY</h5>
-          <a href="./History.html">Learn More »</a>
-        </div>
+  <!-- Navbar Start -->
+  <my-navbar></my-navbar>
+  <!-- Navbar End -->
+  <!-- Hero Section -->
+     <div class="container-fluid page-headersafety mb-5 py-5 justify-content-center d-flex align-items-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Webginet Safety</h1>
+    </div>
+<!-- Webginet Safety - Page Intro -->
+<section class="container text-center py-5">
+  <h1 class="display-5 fw-bold">Webginet Safety</h1>
+  <p class="lead mt-3 px-md-5">
+    At Webginet, safety isn’t just a protocol — it’s our promise. From day one, we’ve built our reputation on safeguarding lives, workplaces, and communities through uncompromised electrical safety standards and smart protective solutions.
+  </p>
+</section>
+
+<!-- Safety Origins -->
+<section class="container section-padding">
+  <div class="row py-3 mb-5">
+    <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
+      <h2>Safety from the Start</h2>
+      <p>Since our founding in 2010, Webginet has embedded safety at the core of every operation. What began as a family-run business in Dallas quickly became known for its strict safety practices and zero-compromise approach to workplace protection.</p>
+      <p>Whether it was a simple home installation or a major industrial site, our commitment to safety protocols became the blueprint for our growth and trust across sectors.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="./img/consult (5).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Safety History" class="img-fluid">
+    </div>
+  </div>
+</section>
+
+<!-- Our Safety Evolution -->
+<section class="container section-padding">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="./img/brand (3).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Webginet Safety Growth" class="img-fluid">
+    </div>
+    <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
+      <h2>Innovating Safe Practices</h2>
+      <p>As we grew into smart technologies and automation, our safety standards evolved too. We adopted real-time monitoring tools, digital safety checklists, and predictive maintenance strategies to stay ahead of risks in modern infrastructure.</p>
+      <p>Every technician is trained in advanced safety protocols, ensuring that every job — no matter the size — is executed with care, awareness, and control.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Our Safety Timeline -->
+<section class="container my-5 section-padding">
+  <h2 class="text-center mb-5">Webginet Safety Milestones</h2>
+  <div class="row text-center">
+    <div class="col-md-3 col-sm-6">
+      <div class="p-4 border rounded shadow-sm">
+        <h4>2010</h4>
+        <p>Established with a Safety-First Mission</p>
       </div>
-
-      <!-- Safety Section -->
-      <div class="col-md-3 col-sm-6">
-        <div class="icon-box">
-         <i class="fa-solid fa-circle-info"></i> <!-- Icon for Safety -->
-          <h5>ABOUT</h5>
-          <a href="./History.html">Learn More »</a>
-        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="p-4 border rounded shadow-sm">
+        <h4>2015</h4>
+        <p>Launched Technician Safety Certification Program</p>
       </div>
-
-      <!-- News Section -->
-      <div class="col-md-3 col-sm-6">
-        <div class="icon-box">
-          <i class="bi bi-newspaper"></i> <!-- Newspaper icon for News -->
-          <h5>NEWS</h5>
-          <a href="./History.html">Learn More »</a>
-        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="p-4 border rounded shadow-sm">
+        <h4>2019</h4>
+        <p>Introduced Digital Safety Audits & IoT Monitoring</p>
       </div>
-
-      <!-- Careers Section -->
-      <div class="col-md-3 col-sm-6">
-        <div class="icon-box">
-          <i class="fa-solid fa-rocket"></i> <!-- Rocket icon for Careers -->
-          <h5>CAREERS</h5>
-          <a href="./History.html">Learn More »</a>
-        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="p-4 border rounded shadow-sm">
+        <h4>2024</h4>
+        <p>Achieved National Safety Excellence Award</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Safety Philosophy -->
+<section class="container section-padding">
+  <div class="row">
+    <div class="col-md-6" style="justify-content: center; display: flex; flex-direction: column;">
+      <h2>Our Safety Philosophy</h2>
+      <p>We believe true innovation only thrives in a safe environment. At Webginet, safety isn’t a task — it’s a mindset. From continuous staff training to cutting-edge protective systems, we ensure our teams and clients are protected at every turn.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="./img/consult (2).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); " alt="Safety Philosophy" class="img-fluid">
+    </div>
+  </div>
+</section>
+
+<!-- Safety Fact Sheet -->
+<section class="container text-center my-5 section-padding">
+  <h2 class="text-center mb-5">Webginet Safety Fact Sheet</h2>
+  <div class="row">
+    <div class="col-md-3 col-sm-6 border pt-3">
+      <div class="counter">
+        <h4 class="counter-value">2010</h4>
+        <p>Safety-First Founded</p>
+      </div>
+    </div>
+    <div class="col-md-3 border pt-3">
+      <h4>Zero Incidents</h4>
+      <p>On 98% of Projects</p>
+    </div>
+    <div class="col-md-3 col-sm-6 border pt-3">
+      <div class="counter purple">
+        <h4 class="counter-value">500+</h4>
+        <p>Certified Safety Courses Completed</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 border pt-3">
+      <div class="counter">
+        <h4 class="counter-value" data-suffix="+">350</h4>
+        <p>Trained Safety Technicians</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founder's Message on Safety -->
+<section class="container section-padding text-center">
+  <div class="col-lg-10 mx-auto">
+    <h2>Message from Our Founder</h2>
+    <p class="mt-3">"Safety has always been the backbone of Webginet. It’s not just about protecting people — it’s about building trust, reliability, and a future where everyone goes home safely. I’m proud of our team’s unwavering commitment to safety excellence."</p>
+    <p class="fw-bold mt-2">– John Doe, Founder & CEO</p>
+  </div>
+</section>
+
+<!-- Icon Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      
+      <!-- Card 1: Our Journey -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center h-100 shadow-lg border-0">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-primary">
+              <i class="bi bi-clock"></i>
+            </div>
+            <h5 class="card-title">OUR JOURNEY</h5>
+            <p class="card-text">Explore our history, milestones, and how we became trusted electricians nationwide.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./history.html" class="text-decoration-none text-primary fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Safety First -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center h-100 shadow-lg border-0">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-success">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="card-title">SAFETY FIRST</h5>
+            <p class="card-text">See how we prioritize the safety of our team and clients at every project stage.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./safety.html" class="text-decoration-none text-success fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: News & Updates -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center h-100 shadow-lg border-0">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-info">
+              <i class="bi bi-newspaper"></i>
+            </div>
+            <h5 class="card-title">NEWS & UPDATES</h5>
+            <p class="card-text">Stay informed about Webginet Electricians' latest news, projects, and innovations.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./News.html" class="text-decoration-none text-info fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Join Our Team -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center h-100 shadow-lg border-0">
+          <div class="card-body">
+            <div class="mb-3 fs-2 text-warning">
+              <i class="bi bi-person-plus-fill"></i>
+            </div>
+            <h5 class="card-title">JOIN OUR TEAM</h5>
+            <p class="card-text">Discover exciting career opportunities and become part of the Webginet family.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="./Career.html" class="text-decoration-none text-warning fw-semibold">
+              Learn More &raquo;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
     <!-- Footer Start -->
     <my-footer></my-footer>
     <!-- Footer End -->
