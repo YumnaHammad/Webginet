@@ -47,6 +47,24 @@
     />
   </head>
   <style>
+      .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+box-shadow: 0 8px 20px rgb(0, 0, 0); 
+}
+
+.product-card img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
     /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -808,6 +826,92 @@
 </div>
 <!-- Accomplishment End -->
 
+<!-- OUR DEDICATED PRODUCT SECTION -->
+<section class="container my-5 pt-5 text-center">
+  <h2 class="mb-4 fw-bold">OUR Dedicated Product</h2>
+
+  <div class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="CCTV">
+        <p class="mt-2">CCTV Surveillance Systems</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Access Control">
+        <p class="mt-2">Access Control Solutions</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Intrusion System">
+        <p class="mt-2">Intrusion Detection Systems</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Video Door Phone">
+        <p class="mt-2">Video Door Phone Systems</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY SOLUTIONS -->
+<div class="container my-5 pt-5">
+  <h2 class="section-title text-center mt-5">Webginet’s Advanced Security Solutions Include:</h2>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4 text-center">
+
+  
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/fingerprint-scan.png" alt="Biometric">
+      <p><strong class="text-dark">Biometric Access Control</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/lock.png" alt="Smart Locks">
+      <p><strong class="text-dark">Smart Locking Systems</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/siren.png" alt="Alarm">
+      <p><strong class="text-dark">Intrusion Alarm Systems</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/facial-recognition-scan.png" alt="Face ID">
+      <p><strong class="text-dark">Facial Recognition Access</strong></p>
+    </div>
+
+  
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/control-panel.png" alt="Security Management">
+      <p><strong class="text-dark">Central Security Management</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/motion-detector.png" alt="Motion Sensor">
+      <p><strong class="text-dark">Motion Detection & Alerts</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/firewall.png" alt="Network Security">
+      <p><strong class="text-dark">Integrated Network Security</strong></p>
+    </div>
+
+  </div>
+</div>
 
     <!-- Footer Start -->
     <my-footer></my-footer>

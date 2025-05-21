@@ -37,6 +37,24 @@
   />
 </head>
   <style>
+      .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+box-shadow: 0 8px 20px rgb(0, 0, 0); 
+}
+
+.product-card img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
     /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -261,8 +279,9 @@
 <div class="container my-3">
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item active">Residential market</li>
+       <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Webginet</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a href="Smart_Building.html">Smart Building</a></li>
+              <li class="breadcrumb-item " aria-current="page"><a href="Datacom.html">DataCom</a></li>
     </ol>
   </nav>
 </div>
@@ -310,6 +329,83 @@
 </div>
 <!-- Smart Infrastructure End -->
 
+<!-- OUR DEDICATED PRODUCT SECTION -->
+<section class="container my-5 pt-5 text-center">
+  <h2 class="mb-4 fw-bold">OUR Dedicated Product</h2>
+
+  <div class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Network Cabling">
+        <p class="mt-2">Structured Network Cabling</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Data Center">
+        <p class="mt-2">Data Center Solutions</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Server Racks">
+        <p class="mt-2">Server Rack & UPS Systems</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Networking">
+        <p class="mt-2">LAN/WAN Infrastructure</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IT INFRASTRUCTURE SOLUTIONS -->
+<div class="container my-5 pt-5">
+  <h2 class="section-title text-center mt-5">Webginet’s IT Infrastructure Solutions Include:</h2>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4 text-center">
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/ethernet-on.png" alt="Network Cabling">
+      <p><strong class="text-dark">Structured Network Cabling</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/data-center.png" alt="Data Center">
+      <p><strong class="text-dark">Data Center Design & Setup</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/server.png" alt="Server Room">
+      <p><strong class="text-dark">Server & Storage Solutions</strong></p>
+    </div>
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/router.png" alt="Router">
+      <p><strong class="text-dark">Routers, Switches & Firewalls</strong></p>
+    </div>
+
+   
+
+    <div class="col icon-text">
+      <img class="iconnn" src="https://img.icons8.com/ios/100/cloud-computing.png" alt="Virtualization">
+      <p><strong class="text-dark">Virtualization & Cloud Migration</strong></p>
+    </div>
+
+
+    
+
+  </div>
+</div>
 
 
 <!-- Section: Housing Value Enhancement -->

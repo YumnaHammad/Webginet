@@ -37,6 +37,24 @@
   />
 </head>
   <style>
+      .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+box-shadow: 0 8px 20px rgb(0, 0, 0); 
+}
+
+.product-card img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
     /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -277,6 +295,47 @@
   </div>
 </div>
 <!-- Efficiency End -->
+ <!-- OUR DEDICATED PRODUCT SECTION -->
+<section class="container my-5 pt-5 text-center">
+  <h2 class="mb-4 fw-bold">OUR Dedicated Product</h2>
+
+  <div class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="HVAC">
+        <p class="mt-2">Smart HVAC Systems</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Thermostats">
+        <p class="mt-2">Automated Thermostats</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Sensors">
+        <p class="mt-2">Environmental Sensors</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Air Quality">
+        <p class="mt-2">Indoor Air Quality Systems</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- Climate Control Technologies Section -->
 <div class="container my-5">
   <h2 class="section-title text-center mt-5">Webginet’s Climate Control & Sustainability Capabilities</h2>

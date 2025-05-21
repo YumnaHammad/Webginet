@@ -38,6 +38,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
+    h4 {
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 700;
+      color: #111;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin: 100px auto;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+
+    h4 span {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.6s forwards ease-out;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Delay per word */
+    h4 span:nth-child(1)  { animation-delay: 0.1s; }
+    h4 span:nth-child(2)  { animation-delay: 0.2s; }
+    h4 span:nth-child(3)  { animation-delay: 0.3s; }
+    h4 span:nth-child(4)  { animation-delay: 0.4s; }
+    h4 span:nth-child(5)  { animation-delay: 0.5s; }
+    h4 span:nth-child(6)  { animation-delay: 0.6s; }
+    h4 span:nth-child(7)  { animation-delay: 0.7s; }
+    h4 span:nth-child(8)  { animation-delay: 0.8s; }
+    h4 span:nth-child(9)  { animation-delay: 0.9s; }
+    h4 span:nth-child(10) { animation-delay: 1.0s; }
+    h4 span:nth-child(11) { animation-delay: 1.1s; }
+    h4 span:nth-child(12) { animation-delay: 1.2s; }
+    h4 span:nth-child(13) { animation-delay: 1.3s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Optional glow effect on hover */
+    h4 span:hover {
+      color: #3b82f6;
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+      cursor: default;
+    }
     /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -414,25 +463,103 @@
     <!-- Text Column -->
     <div class="col-md-6 d-flex align-items-center">
       <div>
-        <h3 class="blue-text">Webginet BRANDS</h3>
+        <h3 class="blue-text">WEBGINET BRANDS</h3>
         <p>
-          In order to meet specific needs, complete and enrich product lines, and provide efficient solutions
-          at the best prices, Webginet offers around 20 private label brands. One example is BizLine, providing
-          electrical tools and accessories.
+         To meet diverse client needs, expand its service portfolio, and deliver high-quality digital solutions at competitive prices, Webginet offers a range of in-house technology brands. One such example is NEXYOS, which specializes in providing essential web development tools and digital accessories.
         </p>
       </div>
     </div>
 
     <!-- Image Column -->
     <div class="col-md-6">
-      <img src="./img/consult (2).jpg" style="box-shadow: 0 8px 20px rgb(0, 0, 0); "alt="BizLine" class="img-fluid supplier-logo">
+      <img src="./img/News.jpg" alt="BizLine" class="" style="height: 100px;">
     </div>
   </div>
 </div>
 
         </div>
     </div>
+<!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="text-center">
+  
+      <h1 class="mb-5">BRANDS</h1>
+    </div>
+    <div
+      class="owl-carousel testimonial-carousel position-relative wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="testimonial-item text-center">
+        
+        <img
+          class="bg-light rounded-circle p-2 mx-auto mb-2"
+          src="img/testimonial-1.jpg"
+          style="width: 80px; height: 80px"
+        />
+        
+   
+        <p class="m-0">Marketing Manager</p>
+      </div>
 
+      <div class="testimonial-item text-center">
+       
+        <img
+          class="bg-light rounded-circle p-2 mx-auto mb-2"
+          src="img/testimonial-2.jpg"
+          style="width: 80px; height: 80px"
+        />
+        
+      
+        <p class="m-0">IT Consultant</p>
+      </div>
+
+      <div class="testimonial-item text-center">
+       
+        <img
+          class="bg-light rounded-circle p-2 mx-auto mb-2"
+          src="img/testimonial-3.jpg"
+          style="width: 80px; height: 80px"
+        />
+        
+
+        <p class="m-0">Project Coordinator</p>
+      </div>
+
+      <div class="testimonial-item text-center">
+      
+        <img
+          class="bg-light rounded-circle p-2 mx-auto mb-2"
+          src="img/testimonial-4.jpg"
+          style="width: 80px; height: 80px"
+        />
+        
+
+        <p class="m-0">Operations Director</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+
+ <div class="container">
+<h4>
+  <span>Join</span>
+  <span>the</span>
+  <span>Distributors</span>
+  <span>Marketplace</span>
+  <span>today</span>
+  <span>and</span>
+  <span>become</span>
+  <span>a</span>
+  <span>supplier</span>
+  <span>to</span>
+  <span>thousands</span>
+  <span>of</span>
+  <span>business's!</span>
+</h4>
+
+  </div>
 
     <!-- Footer Start -->
     <my-footer></my-footer>
