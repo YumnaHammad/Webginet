@@ -37,6 +37,75 @@
   />
 </head>
 <style>
+      #SolutionBtn, #ProductBtn, #ServicesBtn {
+  cursor: pointer;
+}
+
+#ProductBtn {
+  background-color: #eee;
+}
+    .icon-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .icon-box i {
+      font-size: 50px;
+      color: #007bff;
+    }
+    .icon-box h5 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    .right{
+         animation: fadeInRight 1s ease-in-out;
+    }
+    @keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+  .left{
+         animation: fadeInLeft 1s ease-in-out;
+    }
+@keyframes fadeInLeft {
+    from {
+        opacity:0;
+        -webkit-transform: translatex(-100px);
+        -moz-transform: translatex(-100px);
+        -o-transform: translatex(-100px);
+        transform: translatex(-100px);
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -o-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+.in-left {
+    -webkit-animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    -o-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-duration:1s;
+    animation-delay: 1s;
+}
+
    .simple-card {
     border: 2px solid #ccc;
     border-radius: 12px;
@@ -350,7 +419,16 @@
     </nav>
 </div>
 
-
+<div class="d-flex justify-content-center py-5">
+  <div class="d-flex border-bottom position-relative">
+    <div id="SolutionBtn" class="px-4 py-2 text-muted border border-bottom-0 rounded-top">SOLUTIONS</div>
+    <div id="ProductBtn" class="px-4 py-2 text-dark bg-light border border-bottom-0 rounded-top fw-semibold" style="z-index: 1; position: relative;">PRODUCTS</div>
+    <div id="ServicesBtn" class="px-4 py-2 text-muted border border-bottom-0 rounded-top">SERVICES</div>
+  </div>
+</div>
+<div class="container" id="content-area">
+  <!-- The loaded content will appear here -->
+</div>
 <!-- Second Section: Commercial Companies Support -->
 <section class="container py-5">
   <h2 class="text-center">Webginet’s Commercial Solutions for Enterprises</h2>
@@ -576,6 +654,27 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+</script>
+  <script src="js/main.js"></script>
+  </script>
+<!-- Make sure jQuery is included -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  // Load Product portion
+  $('#ProductBtn').on('click', function() {
+    $('#content-area').load('ProductFamilies.html #my-productportion');
+  });
+
+  // Load Solution portion
+  $('#SolutionBtn').on('click', function() {
+    $('#content-area').load('Commercial_Market.html #my-solutionportion');
+  });
+
+  // Load Services portion
+  $('#ServicesBtn').on('click', function() {
+    $('#content-area').load('Services.html #my-serviceportion');
+  });
 </script>
 <script>
     class MyNavbar extends HTMLElement {
