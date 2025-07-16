@@ -322,7 +322,7 @@ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/in
     color: var(--light);
 }
 .page-headervoice{
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Home-2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/consult\ \(1\).jpg) center center no-repeat;
       background-size: cover;
       height: 500px;
 }

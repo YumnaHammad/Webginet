@@ -39,6 +39,24 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
+    .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+box-shadow: 0 8px 20px rgb(0, 0, 0); 
+}
+
+.product-card img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
     /* Global Styles */
       .col img {
     transition: transform 0.3s ease;
@@ -321,6 +339,75 @@
   </div>
 
 </div>
+<section class="container my-5 pt-5 text-center">
+  <h2 class="mb-4 fw-bold">OUR Dedicated Production Parts</h2>
+
+  <div class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Mechanical Components">
+        <p class="mt-2">Mechanical Components</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Power Supplies">
+        <p class="mt-2">Power Supply Units</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Cabling & Wiring">
+        <p class="mt-2">Cables & Wiring Solutions</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Switchgear">
+        <p class="mt-2">Switchgear & Breakers</p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="PLC Modules">
+        <p class="mt-2">PLC Modules & I/O Cards</p>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Sensors & Actuators">
+        <p class="mt-2">Sensors & Actuators</p>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Industrial Motors">
+        <p class="mt-2">Industrial Motors & Drives</p>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Spare Kits">
+        <p class="mt-2">OEM Spare Kits</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="container my-5">
   <h2 class="section-title text-center mt-5">Webginet’s Production Parts Capabilities</h2>

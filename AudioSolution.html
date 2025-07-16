@@ -37,6 +37,68 @@
 
 </head>
  <style>
+    .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+box-shadow: 0 8px 20px rgb(0, 0, 0); 
+}
+
+.product-card img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+       .icon-box {
+            display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+        }
+        .icon-box:hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+        .icon-box i {
+                font-size: 50px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+        }
+        .icon-box:hover i {
+    transform: scale(1.2);
+}
+.icon-box h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.icon-box:hover h4 {
+    color: #998202;
+}
+
+.icon-box p {
+    margin-top: 10px;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.icon-box:hover p {
+    color: #333;
+}
     /* Global Styles */
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -438,7 +500,43 @@
   </div>
 </div>
 
+<section class="container my-5 pt-5 text-center">
+  <h2 class="mb-4 fw-bold">OUR Dedicated Product</h2>
 
+  <div class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="PA Systems">
+        <p class="mt-2">Public Address Systems</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Conference Tech">
+        <p class="mt-2">Video Conferencing Solutions</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="AV Integration">
+        <p class="mt-2">Complete AV Integration</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Digital Signage">
+        <p class="mt-2">Digital Signage Systems</p>
+      </div>
+    </div>
+  </div>
+</section>
                  
 <div class="container my-5">
 
@@ -487,6 +585,120 @@
    
   </div>
 </div>
+<!-- Section: Webginet Enables Modern IP Voice Communications -->
+<section class="container  my-5 py-5">
+    <h2>Webginet Enables Modern IP Voice Communications</h2>
+    <p class="lead">
+        Webginet is a trusted partner in VoIP, Unified Communications (UC), and Enterprise IP Telephony solutions. We help businesses transition from legacy systems to scalable, high-performance voice infrastructure.
+    </p>
+    <p>
+        From consultation to deployment and support, we handle the entire lifecycle of your voice solutions — including SIP trunking, UC integration, and intelligent call routing systems.
+    </p>
+    <p class="font-weight-bold">
+        Whether you're deploying on-premise PBX, cloud-based telephony, or hybrid communication environments, Webginet ensures quality, uptime, and voice clarity at scale.
+    </p>
+</section>
+
+<!-- Icon Box Section -->
+<section class="container text-center my-5">
+    <h3>Why Choose Webginet for Your Voice Solutions?</h3>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-gear fs-1 mb-3"></i>
+                <h4>VoIP Readiness Assessment</h4>
+                <p>Ensure your infrastructure is ready for seamless VoIP deployment.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-arrow-right-circle fs-1 mb-3"></i>
+                <h4>UC Migration Planning</h4>
+                <p>Strategic migration from legacy PBX to Unified Communications.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-telephone-forward fs-1 mb-3"></i>
+                <h4>SIP Trunk Provisioning</h4>
+                <p>Configure and monitor SIP trunks for optimized call quality and cost-efficiency.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-headset fs-1 mb-3"></i>
+                <h4>Cloud Contact Center Setup</h4>
+                <p>Deploy scalable, cloud-native contact center platforms with call routing & analytics.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-broadcast-pin fs-1 mb-3"></i>
+                <h4>Enterprise IP Paging Systems</h4>
+                <p>Voice paging over IP networks for retail, healthcare, and education sectors.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-shield-check fs-1 mb-3"></i>
+                <h4>VoIP Security & Compliance</h4>
+                <p>Protect your voice network from fraud, eavesdropping, and regulatory risk.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-phone-landscape fs-1 mb-3"></i>
+                <h4>Softphone & Mobile Integration</h4>
+                <p>Enable remote work and mobile calling with secure device integration.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-tools fs-1 mb-3"></i>
+                <h4>24/7 Voice Support</h4>
+                <p>Round-the-clock maintenance and troubleshooting for voice systems.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-globe fs-1 mb-3"></i>
+                <h4>Global Voice Deployment</h4>
+                <p>Deploy multi-region IP telephony solutions with consistent policies and tools.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-people-fill fs-1 mb-3"></i>
+                <h4>Workforce Collaboration Tools</h4>
+                <p>Integrate voice with chat, video, and file sharing for seamless collaboration.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-cloud-arrow-up fs-1 mb-3"></i>
+                <h4>Cloud PBX Solutions</h4>
+                <p>Move to a cost-efficient, scalable cloud-based phone system.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="icon-box p-4 border rounded h-100">
+                <i class="bi bi-bar-chart-line fs-1 mb-3"></i>
+                <h4>Call Analytics & Insights</h4>
+                <p>Gain actionable data on call volumes, quality, and performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
                     <!-- Footer Start -->
                     <my-footer></my-footer>

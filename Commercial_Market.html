@@ -40,6 +40,12 @@
 </head>
 <style>
   /* Global Styles */
+  .card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
@@ -296,7 +302,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="./index.html">Webginet</a></li>
-        <li class="breadcrumb-item"><a href="./Market">Market</a></li>
+       <li class="breadcrumb-item " aria-current="page"><a href="Market.html">Market</a></li>
         <li class="breadcrumb-item active" aria-current="page">Commercial Market</li>
       </ol>
     </nav>
@@ -384,7 +390,7 @@
 
 
 <!-- Call to Action -->
-<section class="py-5 bg-dark text-white text-center">
+<section class="py-5 bg-dark text-white text-center" >
   <div class="container">
     <h4>Let’s Build the Future of Your Facility</h4>
     <p>Whether retrofitting a school or designing a high-tech datacenter, Webginet is your trusted integration partner.</p>
@@ -482,66 +488,186 @@
 </section>
 
 <!-- Solutions by Industry -->
-<section class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-5">Solutions by Industry</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+<section class="py-5" id="my-solutionportion">
+<div class="container">
+  <h2 class="text-center mb-5">Solutions by Industry</h2>
+  <div class="row g-4">
+    <!-- Existing 9 cards -->
+    <!-- Replace # with actual links -->
+         <!-- New cards below -->
+    <div class="col-md-6 col-lg-4">
+      <a href="lightening.html" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>💡 Lighting</h5>
+          <p>Advanced lighting control systems for energy efficiency and ambiance across all environments.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="climate_control.html" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>🌡 Climate Control</h5>
+          <p>Smart HVAC systems ensuring comfort, efficiency, and air quality in every setting.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="security.html" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>🔐 Security</h5>
+          <p>Comprehensive surveillance, access control, and alarm systems for safety and compliance.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="Datacom.html" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>📡 Datacom</h5>
+          <p>Efficient data transmission and networking infrastructure to support digital transformation.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="Energy_Power.html" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>⚡ Energy & Power</h5>
+          <p>Reliable power systems, UPS, and monitoring to reduce downtime and ensure operational continuity.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#smartbuildings" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>🏙️ Smart Building Systems</h5>
+          <p>Intelligent integration of lighting, HVAC, and access for fully automated buildings.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#homeauto" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>🏠 Home Automation</h5>
+          <p>Convenient control of lighting, security, and climate from your smartphone or voice assistant.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#av" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>🎧 Audio/Visual</h5>
+          <p>Cutting-edge AV solutions for conference rooms, classrooms, and immersive entertainment.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#industrial" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>🏭 Industrial Solutions</h5>
+          <p>Automation and safety technologies designed for factories, warehouses, and plants.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#parts" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>⚙️ Production Parts</h5>
+          <p>Reliable components and spare parts to keep your operations running smoothly.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#it" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>🖧 IT Networks</h5>
+          <p>Structured cabling and wireless solutions built to handle growing data demands.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#voice" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:scale-105 hover:shadow-lg">
+          <h5>📞 Voice</h5>
+          <p>Advanced voice communication systems for seamless enterprise and facility-wide communication.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#office" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🏢 Office Spaces</h5>
           <p>Smart lighting, HVAC automation, and integrated systems that boost workplace comfort and productivity.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#hospitality" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🏨 Hospitality</h5>
           <p>Energy-efficient climate, security, and lighting controls that enhance guest satisfaction and reduce costs.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#healthcare" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🏥 Healthcare</h5>
           <p>Technology solutions for round-the-clock care — improving energy savings while maintaining safety and hygiene.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#retail" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🛒 Retail</h5>
           <p>Smart stores with engaging lighting, displays, and real-time analytics to drive customer experience and efficiency.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#education" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🏫 Education</h5>
           <p>Connected classrooms, air quality systems, and secure campuses built for modern learning and teaching.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#datacenters" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🖥️ Data Centers</h5>
           <p>High-performance infrastructure with precision cooling and power for uptime, security, and energy reduction.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#leisure" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🎭 Leisure & Entertainment</h5>
           <p>Customized AV, lighting, and automation systems for memorable experiences in theaters, casinos, and venues.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#transport" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🚆 Transportation</h5>
           <p>Resilient technologies for transit hubs, tunnels, and critical infrastructure projects built to last.</p>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="p-4 border rounded shadow-sm h-100">
+      </a>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <a href="#defense" class="text-decoration-none text-dark">
+        <div class="p-4 border rounded shadow-sm h-100 transition-transform hover:shadow-lg hover:scale-105">
           <h5>🛡 Defense & Government</h5>
           <p>Mission-critical systems that meet federal security, compliance, and reliability standards.</p>
         </div>
-      </div>
+      </a>
     </div>
+
+
   </div>
+</div>
+
 </section>
 
 <!-- Core Services -->

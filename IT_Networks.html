@@ -36,6 +36,24 @@
   />
 </head>
     <style>
+        .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+box-shadow: 0 8px 20px rgb(0, 0, 0); 
+}
+
+.product-card img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
           /* Global Styles */
       .col img {
     transition: transform 0.3s ease;
@@ -361,7 +379,43 @@
         </ul>
     </div>
 </section>
+<section class="container my-5 pt-5 text-center">
+  <h2 class="mb-4 fw-bold">OUR Dedicated Product</h2>
 
+  <div class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="ERP System">
+        <p class="mt-2">Enterprise Resource Planning (ERP)</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="CRM Software">
+        <p class="mt-2">Customer Relationship Management (CRM)</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="BI Tools">
+        <p class="mt-2">Business Intelligence Platforms</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-3 mb-4">
+      <div class="product-card">
+        <img src="img/brand (2).jpg" class="img-fluid" alt="Workflow">
+        <p class="mt-2">Workflow Automation Tools</p>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- IT Networking Features -->
 <section class="py-5">
     <div class="container text-center">
