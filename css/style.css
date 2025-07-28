@@ -1019,3 +1019,88 @@ border-radius: 10px;
   .download-icon {
     margin-right: 8px;
   }
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+  }
+  .navbar-collapse {
+    background-color: #fff;
+    padding: 1rem;
+  }
+  .dropdown-menu {
+    display: none !important;
+    position: absolute;
+  }
+  .dropdown-menu.show {
+    display: block !important;
+  }
+}
+/* Navbar hover effects */
+.navbar-nav .nav-item:hover .dropdown-menu {
+  display: block !important;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Scrollable dropdowns */
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Refined Navbar Design */
+.navbar {
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+.navbar-brand img {
+  height: 35px;
+}
+.nav-link {
+  color: #ddd !important;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+}
+
+/* Consistent button width */
+.nav-link, .dropdown-item {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Consistent padding and hover effects */
+.nav-link {
+  padding: 8px 12px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.nav-link:hover {
+  background: #444;
+  color: #fff !important;
+}
+
+.dropdown-item {
+  padding: 8px 15px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.dropdown-item:hover {
+  background-color: #555;
+  color: #fff;
+}
+/* Justify text for the About Us section */
+.text-justify {
+  text-align: justify;
+}
