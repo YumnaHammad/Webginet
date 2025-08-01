@@ -7,6 +7,37 @@
     --dark: #17224D;
 }
 
+/* Global Text Justification Settings */
+*, body, p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+body {
+    line-height: 1.6;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Heading text alignment (keep centered for titles) */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Container text justification */
+.container, .container-fluid {
+    text-align: justify;
+}
+
+/* Card content text justification */
+.card-body, .card-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 .fw-medium {
     font-weight: 600 !important;
 }
@@ -49,21 +80,26 @@
 .btn-square {
     width: 38px;
     height: 38px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
 }
 
 .btn-sm-square {
     width: 32px;
     height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
 }
 
 .btn-lg-square {
     width: 48px;
     height: 48px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
     padding: 0;
     display: flex;
     align-items: center;
@@ -102,7 +138,7 @@
 @media (max-width: 768px) {
     .header-carousel .owl-carousel-item {
         position: relative;
-        min-height: 500px;
+        min-height: 400px;
     }
     
     .header-carousel .owl-carousel-item img {
@@ -122,6 +158,57 @@
         font-size: 30px;
         font-weight: 600;
     }
+    
+    /* All page header classes for responsive adjustments */
+.page-header,
+.page-headerNews,
+.page-headercareer,
+.page-headerelectrician,
+.page-headerhistory,
+.page-headersafety,
+.page-headerlighting,
+.page-headerclimate,
+.page-headersecurity,
+.page-headerDataCom,
+.page-headerenergy,
+.page-headersmart,
+.page-headerhome,
+.page-headervideo,
+.page-headerindust,
+.page-headerproduct,
+.page-headercon,
+.page-headercom,
+.page-headerres,
+.page-headeroffer,
+.page-headerindustrial,
+.page-headermar,
+.page-headerser,
+.page-headerab,
+.page-headermulti,
+.page-headermarketingCon,
+.page-headermanagedservice,
+.page-headerecomerce,
+.page-headersupport,
+.page-headerProfam,
+.page-headerdist,
+.page-headerIT,
+.page-headervoice,
+.page-headergroup,
+.page-headeradvantage,
+.page-headerNewCon,
+.page-headerfire,
+.page-headerconsulting,
+.page-headerinstall,
+.page-headerfacailty,
+.page-headerbg1,
+.page-headerbg2,
+.page-headersup,
+.page-headerdesign,
+.page-headerstaging,
+.page-headernational {
+    margin-top: 0;
+    height: 400px;
+}
 }
 
 .header-carousel .owl-nav {
@@ -154,242 +241,199 @@
     background: var(--primary);
     border-color: var(--primary);
 }
-.page-headerNews{
-   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/sceurity-7.jpg) center center no-repeat;
+/* Page Header Base Styles */
+.page-header,
+.page-headerNews,
+.page-headercareer,
+.page-headerelectrician,
+.page-headerhistory,
+.page-headersafety,
+.page-headerlighting,
+.page-headerclimate,
+.page-headersecurity,
+.page-headerDataCom,
+.page-headerenergy,
+.page-headersmart,
+.page-headerhome,
+.page-headervideo,
+.page-headerindust,
+.page-headerproduct,
+.page-headercon,
+.page-headercom,
+.page-headerres,
+.page-headeroffer,
+.page-headerindustrial,
+.page-headermar,
+.page-headerser,
+.page-headerab,
+.page-headermulti,
+.page-headermarketingCon,
+.page-headermanagedservice,
+.page-headerecomerce,
+.page-headersupport,
+.page-headerProfam,
+.page-headerdist,
+.page-headerIT,
+.page-headervoice,
+.page-headergroup,
+.page-headeradvantage,
+.page-headerNewCon,
+.page-headerfire,
+.page-headerconsulting,
+.page-headerinstall,
+.page-headerfacailty,
+.page-headerbg1,
+.page-headerbg2,
+.page-headersup,
+.page-headerdesign,
+.page-headerstaging,
+.page-headernational {
     background-size: cover;
     height: 500px;
 }
-.page-headercareer{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-}
-.page-headerelectrician{
- background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-}
-.page-headerhistory{
- background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(5\).jpg-) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-}
-.page-headersafety{
- background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-13.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-}
+
+/* Individual Page Header Backgrounds */
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-3.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-    margin-top: 73px;
+    margin-top: 0;
 }
-.page-headerlighting{
+.page-headerNews {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/sceurity-7.jpg) center center no-repeat;
+}
+.page-headercareer {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(2\).jpg) center center no-repeat;
+}
+.page-headerelectrician {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(2\).jpg) center center no-repeat;
+}
+.page-headerhistory {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(5\).jpg-) center center no-repeat;
+}
+.page-headersafety {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-13.jpg) center center no-repeat;
+}
+.page-headerlighting {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-1.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-    
 }
-.page-headerclimate{
-   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-2.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-    
+.page-headerclimate {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-2.jpg) center center no-repeat;
 }
-.page-headersecurity{
-   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-10.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
-    
+.page-headersecurity {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-10.jpg) center center no-repeat;
 }
-.page-headerDataCom{
+.page-headerDataCom {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Datacom-1.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headerenergy{
+.page-headerenergy {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Energy.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headersmart{
+.page-headersmart {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-7.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headerhome{
+.page-headerhome {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Home-3.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headervideo{
+.page-headervideo {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/video-2.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headerindust{
+.page-headerindust {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(4\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headerproduct{
+.page-headerproduct {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Production\ \(3\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headercon{
+.page-headercon {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/contact.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headercom{
+.page-headercom {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-9.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headerres{
+.page-headerres {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/res.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headeroffer{
+.page-headeroffer {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/offer\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headerindustrial{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Production\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerindustrial {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Production\ \(2\).jpg) center center no-repeat;
 }
-.page-headermar{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(6\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headermar {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(6\).jpg) center center no-repeat;
 }
-.page-headerser{
+.page-headerser {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Service\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
 }
-.page-headerab{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerab {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/about.jpg) center center no-repeat;
 }
-.page-headermulti{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/multi\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headermulti {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/multi\ \(2\).jpg) center center no-repeat;
 }
-.page-headermarketingCon{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/consult\ \(4\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headermarketingCon {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/consult\ \(4\).jpg) center center no-repeat;
 }
-.page-headermanagedservice{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Service\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headermanagedservice {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Service\ \(2\).jpg) center center no-repeat;
 }
-.page-headerecomerce{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/commerce\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerecomerce {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/commerce\ \(1\).jpg) center center no-repeat;
 }
-.page-headersupport{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/help\ \(3\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headersupport {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/help\ \(3\).jpg) center center no-repeat;
 }
-.page-headerProfam{
-background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/brand\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerProfam {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/brand\ \(2\).jpg) center center no-repeat;
 }
-.page-headerdist{
-background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/brand\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerdist {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/brand\ \(1\).jpg) center center no-repeat;
 }
-.page-headerIT{
-background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(3\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerIT {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(3\).jpg) center center no-repeat;
 }
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
-.page-headervoice{
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/consult\ \(1\).jpg) center center no-repeat;
-      background-size: cover;
-      height: 500px;
+.page-headervoice {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Home-2.jpg) center center no-repeat;
 }
-.page-headergroup{
-background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(4\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headergroup {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(4\).jpg) center center no-repeat;
 }
-.page-headeradvantage{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(6\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headeradvantage {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/indust\ \(6\).jpg) center center no-repeat;
 }
-.page-headerNewCon{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/remodel\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerNewCon {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/remodel\ \(1\).jpg) center center no-repeat;
 }
-.page-headerfire{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Fire.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerfire {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Fire.jpg) center center no-repeat;
 }
-.page-headerconsulting{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/consultingg.jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerconsulting {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/consultingg.jpg) center center no-repeat;
 }
-.page-headerinstall{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(3\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerinstall {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(3\).jpg) center center no-repeat;
 }
-.page-headerfacailty{
-   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Facality\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerfacailty {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Facality\ \(2\).jpg) center center no-repeat;
 }
-.page-headerbg1{
-background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerbg1 {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(1\).jpg) center center no-repeat;
 }
-.page-headerbg2{
-background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerbg2 {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg1\ \(2\).jpg) center center no-repeat;
 }
-.page-headersup{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Facality\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headersup {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Facality\ \(1\).jpg) center center no-repeat;
 }
-.page-headerdesign{
- background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/multi\ \(2\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerdesign {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/multi\ \(2\).jpg) center center no-repeat;
 }
-.page-headerstaging{
- background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/commerce\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headerstaging {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/commerce\ \(1\).jpg) center center no-repeat;
 }
-.page-headernational{
- background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(1\).jpg) center center no-repeat;
-    background-size: cover;
-    height: 500px;
+.page-headernational {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/install\ \(1\).jpg) center center no-repeat;
 }
 .iconnn-text {
   padding: 30px; /* or use padding-left/right/top/bottom as needed */
@@ -450,7 +494,8 @@ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg
     left: 10px;
     z-index: 3;
     color: #fff;
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
     transition: transform 0.4s ease, opacity 0.4s ease;
     opacity: 0;
     transform: translateY(10px);
@@ -480,6 +525,8 @@ background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/bg
     color: #333;
     position: relative;
     z-index: 1;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   /* Hover Effects */
@@ -680,13 +727,16 @@ border-radius: 10px;
     align-items: center;
     justify-content: center;
 }
-.videoclimate{
-        background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-10.jpg) center center no-repeat;
+
+.videoclimate {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/carousel-10.jpg) center center no-repeat;
 }
-.videosecurity{
+
+.videosecurity {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/sceurity-7.jpg) center center no-repeat;
 }
-.videooffer{
+
+.videooffer {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/offer\ \(1\).jpg) center center no-repeat;
 }
 .video  .btn-play {
@@ -842,6 +892,8 @@ border-radius: 10px;
     justify-content: center;
     flex-direction: column;
     transition: .5s;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .team-item .team-text .bg-primary {
@@ -868,6 +920,8 @@ border-radius: 10px;
 .testimonial-carousel .owl-item.center .testimonial-text * {
     position: relative;
     transition: .5s;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text {
@@ -948,7 +1002,8 @@ border-radius: 10px;
     display: block;
     margin-bottom: 5px;
     padding: 0;
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
     color: #FFFFFF;
     font-size: 15px;
     font-weight: normal;
@@ -973,6 +1028,8 @@ border-radius: 10px;
     padding: 25px 0;
     font-size: 15px;
     border-top: 1px solid rgba(256, 256, 256, .1);
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .footer .copyright a {
@@ -1004,6 +1061,12 @@ border-radius: 10px;
     text-align: center;
     margin-bottom: 2.5rem;
   }
+  
+  /* Section content text justification */
+  .section-content {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 
   .download-btn {
     border: 1px solid #b0aba6;
@@ -1019,88 +1082,695 @@ border-radius: 10px;
   .download-icon {
     margin-right: 8px;
   }
-@media (max-width: 768px) {
-  .navbar-nav {
-    text-align: center;
-  }
-  .navbar-nav .nav-item {
-    margin: 0.5rem 0;
-  }
-  .navbar-collapse {
-    background-color: #fff;
-    padding: 1rem;
-  }
-  .dropdown-menu {
-    display: none !important;
-    position: absolute;
-  }
-  .dropdown-menu.show {
-    display: block !important;
-  }
-}
-/* Navbar hover effects */
-.navbar-nav .nav-item:hover .dropdown-menu {
-  display: block !important;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
 
-/* Scrollable dropdowns */
-.dropdown-menu {
-  max-height: 300px;
-  overflow-y: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Refined Navbar Design */
+/*** Modern Floating Navbar ***/
 .navbar {
-  background: linear-gradient(90deg, #4b6cb7, #182848);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
-}
-.navbar-brand img {
-  height: 35px;
-}
-.nav-link {
-  color: #ddd !important;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-.nav-link:hover {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1900px;
   background: rgba(255, 255, 255, 0.1);
-  color: #fff !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 30px;
+  transition: all 0.4s ease-in-out;
 }
 
-/* Consistent button width */
-.nav-link, .dropdown-item {
-  max-width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+/* Logo Image */
+.navbar-brand img {
+  height: 50px;
 }
 
-/* Consistent padding and hover effects */
+/* Nav Links */
 .nav-link {
-  padding: 8px 12px;
-  transition: background 0.2s ease, color 0.2s ease;
+  color: #000000 !important;
+  font-weight: 500;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
 }
-.nav-link:hover {
-  background: #444;
-  color: #fff !important;
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important;
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #6dd5fa, #c776ca);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+  padding: 5px 25px;
+  text-decoration: none;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  display: none;
+}
+
+.navbar-toggler i {
+  color: #ffffff;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+/* Toggle Button Icons */
+.hamburger-icon,
+.cross-icon {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon {
+  display: none !important;
+  transform: rotate(90deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .cross-icon {
+  display: block !important;
+  transform: rotate(0deg);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-toggler[aria-expanded="false"] .hamburger-icon {
+  display: block !important;
+  transform: rotate(0deg);
+}
+
+.navbar-toggler[aria-expanded="false"] .cross-icon {
+  display: none !important;
+  transform: rotate(-90deg);
+}
+
+/* Toggle button hover effect */
+.navbar-toggler:hover {
+  transform: scale(1.05);
+}
+
+.navbar-toggler:active {
+  transform: scale(0.95);
+}
+
+/* Cross icon specific styling */
+.cross-icon {
+  font-weight: bold;
+}
+
+/* Ensure cross icon is clickable */
+.navbar-toggler[aria-expanded="true"] .cross-icon {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Nav Slide Animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-nav .nav-item {
+  opacity: 0;
+  animation: slideDown 0.5s ease forwards;
+}
+
+.navbar-nav .nav-item:nth-child(1) { animation-delay: 0.2s; }
+.navbar-nav .nav-item:nth-child(2) { animation-delay: 0.4s; }
+.navbar-nav .nav-item:nth-child(3) { animation-delay: 0.6s; }
+.navbar-nav .nav-item:nth-child(4) { animation-delay: 0.8s; }
+.navbar-nav .nav-item:nth-child(5) { animation-delay: 1s; }
+
+/* Dropdown Styling */
+.dropdown-menu {
+  border-radius: 1rem;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+}
+
+/* Mega Dropdown specific positioning */
+.mega-dropdown {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-top: 0.5rem;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover effect for dropdowns */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .dropdown-item {
-  padding: 8px 15px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-.dropdown-item:hover {
-  background-color: #555;
-  color: #fff;
-}
-/* Justify text for the About Us section */
-.text-justify {
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
   text-align: justify;
+  text-justify: inter-word;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(90deg, #6dd5fa, #c776ca);
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Mega Dropdown */
+.mega-dropdown {
+  width: 100%;
+  min-width: 1000px;
+  max-width: 1200px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 90%;
+  margin-left: 0.2rem;
+  transform: translateX(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mega Dropdown Grid */
+.mega-dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 800px;
+  max-width: 1200px;
+}
+
+.mega-dropdown > div {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.5rem 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Optional Headings */
+h6 {
+  color: #000000;
+  text-align: center;
+}
+
+/* Large Desktop - Mega Dropdown Optimization */
+@media (min-width: 1400px) {
+  .mega-dropdown {
+    min-width: 1000px;
+    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .mega-dropdown > div {
+    min-width: 300px;
+  }
+  
+  /* Fix content section spacing on large desktop */
+  .container,
+  .container-fluid {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  /* Fix section spacing */
+  section {
+    padding: 4rem 0;
+  }
+  
+  /* Fix card spacing */
+  .card,
+  .custom-card {
+    margin-bottom: 3rem;
+  }
+  
+  /* Fix value item spacing */
+  .value-item {
+    margin-bottom: 3rem;
+  }
+  
+  /* Fix section title spacing */
+  .section-title {
+    margin-bottom: 4rem;
+  }
+}
+
+/* Desktop - Standard Mega Dropdown */
+@media (min-width: 992px) and (max-width: 1399px) {
+  .mega-dropdown {
+    min-width: 800px;
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .mega-dropdown > div {
+    min-width: 250px;
+  }
+  
+  /* Fix content section spacing on desktop */
+  .container,
+  .container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  /* Fix section spacing */
+  section {
+    padding: 3rem 0;
+  }
+  
+  /* Fix card spacing */
+  .card,
+  .custom-card {
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Fix value item spacing */
+  .value-item {
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Fix section title spacing */
+  .section-title {
+    margin-bottom: 3rem;
+  }
+}
+
+/* Tablet - Responsive Mega Dropdown */
+@media (min-width: 769px) and (max-width: 991px) {
+  .mega-dropdown {
+    min-width: 600px;
+    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .mega-dropdown > div {
+    min-width: 200px;
+  }
+  
+  /* All page header classes for responsive adjustments */
+  .page-header,
+  .page-headerNews,
+  .page-headercareer,
+  .page-headerelectrician,
+  .page-headerhistory,
+  .page-headersafety,
+  .page-headerlighting,
+  .page-headerclimate,
+  .page-headersecurity,
+  .page-headerDataCom,
+  .page-headerenergy,
+  .page-headersmart,
+  .page-headerhome,
+  .page-headervideo,
+  .page-headerindust,
+  .page-headerproduct,
+  .page-headercon,
+  .page-headercom,
+  .page-headerres,
+  .page-headeroffer,
+  .page-headerindustrial,
+  .page-headermar,
+  .page-headerser,
+  .page-headerab,
+  .page-headermulti,
+  .page-headermarketingCon,
+  .page-headermanagedservice,
+  .page-headerecomerce,
+  .page-headersupport,
+  .page-headerProfam,
+  .page-headerdist,
+  .page-headerIT,
+  .page-headervoice,
+  .page-headergroup,
+  .page-headeradvantage,
+  .page-headerNewCon,
+  .page-headerfire,
+  .page-headerconsulting,
+  .page-headerinstall,
+  .page-headerfacailty,
+  .page-headerbg1,
+  .page-headerbg2,
+  .page-headersup,
+  .page-headerdesign,
+  .page-headerstaging,
+  .page-headernational {
+    margin-top: 0;
+    height: 450px;
+  }
+  
+  .header-carousel .owl-carousel-item {
+    min-height: 450px;
+  }
+  
+  /* Fix content section spacing on tablet */
+  .container,
+  .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Fix section spacing */
+  section {
+    padding: 2.5rem 0;
+  }
+  
+  /* Fix card spacing */
+  .card,
+  .custom-card {
+    margin-bottom: 2rem;
+  }
+  
+  /* Fix value item spacing */
+  .value-item {
+    margin-bottom: 2rem;
+  }
+  
+  /* Fix section title spacing */
+  .section-title {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    padding: 8px 20px;
+    top: 10px;
+    border-radius: 15px;
+  }
+  
+  .navbar-brand img {
+    height: 35px;
+  }
+  
+  .nav-link {
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+    padding: 8px 12px !important;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    padding: 8px 12px !important;
+    font-size: 0.85rem;
+  }
+  
+  /* Mobile Navbar Collapse with Scrollbar */
+  .navbar-collapse {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+  
+  .navbar-collapse::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .navbar-collapse::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .navbar-collapse::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+  
+  .navbar-collapse::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .mega-dropdown {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .dropdown-menu {
+    min-width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .dropdown-submenu > .dropdown-menu {
+    left: auto;
+    position: relative;
+    transform: translateX(0);
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+  }
+  
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .navbar-toggler {
+    padding: 4px 8px;
+  }
+  
+  .navbar-toggler i {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 576px) {
+  .navbar {
+    width: 98%;
+    padding: 6px 15px;
+    top: 5px;
+  }
+  
+  .navbar-brand img {
+    height: 30px;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 10px !important;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    padding: 6px 10px !important;
+    font-size: 0.8rem;
+  }
+  
+  .mega-dropdown {
+    padding: 0.5rem;
+  }
+  
+  .dropdown-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  /* All page header classes for responsive adjustments */
+  .page-header,
+  .page-headerNews,
+  .page-headercareer,
+  .page-headerelectrician,
+  .page-headerhistory,
+  .page-headersafety,
+  .page-headerlighting,
+  .page-headerclimate,
+  .page-headersecurity,
+  .page-headerDataCom,
+  .page-headerenergy,
+  .page-headersmart,
+  .page-headerhome,
+  .page-headervideo,
+  .page-headerindust,
+  .page-headerproduct,
+  .page-headercon,
+  .page-headercom,
+  .page-headerres,
+  .page-headeroffer,
+  .page-headerindustrial,
+  .page-headermar,
+  .page-headerser,
+  .page-headerab,
+  .page-headermulti,
+  .page-headermarketingCon,
+  .page-headermanagedservice,
+  .page-headerecomerce,
+  .page-headersupport,
+  .page-headerProfam,
+  .page-headerdist,
+  .page-headerIT,
+  .page-headervoice,
+  .page-headergroup,
+  .page-headeradvantage,
+  .page-headerNewCon,
+  .page-headerfire,
+  .page-headerconsulting,
+  .page-headerinstall,
+  .page-headerfacailty,
+  .page-headerbg1,
+  .page-headerbg2,
+  .page-headersup,
+  .page-headerdesign,
+  .page-headerstaging,
+  .page-headernational {
+    margin-top: 0;
+    height: 350px;
+  }
+  
+  .header-carousel .owl-carousel-item {
+    min-height: 350px;
+  }
+  
+  /* Fix content section spacing on extra small mobile */
+  .container,
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Fix section spacing */
+  section {
+    padding: 1.5rem 0;
+  }
+  
+  /* Fix card spacing */
+  .card,
+  .custom-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Fix value item spacing */
+  .value-item {
+    margin-bottom: 1rem;
+  }
+  
+  /* Fix section title spacing */
+  .section-title {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (max-width: 768px) {
+  .nav-link,
+  .dropdown-item,
+  .navbar-toggler {
+    min-height: 44px; /* Apple's recommended touch target size */
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown-item {
+    min-height: 40px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  /* Improve dropdown visibility on mobile */
+  .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Better spacing for mobile navigation */
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-nav .nav-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Ensure navbar collapse takes full height when open */
+  .navbar-collapse.show {
+    padding-bottom: 2rem;
+  }
+  
+  /* Smooth transition for navbar collapse */
+  .navbar-collapse {
+    transition: all 0.3s ease;
+  }
+  
+  /* Fix content section spacing on mobile */
+  .container,
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Fix section spacing */
+  section {
+    padding: 2rem 0;
+  }
+  
+  /* Fix card spacing */
+  .card,
+  .custom-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Fix value item spacing */
+  .value-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Fix section title spacing */
+  .section-title {
+    margin-bottom: 2rem;
+  }
 }

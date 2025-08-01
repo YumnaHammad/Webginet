@@ -31,9 +31,13 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 <style>
   .hover-shadow {
@@ -268,7 +272,253 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <my-navbar></my-navbar>
+     <!-- Mobile Navbar -->
+  <div class=" d-md-none d-block">
+
+    <!-- Navbar -->
+    <nav class="navbar bg-transparent px-3 py-2">
+      <img src="img/logo.png" alt="Logo" style="height: 40px;">
+      <button class="btn ms-auto" id="openMenuBtn">
+        <i class="fa-solid fa-bars text-warning fs-2"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="d-flex justify-content-between align-items-center p-3">
+        <button class="btn" id="closeMenuBtn">
+          <i class="fa-solid fa-xmark fa-2x"></i>
+        </button>
+      </div>
+      <ul id="mainMenu">
+        <li class="menu-link"><a href="index.html">Home</a></li>
+
+        <li class="menu-link">
+          Explore & Market
+          <i class="fa-solid fa-arrow-right" onclick="openSubMenu('exploreSubmenu')"></i>
+        </li>
+
+        <li class="menu-link">
+          Services
+          <i class="fa-solid fa-arrow-right" onclick="openSubMenu('servicesSubmenu')"></i>
+        </li>
+
+        <li class="menu-link"><a href="Group.html">Group</a></li>
+        <li class="menu-link"><a href="about.html">About</a></li>
+        <li class="menu-link"><a href="Career.html">Career</a></li>
+        <li class="menu-link"><a href="contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link gradient-btn text-white px-3 py-2 rounded-pill" href="contact.html">Buy Now</a>
+        </li>
+      </ul>
+
+      <!-- Submenu: Explore & Market -->
+      <div class="submenu-panel" id="exploreSubmenu">
+        <div class="menu-link">
+          <i class="fa-solid fa-arrow-left" onclick="closeSubMenu('exploreSubmenu')"></i> Back
+        </div>
+        <li class="submenu-link">Explore Solutions <i class="fa-solid fa-arrow-right"
+            onclick="openSubMenu('ExploreSubsubmenu')"></i></li>
+        <li class="submenu-link">Explore us <i class="fa-solid fa-arrow-right" onclick="openSubMenu('ExploreUs')"></i>
+        </li>
+        <li class="submenu-link">Industries We Serve <i class="fa-solid fa-arrow-right"
+            onclick="openSubMenu('IndustriesWeServe')"></i></li>
+        <li class="submenu-link">What Makes Us Better <i class="fa-solid fa-arrow-right"
+            onclick="openSubMenu('WhatMakesUsBetter')"></i></li>
+        <li class="submenu-link"> Brands & Products <i class="fa-solid fa-arrow-right"
+            onclick="openSubMenu('Brands&Products')"></i></li>
+      </div>
+
+      <!-- Sub-sub menu: Explore Solutions  -->
+      <div class="submenu-panel" id="ExploreSubsubmenu">
+        <div class="menu-link">
+          <i class="fa-solid fa-arrow-left" onclick="closeSubMenu('ExploreSubsubmenu')"></i> Back
+        </div>
+        <li class="submenu-link"><a href="Smart_Building.html">Smart Building Systems</a></li>
+        <li class="submenu-link"><a href="lightening.html">Electrical System</a></li>
+        <li class="submenu-link"><a href="Energy_Power.html">Renewable Energy</a></li>
+        <li class="submenu-link"><a href="climate_control.html">Climate Control</a></li>
+        <li class="submenu-link"><a href="security.html">Physical Security</a></li>
+        <li class="submenu-link"><a href="Datacom.html">IT Infrastructure</a></li>
+        <li class="submenu-link"><a href="IT_Networks.html">Enterprise Managed Solution</a></li>
+        <li class="submenu-link"><a href="Home_Automation.html">Home Automation</a></li>
+        <li class="submenu-link"><a href="AudioSolution.html">Audio/Visual Solutions</a></li>
+        <li class="submenu-link"><a href="Industrial_Solutions.html">Industrial Solutions</a></li>
+        <li class="submenu-link"><a href="Production_Parts.html">Production Parts</a></li>
+      </div>
+
+      <!-- Sub-sub menu: Explore us -->
+      <div class="submenu-panel" id="ExploreUs">
+        <div class="menu-link">
+          <i class="fa-solid fa-arrow-left" onclick="closeSubMenu('ExploreUs')"></i> Back
+        </div>
+        <li class="submenu-link"><a href="Electricians.html">Electricians</a></li>
+        <li class="submenu-link"><a href="installer.html">Smart system Installers</a></li>
+        <li class="submenu-link"><a href="Facility_Managers.html">Authorized Service Provider</a></li>
+        <li class="submenu-link"><a href="Commercial.html">Commercial Companies</a></li>
+        <li class="submenu-link"><a href="security.html">Physical Security</a></li>
+        <li class="submenu-link"><a href="Industrial.html">Industrial Companies</a></li>
+        <li class="submenu-link"><a href="Suppliers.html">Satisfied Suppliers</a></li>
+      </div>
+
+      <!-- Sub-sub menu: Industries We Serve  -->
+      <div class="submenu-panel" id="IndustriesWeServe">
+        <div class="menu-link">
+          <i class="fa-solid fa-arrow-left" onclick="closeSubMenu('IndustriesWeServe')"></i> Back
+        </div>
+        <li class="submenu-link"><a href="Market.html">Market</a></li>
+        <li class="submenu-link"><a href="Residential_Market.html">Residential Market</a></li>
+        <li class="submenu-link"><a href="Commercial_Market.html">Commercial Market</a></li>
+        <li class="submenu-link"><a href="Industrial_Market.html">Industrial Market</a></li>
+      </div>
+
+      <!-- Sub-sub menu: What Makes Us Better -->
+      <div class="submenu-panel" id="WhatMakesUsBetter">
+        <div class="menu-link">
+          <i class="fa-solid fa-arrow-left" onclick="closeSubMenu('WhatMakesUsBetter')"></i> Back
+        </div>
+        <li class="submenu-link"><a href="Services.html">Services</a></li>
+        <li class="submenu-link"><a href="advantages.html">Advantages</a></li>
+      </div>
+
+      <!-- Sub-sub menu: Brands & Products -->
+      <div class="submenu-panel" id="Brands&Products">
+        <div class="menu-link">
+          <i class="fa-solid fa-arrow-left" onclick="closeSubMenu('Brands&Products')"></i> Back
+        </div>
+        <li class="submenu-link"><a href="ProductFamilies.html">Product Families</a></li>
+        <li class="submenu-link"><a href="Distributed_Brands.html">Distributed Brands</a></li>
+      </div>
+
+      <!-- Submenu: Services -->
+      <div class="submenu-panel" id="servicesSubmenu">
+        <div class="menu-link">
+          <i class="fa-solid fa-arrow-left" onclick="closeSubMenu('servicesSubmenu')"></i> Back
+        </div>
+        <li class="submenu-link"><a href="Multichannel_Marketing.html">Multichannel Marketing</a></li>
+        <li class="submenu-link"><a href="E-commerce_Solutions.html">E-commerce Solutions</a></li>
+        <li class="submenu-link"><a href="Marketing_Consulting.html">Marketing Consulting</a></li>
+        <li class="submenu-link"><a href="Managed_Services.html">Managed Services</a></li>
+        <li class="submenu-link"><a href="24_Support.html">24/7 Support</a></li>
+        <li class="submenu-link"><a href="Newconstruction.html">New Construction & Remodels</a></li>
+        <li class="submenu-link"><a href="Firealarm.html">Fire Alarm</a></li>
+        <li class="submenu-link"><a href="consulting.html">Consulting</a></li>
+        <li class="submenu-link"><a href="Natioinalwide.html">Nationwide Rollouts</a></li>
+        <li class="submenu-link"><a href="Design.html">Design & Engineering</a></li>
+        <li class="submenu-link"><a href="Staging.html">Staging & Configuration</a></li>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Desktop Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar shadow-lg py-3 d-none d-md-flex">
+    <div class="container-fluid px-4">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <!-- <img src="logo.png" alt="Logo" width="40" class="me-2"> -->
+        <img src="img/logo.png" alt="Logo" />
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center gap-3">
+          <li class="nav-item">
+            <a class="nav-link gradient-btn active text-white px-3 py-2 rounded-pill" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown">
+              Explore & Market
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+              <li class="dropdown-submenu position-relative">
+                <a class="dropdown-item dropdown-toggle" href="Smart_Building.html">Explore Solutions</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Smart_Building.html">Smart Building Systems</a></li>
+                  <li><a class="dropdown-item" href="lightening.html">Electrical System</a></li>
+                  <li><a class="dropdown-item" href="Energy_Power.html">Renewable Energy</a></li>
+                  <li><a class="dropdown-item" href="climate_control.html">Climate Control</a></li>
+                  <li><a class="dropdown-item" href="security.html">Physical Security</a></li>
+                  <li><a class="dropdown-item" href="Datacom.html">IT Infrastructure</a></li>
+                  <li><a class="dropdown-item" href="IT_Networks.html">Enterprise Managed Solution</a></li>
+                  <li><a class="dropdown-item" href="Home_Automation.html">Home Automation</a></li>
+                  <li><a class="dropdown-item" href="AudioSolution.html">Audio/Visual Solutions</a></li>
+                  <li><a class="dropdown-item" href="Industrial_Solutions.html">Industrial Solutions</a></li>
+                  <li><a class="dropdown-item" href="Production_Parts.html">Production Parts</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu position-relative">
+                <a class="dropdown-item dropdown-toggle" href="Electricians.html">Explore us</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Electricians.html">Electricians</a></li>
+                  <li><a class="dropdown-item" href="installer.html">Smart system Installers</a></li>
+                  <li><a class="dropdown-item" href="Facility_Managers.html">Authorized Service Provider</a></li>
+                  <li><a class="dropdown-item" href="Commercial.html">Commercial Companies</a></li>
+                  <li><a class="dropdown-item" href="security.html">Physical Security</a></li>
+                  <li><a class="dropdown-item" href="Industrial.html">Industrial Companies</a></li>
+                  <li><a class="dropdown-item" href="Suppliers.html">Satisfied Suppliers</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu position-relative">
+                <a class="dropdown-item dropdown-toggle" href="Market.html">Industries We Serve</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Market.html">Market</a></li>
+                  <li><a class="dropdown-item" href="Residential_Market.html">Residential Market</a></li>
+                  <li><a class="dropdown-item" href="Commercial_Market.html">Commercial Market</a></li>
+                  <li><a class="dropdown-item" href="Industrial_Market.html">Industrial Market</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu position-relative">
+                <a class="dropdown-item dropdown-toggle" href="Services.html">What Makes Us Better</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Services.html">Services</a></li>
+                   <li><a class="dropdown-item" href="advantages.html">Advantages</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu position-relative">
+                <a class="dropdown-item dropdown-toggle" href="ProductFamilies.html">Brands & Products</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ProductFamilies.html">Product Families</a></li>
+                  <li><a class="dropdown-item" href="Distributed_Brands.html">Distributed Brands</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="Multichannel_Marketing.html">Multichannel Marketing</a></li>
+          <li><a class="dropdown-item" href="E-commerce_Solutions.html">E-commerce Solutions</a></li>
+            <li><a class="dropdown-item" href="Marketing_Consulting.html">Marketing Consulting</a></li>
+           <li><a class="dropdown-item" href="Managed_Services.html">Managed Services</a></li>
+           <li><a class="dropdown-item" href="24_Support.html">24/7 Support</a></li>
+            <li><a class="dropdown-item" href="Newconstruction.html">New Construction & Remodels</a></li>
+            <li><a class="dropdown-item" href="Firealarm.html">Fire Alarm</a></li>
+          <li><a class="dropdown-item" href="consulting.html">Consulting</a></li>
+          <li><a class="dropdown-item" href="Natioinalwide.html">Nationwide Rollouts</a></li>
+            <li><a class="dropdown-item" href="Design.html">Design & Engineering</a></li>
+        <li><a class="dropdown-item" href="Staging.html">Staging & Configuration</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="Group.html">Group</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="Career.html">Career</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link gradient-btn text-white px-3 py-2 rounded-pill" href="contact.html">Buy Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
     <!-- Navbar End -->
 
     <!-- Page Header Start -->
@@ -445,6 +695,56 @@
             }
         }
         customElements.define('my-footer', MyFooter);
+    </script>
+ <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menu = document.getElementById("mobileMenu");
+        const openBtn = document.getElementById("openMenuBtn");
+        const closeBtn = document.getElementById("closeMenuBtn");
+  
+        console.log("openBtn:", openBtn);   // ✅ Check if found
+        console.log("closeBtn:", closeBtn);
+  
+        if (openBtn && closeBtn && menu) {
+          openBtn.onclick = () => {
+            menu.classList.add("open");
+            document.body.style.overflow = "hidden";
+          };
+  
+          closeBtn.onclick = () => {
+            console.log("Close button clicked"); // Debug
+            menu.classList.remove("open");
+            closeAllSubmenus();
+            document.body.style.overflow = "";
+          };
+  
+        } else {
+          console.error("One or more menu buttons not found in DOM.");
+        }
+  
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            menu.classList.remove("open");
+            closeAllSubmenus();
+            document.body.style.overflow = "";
+          }
+        });
+      });
+  
+      // ✅ Make submenu functions globally accessible
+      function openSubMenu(id) {
+        document.getElementById(id)?.classList.add("open");
+      }
+  
+      function closeSubMenu(id) {
+        document.getElementById(id)?.classList.remove("open");
+      }
+  
+      function closeAllSubmenus() {
+        document.querySelectorAll(".submenu-panel.open").forEach(panel => {
+          panel.classList.remove("open");
+        });
+      }
     </script>
 </body>
 

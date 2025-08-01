@@ -26,7 +26,98 @@
     });
     
 
+    // Mobile Menu Functionality
+    document.addEventListener("DOMContentLoaded", function () {
+        const menu = document.getElementById("mobileMenu");
+        const openBtn = document.getElementById("openMenuBtn");
+        const closeBtn = document.getElementById("closeMenuBtn");
 
+        if (openBtn && closeBtn && menu) {
+            openBtn.onclick = () => {
+                menu.classList.add("open");
+                document.body.style.overflow = "hidden";
+            };
+
+            closeBtn.onclick = () => {
+                menu.classList.remove("open");
+                closeAllSubmenus();
+                document.body.style.overflow = "";
+            };
+        }
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                menu.classList.remove("open");
+                closeAllSubmenus();
+                document.body.style.overflow = "";
+            }
+        });
+    });
+
+    // Global submenu functions
+    window.openSubMenu = function(id) {
+        document.getElementById(id)?.classList.add("open");
+    }
+
+    window.closeSubMenu = function(id) {
+        document.getElementById(id)?.classList.remove("open");
+    }
+
+    window.closeAllSubmenus = function() {
+        document.querySelectorAll(".submenu-panel.open").forEach(panel => {
+            panel.classList.remove("open");
+        });
+    }
+
+    // Responsive image handling
+    function handleResponsiveImages() {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            if (!img.classList.contains('img-fluid')) {
+                img.classList.add('img-fluid');
+            }
+        });
+    }
+
+    // Responsive table handling
+    function handleResponsiveTables() {
+        const tables = document.querySelectorAll('table');
+        tables.forEach(table => {
+            if (!table.parentElement.classList.contains('table-responsive')) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'table-responsive';
+                table.parentNode.insertBefore(wrapper, table);
+                wrapper.appendChild(table);
+            }
+        });
+    }
+
+    // Responsive form handling
+    function handleResponsiveForms() {
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                if (input.type !== 'hidden' && !input.classList.contains('form-control')) {
+                    input.classList.add('form-control');
+                }
+            });
+        });
+    }
+
+    // Initialize responsive features
+    $(document).ready(function() {
+        handleResponsiveImages();
+        handleResponsiveTables();
+        handleResponsiveForms();
+    });
+
+    // Handle window resize
+    $(window).on('resize', function() {
+        handleResponsiveImages();
+        handleResponsiveTables();
+        handleResponsiveForms();
+    });
     
     // Dropdown on mouse hover
     // const $dropdown = $(".dropdown");
@@ -115,7 +206,19 @@
         navText : [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
-        ]
+        ],
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                dots: true
+            },
+            768: {
+                items: 1,
+                nav: true,
+                dots: false
+            }
+        }
     });
 
 
@@ -130,19 +233,24 @@
         nav : false,
         responsive: {
             0:{
-                items:1
+                items:1,
+                margin: 15
             },
             576:{
-                items:2
+                items:2,
+                margin: 20
             },
             768:{
-                items:3
+                items:3,
+                margin: 25
             },
             992:{
-                items:2
+                items:2,
+                margin: 25
             },
             1200:{
-                items:4
+                items:4,
+                margin: 25
             }
         }
     });
@@ -164,13 +272,19 @@
         ],
         responsive: {
             0:{
-                items:1
+                items:1,
+                nav: false,
+                dots: true
             },
             768:{
-                items:2
+                items:2,
+                nav: true,
+                dots: false
             },
             992:{
-                items:3
+                items:3,
+                nav: true,
+                dots: false
             }
         }
     });
@@ -184,7 +298,111 @@
             .then((res) => res.text())
             .then((html) => {
               this.innerHTML = html;
+              this.initializeNavbar();
+              this.initializeMobileMenu();
             });
+        }
+        
+        initializeNavbar() {
+          // Wait for DOM and Bootstrap to be ready
+          setTimeout(() => {
+            const navbarToggler = this.querySelector('.navbar-toggler');
+            const navbarCollapse = this.querySelector('.navbar-collapse');
+            
+            if (navbarToggler && navbarCollapse) {
+              // Handle toggle button state changes
+              navbarCollapse.addEventListener('show.bs.collapse', () => {
+                navbarToggler.setAttribute('aria-expanded', 'true');
+              });
+              
+              navbarCollapse.addEventListener('hide.bs.collapse', () => {
+                navbarToggler.setAttribute('aria-expanded', 'false');
+              });
+              
+              // Handle toggle button click to close when open
+              navbarToggler.addEventListener('click', (e) => {
+                const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+                const isNavbarOpen = navbarCollapse.classList.contains('show');
+                
+                if (isExpanded && isNavbarOpen) {
+                  // If navbar is open, close it
+                  e.preventDefault();
+                  e.stopPropagation();
+                  
+                  // Use Bootstrap's collapse method to close
+                  if (typeof bootstrap !== 'undefined') {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                    if (bsCollapse) {
+                      bsCollapse.hide();
+                    } else {
+                      // Fallback if Bootstrap instance doesn't exist
+                      navbarCollapse.classList.remove('show');
+                      navbarToggler.setAttribute('aria-expanded', 'false');
+                    }
+                  } else {
+                    // Fallback if Bootstrap is not loaded
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                  }
+                }
+                // If navbar is closed, let Bootstrap handle the opening
+              });
+              
+              // Handle click outside to close
+              document.addEventListener('click', (e) => {
+                if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                  if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                      toggle: false
+                    });
+                    bsCollapse.hide();
+                  }
+                }
+              });
+            }
+          }, 100);
+        }
+
+        initializeMobileMenu() {
+          const menu = this.querySelector("#mobileMenu");
+          const openBtn = this.querySelector("#openMenuBtn");
+          const closeBtn = this.querySelector("#closeMenuBtn");
+
+          if (openBtn && closeBtn && menu) {
+            openBtn.onclick = () => {
+              menu.classList.add("open");
+              document.body.style.overflow = "hidden";
+            };
+
+            closeBtn.onclick = () => {
+              menu.classList.remove("open");
+              this.closeAllSubmenus();
+              document.body.style.overflow = "";
+            };
+          }
+
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+              menu.classList.remove("open");
+              this.closeAllSubmenus();
+              document.body.style.overflow = "";
+            }
+          });
+        }
+
+        // ✅ Make submenu functions accessible within the class
+        openSubMenu(id) {
+          this.querySelector(`#${id}`)?.classList.add("open");
+        }
+
+        closeSubMenu(id) {
+          this.querySelector(`#${id}`)?.classList.remove("open");
+        }
+
+        closeAllSubmenus() {
+          this.querySelectorAll(".submenu-panel.open").forEach(panel => {
+            panel.classList.remove("open");
+          });
         }
       }
       customElements.define("my-navbar", MyNavbar);
