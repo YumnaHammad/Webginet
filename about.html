@@ -33,7 +33,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/about-enhanced.css" />
-    <link
+    <linkn
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
@@ -218,6 +218,53 @@
       .contact-container {
         padding: 20px;
       }
+    }
+    
+    /* Simple Bullet Points */
+    .simple-bullets {
+      list-style: disc !important;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .simple-bullets li {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+      list-style: disc !important;
+      display: list-item !important;
+      position: relative;
+    }
+    
+    .simple-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: -1.5rem;
+      color: #333;
+      font-weight: bold;
+    }
+    
+    .simple-bullets ul {
+      list-style: circle !important;
+      padding-left: 2rem;
+      margin-top: 0.5rem;
+    }
+    
+    .simple-bullets ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      list-style: circle !important;
+      display: list-item !important;
+      position: relative;
+    }
+    
+    .simple-bullets ul li::before {
+      content: "○";
+      position: absolute;
+      left: -1.5rem;
+      color: #666;
+      font-weight: normal;
     }
   </style>
 
@@ -497,43 +544,47 @@
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <h2 class="mb-4 fw-bold text-dark text-center">About Webginet: Powering Qatar's Future, Locally Made & Globally Connected</h2>
-        <p class="fs-5 text-muted mb-4 text-justify">
-          At Webginet, we are more than a solutions provider – we are Qatar's partner in progress. As a leading manufacturer of cutting-edge electrical products and smart infrastructure systems, we design and build the core technologies powering tomorrow. We forge strategic alliances with world-class global brands, bringing together the best expertise and innovation to serve the Qatari market.
-        </p>
-        <p class="fs-5 text-muted mb-4 text-justify">
-          This powerful combination – our own manufacturing excellence and key international collaborations – ensures the solutions you need are always available, locally supported, and perfectly adapted for Qatar's unique environment. From smart automation and digital infrastructure to sustainable energy solutions, we deliver seamlessly integrated projects, right here where you operate.
-        </p>
-        <p class="fs-5 text-muted mb-4 text-justify">
-          Our growth is built on sound financial foundations and an unwavering commitment to attracting and empowering top Qatari talent. We exist to empower local businesses and communities, positioning Webginet as a major engine for Qatar's economic vision.
-        </p>
-        <p class="fs-5 text-muted mb-4 text-justify">
-          Sustainability drives our manufacturing and partnerships. We are actively advancing green energy initiatives and deploying smart metering projects, ensuring the solutions we build and bring together create lasting value. No matter the stage of your project, Webginet partners with you from concept to completion and beyond, providing trusted local support and global innovation.
-        </p>
-        <ul class="fs-5 text-muted text-justify">
-          <li>Manufacturer Identity Front & Center: Explicitly states "As a leading manufacturer" and "design and build the core technologies". This establishes your foundational role in creating products.</li>
-          <li>Collaboration Highlighted: Clearly states "We forge strategic alliances with world-class global brands". This explains how you ensure broad solution availability.</li>
-          <li>Local Availability & Adaptation: The core benefit is linked directly to being a local manufacturer and partner: "ensures the solutions you need are always available, locally supported, and perfectly adapted for Qatar's unique environment." This addresses customer convenience and relevance.</li>
-          <li>Integrated Positioning: The paragraph flows naturally:
-            <ul>
-              <li>Who we are: Manufacturer & Collaborator.</li>
-              <li>What this means for customers: Local availability, support, and adaptation.</li>
-              <li>What we deliver: Integrated solutions (tying back to your core services).</li>
-            </ul>
-          </li>
-          <li>Strengthened Local Commitment: "locally supported", "right here where you operate", "empowering top Qatari talent", and "major engine for Qatar's economic vision" all reinforce your deep roots and contribution to the local economy – a natural fit for a manufacturer.</li>
-          <li>Sustainability Link to Manufacturing: "Sustainability drives our manufacturing and partnerships" explicitly connects your green commitment to how you make things and who you work with.</li>
-          <li>Preserved Core Strengths: All your original pillars (Solutions breadth, Financials, Talent, Empowering Community, National Contribution, Sustainability, End-to-End Support) remain strongly integrated.</li>
-        </ul>
-        <p class="fs-5 text-muted mb-4 text-justify">
-          Benefits of this Approach:
-        </p>
-        <ul class="fs-5 text-muted text-justify">
-          <li>Builds Trust: Shows you control core technology (manufacturing) and have the reach (collaborations) to deliver comprehensively.</li>
-          <li>Addresses Customer Needs: Directly answers "Can I get it here and get support?" by emphasizing local availability and adaptation.</li>
-          <li>Competitive Advantage: Positions you uniquely as both a local producer and a gateway to global innovation.</li>
-          <li>National Alignment: Being a local manufacturer significantly boosts your role as a contributor to Qatar's economy and industrial development.</li>
-          <li>Stronger Value Proposition: Combines product ownership, global partnerships, local presence, and full project capability into one compelling story.</li>
-        </ul>
+        
+        <div class="content-section">
+          <h4 class="mb-3 fw-bold text-primary">Our Mission & Vision</h4>
+          <ul class="simple-bullets">
+            <li><strong>Manufacturing Excellence:</strong> Leading manufacturer of electrical products and smart infrastructure</li>
+            <li><strong>Global Partnerships:</strong> Strategic alliances with world-class global brands</li>
+            <li><strong>Local Adaptation:</strong> Solutions adapted for Qatar's unique environment</li>
+            <li><strong>Economic Growth:</strong> Empowering local businesses and communities</li>
+            <li><strong>Sustainability Focus:</strong> Green energy initiatives and smart metering projects</li>
+          </ul>
+        </div>
+
+        <div class="content-section">
+          <h4 class="mb-3 fw-bold text-primary">Key Highlights</h4>
+          <ul class="simple-bullets">
+            <li><strong>Manufacturer Identity:</strong> Core role in creating products and technologies</li>
+            <li><strong>Global Collaboration:</strong> Broad solution availability through partnerships</li>
+            <li><strong>Local Support:</strong> Always available and locally supported solutions</li>
+            <li><strong>Integrated Approach:</strong>
+              <ul>
+                <li>Manufacturer & Collaborator</li>
+                <li>Local availability & support</li>
+                <li>Integrated solutions delivery</li>
+              </ul>
+            </li>
+            <li><strong>Local Commitment:</strong> Deep roots in Qatar's economy and development</li>
+            <li><strong>Sustainability:</strong> Green commitment in manufacturing and partnerships</li>
+            <li><strong>Core Strengths:</strong> Solutions, financials, talent, and end-to-end support</li>
+          </ul>
+        </div>
+        
+        <div class="content-section">
+          <h4 class="mb-3 fw-bold text-primary">Benefits</h4>
+          <ul class="simple-bullets">
+            <li><strong>Builds Trust:</strong> Control core technology with global reach</li>
+            <li><strong>Customer Focus:</strong> Local availability and support</li>
+            <li><strong>Competitive Edge:</strong> Local producer with global innovation</li>
+            <li><strong>National Impact:</strong> Contributor to Qatar's economy</li>
+            <li><strong>Strong Value:</strong> Product ownership with global partnerships</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
