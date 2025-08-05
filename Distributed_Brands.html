@@ -33,7 +33,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/navbar.css" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -405,6 +405,86 @@
     }
 }
 
+/* Mobile menu alignment override for Distributed_Brands page */
+@media (max-width: 768px) {
+    .mobile-menu #mainMenu {
+        text-align: left !important;
+    }
+    
+    .mobile-menu .menu-link {
+        text-align: left !important;
+        justify-content: flex-start !important;
+        padding-left: 1rem !important;
+    }
+    
+    .mobile-menu .menu-link a {
+        text-align: left !important;
+        margin-right: auto !important;
+    }
+    
+    .mobile-menu .submenu-panel {
+        text-align: left !important;
+    }
+    
+    .mobile-menu .submenu-link {
+        text-align: left !important;
+        justify-content: flex-start !important;
+        padding-left: 1rem !important;
+    }
+    
+    .mobile-menu .submenu-link a {
+        text-align: left !important;
+        margin-right: auto !important;
+    }
+    
+    /* Override the global centering for mobile menu only */
+    .mobile-menu * {
+        text-align: left !important;
+    }
+    
+    /* Keep the Buy Now button centered */
+    .mobile-menu .nav-item {
+        text-align: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+    
+    .mobile-menu .nav-item .nav-link {
+        text-align: center !important;
+        margin: 0 !important;
+    }
+    
+    /* Remove side margins and reduce spacing */
+    .mobile-menu .menu-link {
+        margin: 0 !important;
+        padding: 0.75rem 0 !important;
+    }
+    
+    .mobile-menu .submenu-link {
+        margin: 0 !important;
+        padding: 0.75rem 0 !important;
+    }
+    
+    /* Ensure menu items with icons are properly left-aligned */
+    .mobile-menu .menu-link i {
+        margin-left: auto !important;
+    }
+    
+    .mobile-menu .submenu-link i {
+        margin-left: auto !important;
+    }
+    
+    /* Move close button to left corner */
+    .mobile-menu .d-flex.justify-content-between {
+        justify-content: flex-start !important;
+    }
+    
+    .mobile-menu #closeMenuBtn {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+}
+
 </style>
 
 <body>
@@ -722,13 +802,13 @@
     <div class="text-center">
       <img src="./img/carousel-11.jpg" alt="3M" class="supplier-logo mb-2">
       <p class="mb-0">3M</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="100">
     <div class="text-center">
       <img src="./img/commerce (1).jpg" alt="ABB" class="supplier-logo mb-2">
       <p class="mb-0">ABB</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="200">
     <div class="text-center">
@@ -754,13 +834,13 @@
     <div class="text-center">
       <img src="./img/help (1).jpg" alt="CME Wire & Cable" class="supplier-logo mb-2">
       <p class="mb-0">CME Wire & Cable</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="600">
     <div class="text-center">
       <img src="./img/Energy.jpg" alt="Eaton" class="supplier-logo mb-2">
       <p class="mb-0">Eaton</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="700">
     <div class="text-center">
@@ -786,13 +866,13 @@
     <div class="text-center">
       <img src="./img/help (2).jpg" alt="Honeywell" class="supplier-logo mb-2">
       <p class="mb-0">Honeywell</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="1100">
     <div class="text-center">
       <img src="./img/commerce (3).jpg" alt="Schneider Electric" class="supplier-logo mb-2">
       <p class="mb-0">Schneider Electric</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="1200">
     <div class="text-center">
@@ -818,13 +898,13 @@
     <div class="text-center">
       <img src="./img/offer (3).jpg" alt="Fluke" class="supplier-logo mb-2">
       <p class="mb-0">Fluke</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="1600">
     <div class="text-center">
       <img src="./img/offer (5).jpg" alt="Leviton" class="supplier-logo mb-2">
       <p class="mb-0">Leviton</p>
-    </div>
+  </div>
   </div>
   <div class="col-lg-2 col-md-3 col-6 mb-3" data-aos="fade-up" data-aos-delay="1700">
     <div class="text-center">

@@ -49,127 +49,112 @@
 .col:hover img {
   transform: scale(1.2);
 }
-  body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Remove all link underlines */
-  a {
-    text-decoration: none !important;
-  }
-  
-  a:hover {
-    text-decoration: none !important;
-  }
-  
-  a:visited {
-    text-decoration: none !important;
-  }
-  
-  a:active {
-    text-decoration: none !important;
-  }
+     /* Global Styles */
+     body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* Modern Floating Navbar */
-  .navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1900px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    padding: 10px 30px;
-    transition: all 0.4s ease-in-out;
-  }
+    /* Modern Floating Navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 30px;
+      transition: all 0.4s ease-in-out;
+    }
 
-  /* Logo Image */
-  .navbar-brand img {
-    height: 50px;
-  }
+    /* Logo Image */
+    .navbar-brand img {
+      height: 50px;
+    }
 
-  /* Nav Links */
-  .nav-link {
-    color: #000000 !important;
-    font-weight: 500;
-    margin-right: 1rem;
+    /* Nav Links */
+    .nav-link {
+      color: #000000 !important;
+      font-weight: 500;
+      margin-right: 1rem;
 
-    transition: all 0.3s ease;
-  }
+      transition: all 0.3s ease;
+    }
 
-  .nav-link:hover,
-  .nav-link.active {
-    color: #000000 !important;
-    transform: scale(1.05);
-  }
-  /* Add this to your existing CSS */
-  .nav-link:hover {
-    background: linear-gradient(90deg, #6dd5fa, #c776ca);
-    border: none;
-    outline: none;
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000000 !important;
+      transform: scale(1.05);
+    }
+    /* Add this to your existing CSS */
+    .nav-link:hover {
+      background: linear-gradient(90deg, #6dd5fa, #c776ca);
+      border: none;
+      outline: none;
 
-    text-decoration: none;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
-    padding: 5px 25px; /* Optional: ensures background has room */
-  }
+      text-decoration: none;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(199, 118, 202, 0.6);
+      padding: 5px 25px; /* Optional: ensures background has room */
+    }
 
-  /* Navbar Toggler Icon */
-  .navbar-toggler {
-    border: none;
-    outline: none;
-  }
+    /* Navbar Toggler Icon */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
 
-  .navbar-toggler-icon {
-    display: none;
-  }
+    .navbar-toggler-icon {
+      display: none;
+    }
 
-  .navbar-toggler i {
-    color: #ffffff;
-    font-size: 1.8rem;
-  }
+    .navbar-toggler i {
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
 
-  /* Nav Slide Animation */
-  @keyframes slideDown {
-    0% {
+    /* Nav Slide Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-nav .nav-item {
       opacity: 0;
-      transform: translateY(-20px);
+      animation: slideDown 0.5s ease forwards;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
+
+    .navbar-nav .nav-item:nth-child(1) {
+      animation-delay: 0.2s;
     }
-  }
+    .navbar-nav .nav-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-item:nth-child(5) {
+      animation-delay: 1s;
+    }
 
-  .navbar-nav .nav-item {
-    opacity: 0;
-    animation: slideDown 0.5s ease forwards;
-  }
-
-  .navbar-nav .nav-item:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  .navbar-nav .nav-item:nth-child(2) {
-    animation-delay: 0.4s;
-  }
-  .navbar-nav .nav-item:nth-child(3) {
-    animation-delay: 0.6s;
-  }
-  .navbar-nav .nav-item:nth-child(4) {
-    animation-delay: 0.8s;
-  }
-  .navbar-nav .nav-item:nth-child(5) {
-    animation-delay: 1s;
-  }
 
   /* Dropdown Styling */
   .dropdown-menu {
@@ -412,7 +397,6 @@
     </div>
   </div>
   <!-- Spinner End -->
-  <!-- Navbar Start -->
   <!-- Mobile Navbar -->
   <div class=" d-md-none d-block">
 
@@ -420,7 +404,7 @@
     <nav class="navbar bg-transparent px-3 py-2">
       <img src="img/logo.png" alt="Logo" style="height: 40px;">
       <button class="btn ms-auto" id="openMenuBtn">
-        <i class="fa-solid fa-bars text-warning fs-2" > <a href="index.html"></a></i>
+        <i class="fa-solid fa-bars text-warning fs-2"></i>
       </button>
     </nav>
 
@@ -434,16 +418,14 @@
       <ul id="mainMenu">
         <li class="menu-link"><a href="index.html">Home</a></li>
 
-        <li class="menu-link"  >
+        <li class="menu-link">
           Explore & Market
           <i class="fa-solid fa-arrow-right" onclick="openSubMenu('exploreSubmenu')"></i>
         </li>
-      
 
         <li class="menu-link">
           Services
           <i class="fa-solid fa-arrow-right" onclick="openSubMenu('servicesSubmenu')"></i>
-          
         </li>
 
         <li class="menu-link"><a href="Group.html">Group</a></li>
@@ -575,7 +557,7 @@
             <a class="nav-link gradient-btn active text-white px-3 py-2 rounded-pill" href="index.html">Home</a>
           </li>
           <li class="nav-item dropdown position-relative">
-            <a class="nav-link dropdown-toggle" href="offer.html" id="exploreDropdown" role="button" data-bs-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown">
               Explore & Market
             </a>
             <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
@@ -633,7 +615,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="Services.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
               Services
             </a>
             <ul class="dropdown-menu">
@@ -662,6 +644,7 @@
     </div>
   </nav>
   <!-- Navbar End -->
+
 
   <!-- Carousel Start -->
   <div class="container-fluid p-0 mb-5">

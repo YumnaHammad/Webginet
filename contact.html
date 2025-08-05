@@ -384,6 +384,127 @@
         padding: 20px;
       }
     }
+
+    /* Mobile menu alignment override for Contact page */
+    @media (max-width: 768px) {
+        .mobile-menu #mainMenu {
+            text-align: left !important;
+        }
+        
+        .mobile-menu .menu-link {
+            text-align: left !important;
+            justify-content: flex-start !important;
+            padding-left: 1rem !important;
+        }
+        
+        .mobile-menu .menu-link a {
+            text-align: left !important;
+            margin-right: auto !important;
+        }
+        
+        .mobile-menu .submenu-panel {
+            text-align: left !important;
+        }
+        
+        .mobile-menu .submenu-link {
+            text-align: left !important;
+            justify-content: flex-start !important;
+            padding-left: 1rem !important;
+        }
+        
+        .mobile-menu .submenu-link a {
+            text-align: left !important;
+            margin-right: auto !important;
+        }
+        
+        /* Override the global centering for mobile menu only */
+        .mobile-menu * {
+            text-align: left !important;
+        }
+        
+        /* Keep the Buy Now button centered */
+        .mobile-menu .nav-item {
+            text-align: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+        }
+        
+        .mobile-menu .nav-item .nav-link {
+            text-align: center !important;
+            margin: 0 !important;
+        }
+        
+        /* Remove side margins and reduce spacing */
+        .mobile-menu .menu-link {
+            margin: 0 !important;
+            padding: 0.75rem 0 !important;
+        }
+        
+        .mobile-menu .submenu-link {
+            margin: 0 !important;
+            padding: 0.75rem 0 !important;
+        }
+        
+        /* Ensure menu items with icons are properly left-aligned */
+        .mobile-menu .menu-link i {
+            margin-left: auto !important;
+        }
+        
+        .mobile-menu .submenu-link i {
+            margin-left: auto !important;
+        }
+        
+        /* Move close button to left corner */
+        .mobile-menu .d-flex.justify-content-between {
+            justify-content: flex-start !important;
+        }
+        
+        .mobile-menu #closeMenuBtn {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+    }
+
+    /* Responsive font sizing for headings */
+    h1 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    h3 {
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+        }
+        
+        h2 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+        }
+    }
+
+    @media (max-width: 576px) {
+        h1 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+        }
+        
+        h2 {
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+        }
+        
+        h3 {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+        }
+    }
   </style>
 
 
