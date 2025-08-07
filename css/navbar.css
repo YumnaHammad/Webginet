@@ -1,6 +1,61 @@
  ul li{
   list-style: none;
  }
+ 
+ /* Desktop Navbar - Ensure items stay in one line */
+ .custom-navbar .navbar-nav {
+   flex-direction: row !important;
+   flex-wrap: nowrap !important;
+   white-space: nowrap;
+   align-items: center;
+   gap: 0.25rem !important; /* Reduced gap between items */
+ }
+ 
+ .custom-navbar .nav-item {
+   flex-shrink: 0;
+   margin-right: 0.25rem; /* Reduced margin between items */
+ }
+ 
+ .custom-navbar .nav-item:last-child {
+   margin-right: 0;
+ }
+ 
+ /* Ensure Buy Now button stays inline */
+ .custom-navbar .nav-item .gradient-btn {
+   white-space: nowrap;
+   display: inline-block;
+   flex-shrink: 0;
+ }
+ 
+ /* Responsive adjustments for smaller screens */
+ @media (max-width: 1200px) {
+   .custom-navbar .navbar-nav {
+     gap: 0.15rem !important; /* Even tighter spacing on smaller screens */
+   }
+   
+   .custom-navbar .nav-item {
+     margin-right: 0.15rem;
+   }
+   
+   .custom-navbar .nav-link {
+     padding: 0.4rem 0.6rem !important; /* Reduced padding */
+     font-size: 0.9rem;
+   }
+ }
+ 
+ @media (max-width: 992px) {
+   .custom-navbar .navbar-nav {
+     flex-direction: column !important;
+     flex-wrap: wrap !important;
+     white-space: normal;
+   }
+   
+   .custom-navbar .nav-item {
+     margin-right: 0;
+     margin-bottom: 0.5rem;
+   }
+ }
+ 
  /* Fullscreen menu */
 .mobile-menu {
   position: fixed;
